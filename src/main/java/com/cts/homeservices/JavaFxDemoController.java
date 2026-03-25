@@ -53,7 +53,7 @@ public class JavaFxDemoController implements Initializable {
 
     @FXML
     private void checkLogin() throws IOException, SQLException {
-        JavaFxDemoApp d = new JavaFxDemoApp();
+        OnlineHomeServiceApp d = new OnlineHomeServiceApp();
         String s1 = tBoxUsername.getText();
         String s2 = tBoxPassword.getText();
         String s3 = cBoxRole.getValue();
@@ -106,7 +106,7 @@ public class JavaFxDemoController implements Initializable {
     @FXML
     void registerUser(ActionEvent event) throws IOException {
         try {
-            JavaFxDemoApp d = new JavaFxDemoApp();
+            OnlineHomeServiceApp d = new OnlineHomeServiceApp();
             d.changeScene("register-user-view.fxml", 1100, 750);
         } catch (IOException e) {
             throw new IOException(e);

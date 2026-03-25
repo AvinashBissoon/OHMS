@@ -10,9 +10,9 @@ import java.sql.SQLException;
 import java.util.Objects;
 import java.util.logging.Logger;
 
-public class JavaFxDemoApp extends Application {
+public class OnlineHomeServiceApp extends Application {
 
-    private static final Logger logger = Logger.getLogger(JavaFxDemoApp.class.getName());
+    private static final Logger logger = Logger.getLogger(OnlineHomeServiceApp.class.getName());
 
     DatabaseConnection dc = new DatabaseConnection();
     private static Stage currentStg;
@@ -21,9 +21,9 @@ public class JavaFxDemoApp extends Application {
     public void start(Stage primaryStage) throws IOException {
         currentStg = primaryStage;
         primaryStage.setResizable(false);
-        FXMLLoader fxmlLoader = new FXMLLoader(JavaFxDemoApp.class.getResource("login-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(OnlineHomeServiceApp.class.getResource("login-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        primaryStage.setTitle("JavaFX Project Demo Application: User Login");
+        primaryStage.setTitle("Online Home Service Solutions: User Login");
         primaryStage.setWidth(1100);
         primaryStage.setHeight(750);
         primaryStage.setScene(scene);
