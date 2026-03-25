@@ -44,7 +44,7 @@
    <center>
       <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <TextField layoutX="225.0" layoutY="195.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Email">
+            <TextField fx:id="LoginEmail" layoutX="226.0" layoutY="192.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Email">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -52,7 +52,7 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <PasswordField layoutX="225.0" layoutY="289.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Password">
+            <PasswordField fx:id="LoginPassword" layoutX="226.0" layoutY="282.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Password">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -60,22 +60,22 @@
                   <Font size="15.0" />
                </font>
             </PasswordField>
-            <ComboBox layoutX="225.0" layoutY="385.0" prefHeight="32.0" prefWidth="325.0" promptText="Select Account Type">
+            <ComboBox fx:id="LoginAccType" layoutX="226.0" layoutY="378.0" prefHeight="32.0" prefWidth="325.0" promptText="Select Account Type">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ComboBox>
-            <Label layoutX="226.0" layoutY="165.0" prefHeight="27.0" prefWidth="120.0" text="Email" textFill="#7c5050">
+            <Label layoutX="227.0" layoutY="158.0" prefHeight="27.0" prefWidth="120.0" text="Email" textFill="#7c5050">
                <font>
                   <Font name="Georgia Bold" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="224.0" layoutY="259.0" text="Password" textFill="#7c5050">
+            <Label layoutX="225.0" layoutY="252.0" text="Password" textFill="#7c5050">
                <font>
                   <Font name="Georgia Bold" size="20.0" />
                </font>
             </Label>
-            <Button layoutX="327.0" layoutY="438.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Login" textFill="#7c5050">
+            <Button fx:id="LoginBtn" layoutX="328.0" layoutY="431.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Login" textFill="#7c5050">
                <font>
                   <Font name="Georgia" size="16.0" />
                </font>
@@ -83,21 +83,21 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Hyperlink fx:id="RegisterLink" layoutX="425.0" layoutY="501.0" text="Click Here!">
+            <Hyperlink fx:id="RegisterLink" layoutX="426.0" layoutY="494.0" text="Click Here!">
                <font>
                   <Font size="13.0" />
                </font></Hyperlink>
-            <Label layoutX="267.0" layoutY="504.0" text="Don't Have an account yet?">
+            <Label layoutX="268.0" layoutY="497.0" text="Don't Have an account yet?">
                <font>
                   <Font size="13.0" />
                </font></Label>
-            <Label layoutX="226.0" layoutY="353.0" text="Account Type" textFill="#7c5050">
+            <Label layoutX="227.0" layoutY="346.0" text="Account Type" textFill="#7c5050">
                <font>
                   <Font name="Georgia Bold" size="20.0" />
                </font>
             </Label>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3b6255" height="58.0" layoutX="95.0" layoutY="61.0" stroke="#dddddd" strokeType="INSIDE" width="585.0" />
-            <Label alignment="CENTER" layoutX="107.0" layoutY="69.0" text="Welcome to Home Service Solutions" textFill="WHITE">
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3b6255" height="58.0" layoutX="34.0" layoutY="61.0" stroke="#dddddd" strokeType="INSIDE" width="707.0" />
+            <Label alignment="CENTER" layoutX="50.0" layoutY="69.0" text="Welcome to Online Home Service Solutions" textFill="WHITE">
                <font>
                   <Font name="Georgia" size="35.0" />
                </font>
