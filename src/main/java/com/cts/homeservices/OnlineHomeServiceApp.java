@@ -33,7 +33,7 @@ public class OnlineHomeServiceApp extends Application {
             String query = "SELECT * FROM tblcustomer";
             dc.rst = dc.stat.executeQuery(query);
 
-            while(dc.rst.next()) {
+            while (dc.rst.next()) {
                 System.out.print(dc.rst.getInt("customerid"));
                 System.out.print("  ");
                 System.out.print(dc.rst.getString("customerfirstname"));
@@ -51,27 +51,20 @@ public class OnlineHomeServiceApp extends Application {
     }
 
     public void changeScene(String fxml, Integer sWidth, Integer sHeight) throws IOException {
-
-        //Parent pane = FXMLLoader.load(getClass().getResource(fxml));
         Parent pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
 
         switch (fxml) {
-            case "application-dashboard-view.fxml":
-                currentStg.setTitle("JavaFX Project Demo: Application Dashboard");
+            case "login-view.fxml":
+                currentStg.setTitle("Online Home Service Solutions: User Login");
                 break;
 
-            case "register-user-view.fxml":
-                currentStg.setTitle("JavaFX Project Demo: Register new User");
-                break;
-            case "inventory-accordion-view.fxml":
-                currentStg.setTitle("JavaFX Project Demo: Customer Order Administration");
-                break;
+            case "registration-view.fxml":
+                currentStg.setTitle("Online Home Service Solutions: User Registration");
         }
 
-        currentStg.setWidth(sWidth);
-        currentStg.setHeight(sHeight);
-        currentStg.getScene().setRoot(pane);
     }
 
-    public static void main(String[] args) {launch();}
+    public static void main(String[] args) {
+        launch();
+    }
 }

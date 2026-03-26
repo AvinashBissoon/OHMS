@@ -46,7 +46,7 @@
    <center>
       <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="RegisterBtn" layoutX="189.0" layoutY="540.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="175.0" text="Register Account" textFill="#7c5050">
+            <Button fx:id="btnRegister" layoutX="189.0" layoutY="540.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="175.0" text="Register Account" textFill="#7c5050">
                <font>
                   <Font name="Georgia Bold" size="16.0" />
                </font>
@@ -83,7 +83,7 @@
                         <Font name="Georgia Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="RegisterEmail" prefHeight="32.0" prefWidth="325.0" promptText="Enter Email" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                  <TextField fx:id="tbRegisterEmail" prefHeight="32.0" prefWidth="325.0" promptText="Enter Email" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
@@ -96,7 +96,7 @@
                         <Font name="Georgia Bold" size="20.0" />
                      </font>
                   </Label>
-                  <PasswordField fx:id="RegisterPassword" prefHeight="32.0" prefWidth="325.0" promptText="Enter Password" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                  <PasswordField fx:id="tbRegisterPassword" prefHeight="32.0" prefWidth="325.0" promptText="Enter Password" GridPane.columnIndex="1" GridPane.rowIndex="7">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
@@ -109,7 +109,7 @@
                         <Font name="Georgia Bold" size="20.0" />
                      </font>
                   </Label>
-                  <ComboBox fx:id="RegisterAccType" prefHeight="32.0" prefWidth="325.0" promptText="Select Account Type" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                  <ComboBox fx:id="cbRegisterAccType" prefHeight="32.0" prefWidth="325.0" promptText="Select Account Type" GridPane.columnIndex="1" GridPane.rowIndex="9">
                      <cursor>
                         <Cursor fx:constant="HAND" />
                      </cursor>
@@ -149,7 +149,7 @@
                         <Font name="Georgia Bold" size="20.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="MobileNumber" layoutX="502.0" layoutY="56.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Mobile Number" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                  <TextField fx:id="tbMobileNumber" layoutX="502.0" layoutY="56.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Mobile Number" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <cursor>
                         <Cursor fx:constant="TEXT" />
                      </cursor>
@@ -157,39 +157,39 @@
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="FirstName" promptText="Enter First Name" GridPane.rowIndex="1">
+                  <TextField fx:id="tbFirstName" promptText="Enter First Name" GridPane.rowIndex="1">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="LastName" promptText="Enter Last Name" GridPane.rowIndex="3">
+                  <TextField fx:id="tbLastName" promptText="Enter Last Name" GridPane.rowIndex="3">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="AddressLine1" promptText="Enter Adress Line 1" GridPane.rowIndex="5">
+                  <TextField fx:id="tbAddressLine1" promptText="Enter Adress Line 1" GridPane.rowIndex="5">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="AddressLine2" promptText="Enter Address Line 2" GridPane.rowIndex="7">
+                  <TextField fx:id="tbAddressLine2" promptText="Enter Address Line 2" GridPane.rowIndex="7">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="City" promptText="Enter City" GridPane.rowIndex="9">
+                  <TextField fx:id="tbCity" promptText="Enter City" GridPane.rowIndex="9">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <TextField fx:id="Country" promptText="Enter Country" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <TextField fx:id="tbCountry" promptText="Enter Country" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <font>
                         <Font size="15.0" />
                      </font>
                   </TextField>
                </children>
             </GridPane>
-            <Button fx:id="BackToLoginBtn" layoutX="406.0" layoutY="540.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="175.0" text="Back to Login" textFill="#7c5050">
+            <Button fx:id="btnBackToLogin" layoutX="406.0" layoutY="540.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="175.0" text="Back to Login" textFill="#7c5050">
                <font>
                   <Font name="Georgia Bold" size="16.0" />
                </font>

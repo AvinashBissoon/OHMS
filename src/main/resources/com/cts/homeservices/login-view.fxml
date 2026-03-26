@@ -14,7 +14,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:controller="com.cts.homeservices.LoginViewController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #036248;" BorderPane.alignment="CENTER">
          <children>
@@ -44,7 +44,7 @@
    <center>
       <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <TextField fx:id="LoginEmail" layoutX="226.0" layoutY="192.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Email">
+            <TextField fx:id="tbLoginEmail" layoutX="226.0" layoutY="192.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Email">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -52,7 +52,7 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <PasswordField fx:id="LoginPassword" layoutX="226.0" layoutY="282.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Password">
+            <PasswordField fx:id="tbLoginPassword" layoutX="226.0" layoutY="282.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Password">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -60,7 +60,7 @@
                   <Font size="15.0" />
                </font>
             </PasswordField>
-            <ComboBox fx:id="LoginAccType" layoutX="226.0" layoutY="378.0" prefHeight="32.0" prefWidth="325.0" promptText="Select Account Type">
+            <ComboBox fx:id="cbLoginAccType" layoutX="226.0" layoutY="378.0" prefHeight="32.0" prefWidth="325.0" promptText="Select Account Type">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -75,7 +75,7 @@
                   <Font name="Georgia Bold" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="LoginBtn" layoutX="328.0" layoutY="431.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Login" textFill="#7c5050">
+            <Button fx:id="btnLogin" layoutX="328.0" layoutY="431.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Login" textFill="#7c5050">
                <font>
                   <Font name="Georgia" size="16.0" />
                </font>
@@ -83,7 +83,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Hyperlink fx:id="RegisterLink" layoutX="426.0" layoutY="494.0" text="Click Here!">
+            <Hyperlink fx:id="btnRegisterLink" layoutX="426.0" layoutY="494.0" onAction="#goToRegistration" text="Click Here!">
                <font>
                   <Font size="13.0" />
                </font></Hyperlink>
