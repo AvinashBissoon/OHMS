@@ -30,7 +30,7 @@ public class LoginViewController implements Initializable {
     private TextField tbLoginPassword;
 
     @FXML
-    private ComboBox<String> cbLoginAccType;
+    private ComboBox<String> cBoxLoginAccType;
 
     @FXML
     private Button btnLogin;
@@ -42,8 +42,8 @@ public class LoginViewController implements Initializable {
     //Populate ComboBox
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cbLoginAccType.setItems(FXCollections.observableArrayList("Customer", "Worker", "Admin"));
-        cbLoginAccType.setStyle("-fx-font: 15px\"Ariel\";");
+        cBoxLoginAccType.setItems(FXCollections.observableArrayList("Customer", "Worker", "Admin"));
+        cBoxLoginAccType.setStyle("-fx-font: 15px\"Ariel\";");
     }
 
 

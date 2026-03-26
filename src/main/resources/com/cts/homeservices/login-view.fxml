@@ -60,7 +60,7 @@
                   <Font size="15.0" />
                </font>
             </PasswordField>
-            <ComboBox fx:id="cbLoginAccType" layoutX="226.0" layoutY="378.0" prefHeight="32.0" prefWidth="325.0" promptText="Select Account Type">
+            <ComboBox fx:id="cBoxLoginAccType" layoutX="226.0" layoutY="378.0" prefHeight="32.0" prefWidth="325.0" promptText="Select Account Type">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
