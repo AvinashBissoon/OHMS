@@ -1,11 +1,13 @@
 package com.cts.homeservices;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -19,9 +21,18 @@ public class RegistrationViewController implements Initializable {
     @FXML
     private Button btnBackToLogin;
 
+    @FXML
+    private ComboBox<String> cBoxCountry;
+
+    @FXML
+    private ComboBox<String> cBoxRegisterAccType;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        cBoxCountry.setItems(FXCollections.observableArrayList("Trinidad", "Tobago"));
+        cBoxCountry.setStyle("-fx-font: 15px\"Ariel\";");
+        cBoxRegisterAccType.setItems(FXCollections.observableArrayList("Customer", "Worker"));
+        cBoxRegisterAccType.setStyle("-fx-font: 15px\"Ariel\";");
     }
 
     @FXML
