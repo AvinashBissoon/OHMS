@@ -30,17 +30,15 @@ public class OnlineHomeServiceApp extends Application {
         primaryStage.show();
 
         try {
-            String query = "SELECT * FROM tblCustomer";
+            String query = "SELECT * FROM tblUsers";
             dc.rst = dc.stat.executeQuery(query);
 
             while (dc.rst.next()) {
-                System.out.print(dc.rst.getInt("customerid"));
+                System.out.print(dc.rst.getString("email"));
                 System.out.print("  ");
-                System.out.print(dc.rst.getString("firstname"));
+                System.out.print(dc.rst.getString("password"));
                 System.out.print("  ");
-                System.out.print(dc.rst.getString("mobilephone"));
-                System.out.print("  ");
-                System.out.println(dc.rst.getString("email"));
+                System.out.println(dc.rst.getString("accountType"));
             }
         } catch (SQLException e) {
             // Log the exception using the Java logger
@@ -64,6 +62,19 @@ public class OnlineHomeServiceApp extends Application {
 
             case "registration-view.fxml":
                 currentStg.setTitle("Online Home Service Solutions: User Registration");
+                break;
+
+            case "customer-dashboard.fxml":
+                currentStg.setTitle("Online Home Service Solutions: Customer Dashboard");
+                break;
+
+            case "employee-dashboard.fxml":
+                currentStg.setTitle("Online Home Service Solutions: Employee Dashboard");
+                break;
+
+            case "admin-dashboard.fxml":
+                currentStg.setTitle("Online Home Service Solutions: Admin Dashboard");
+                break;
         }
 
     }

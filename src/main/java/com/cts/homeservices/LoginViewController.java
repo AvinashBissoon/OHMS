@@ -3,10 +3,8 @@ package com.cts.homeservices;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Hyperlink;
@@ -16,6 +14,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
@@ -54,7 +53,7 @@ public class LoginViewController implements Initializable {
 
         //Text Field style on event
         tbLoginEmail.setStyle(defaultStyle);
-        tbLoginEmail.focusedProperty().addListener((observableValue, oldVal, newVal) ->{
+        tbLoginEmail.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
             if (newVal) tbLoginEmail.setStyle(focusedStyle);
             else tbLoginEmail.setStyle(defaultStyle);
         });
@@ -88,15 +87,50 @@ public class LoginViewController implements Initializable {
     }
 
     @FXML
-    void btnLogin(ActionEvent event) throws IOException{
-        DatabaseConnection dc =new DatabaseConnection();
+    void login(ActionEvent event) throws IOException, SQLException {
+        DatabaseConnection dc = new DatabaseConnection();
         String email = tbLoginEmail.getText();
         String password = tbLoginPassword.getText();
         String accountType = cBoxLoginAccType.getValue();
 
-        if (accountType == null){
-            System.out.println("Please enter valid login details.");
+        if (accountType == null || email.isEmpty() || password.isEmpty()) {
             return;
+        }
+
+        String query = "SELECT * FROM tblUsers WHERE email = ? AND password = ? AND accountType = ?";
+        try {
+            dc.ps = dc.con.prepareStatement(query);
+            dc.ps.setString(1, email);
+            dc.ps.setString(2, password);
+            dc.ps.setString(3, accountType);
+
+            dc.rst = dc.ps.executeQuery();
+            if (dc.rst.next()) {
+                String fxmlFile = "";
+                switch (accountType) {
+                    case "Customer":
+                        fxmlFile = "customer-dashboard.fxml";
+                        break;
+
+                    case "Employee":
+                        fxmlFile = "employee-dashboard.fxml";
+                        break;
+
+                    case "Admin":
+                        fxmlFile = "admin-dashboard.fxml";
+                        break;
+                }
+
+                Stage currentStage = (Stage) tbLoginEmail.getScene().getWindow();
+                OnlineHomeServiceApp.changeScene(currentStage, fxmlFile, 1100, 750);
+            } else {
+                System.out.println("Invalid Login Credentials.");
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }
+
+
