@@ -82,18 +82,18 @@ public class LoginViewController implements Initializable {
     @FXML
     private void goToRegistration(javafx.event.ActionEvent event) throws IOException {
         try {
-            // 1. Load the new FXML file
+            // 1. Load new FXML file
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registration-view.fxml"));
 
-            // 2. Create the new scene with your preferred dimensions
+            // 2. Create the new scene
             Scene scene = new Scene(fxmlLoader.load(), 1100, 750);
 
-            // 3. Get the current stage from the click event
+            // 3. Get the current stage from click event
             Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-            // 4. Set the new scene and show it
+            // 4. Set the new scene and show scene
             stage.setScene(scene);
-            stage.centerOnScreen(); // Optional: keeps the window centered
+            stage.centerOnScreen();
             stage.show();
 
         } catch (IOException e) {
