@@ -1,6 +1,7 @@
 package com.cts.homeservices;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -147,20 +148,10 @@ public class RegistrationViewController implements Initializable {
 
     }
 
-
     @FXML
-    private void goToLogin(javafx.event.ActionEvent event) throws IOException{
-        try{
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("login-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1100, 750);
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-        } catch (Exception e) {
-            System.err.println("Error: Could not register login-view.fxml");
-            e.printStackTrace();
-        }
+    private void goToLogin(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "login-view.fxml", 1100, 750);
     }
 
     //Register User on "Register" Button Click

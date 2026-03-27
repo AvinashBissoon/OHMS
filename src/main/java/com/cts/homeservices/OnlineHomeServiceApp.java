@@ -50,8 +50,12 @@ public class OnlineHomeServiceApp extends Application {
         }
     }
 
-    public void changeScene(String fxml, Integer sWidth, Integer sHeight) throws IOException {
-        Parent pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(fxml)));
+    public static void changeScene(Stage currentStg, String fxml, Integer sWidth, Integer sHeight) throws IOException {
+        Parent pane = FXMLLoader.load(Objects.requireNonNull(OnlineHomeServiceApp.class.getResource(fxml)));
+
+        Scene scene = new Scene(pane, sWidth, sHeight);
+        currentStg.setScene(scene);
+        currentStg.show();
 
         switch (fxml) {
             case "login-view.fxml":

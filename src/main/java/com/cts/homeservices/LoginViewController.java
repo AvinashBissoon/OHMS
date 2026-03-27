@@ -1,6 +1,7 @@
 package com.cts.homeservices;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -80,25 +81,9 @@ public class LoginViewController implements Initializable {
 
     //Go to registration screen
     @FXML
-    private void goToRegistration(javafx.event.ActionEvent event) throws IOException {
-        try {
-            // 1. Load new FXML file
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("registration-view.fxml"));
+    private void goToRegistration(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "registration-view.fxml", 1100, 750);
 
-            // 2. Create the new scene
-            Scene scene = new Scene(fxmlLoader.load(), 1100, 750);
-
-            // 3. Get the current stage from click event
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-
-            // 4. Set the new scene and show scene
-            stage.setScene(scene);
-            stage.centerOnScreen();
-            stage.show();
-
-        } catch (IOException e) {
-            System.err.println("Error: Could not find registration-view.fxml");
-            e.printStackTrace();
-        }
     }
 }
