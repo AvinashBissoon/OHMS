@@ -44,7 +44,7 @@ public class LoginViewController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         //Populate ComboBox
-        cBoxLoginAccType.setItems(FXCollections.observableArrayList("Customer", "Worker", "Admin"));
+        cBoxLoginAccType.setItems(FXCollections.observableArrayList("Customer", "Employee", "Admin"));
 
         //Setting up the styles to be used
         String defaultStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color: #cccccc; -fx-border-width:1; ";
@@ -85,5 +85,18 @@ public class LoginViewController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "registration-view.fxml", 1100, 750);
 
+    }
+
+    @FXML
+    void btnLogin(ActionEvent event) throws IOException{
+        DatabaseConnection dc =new DatabaseConnection();
+        String email = tbLoginEmail.getText();
+        String password = tbLoginPassword.getText();
+        String accountType = cBoxLoginAccType.getValue();
+
+        if (accountType == null){
+            System.out.println("Please enter valid login details.");
+            return;
+        }
     }
 }

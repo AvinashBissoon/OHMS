@@ -75,7 +75,7 @@
                   <Font name="Georgia Bold" size="20.0" />
                </font>
             </Label>
-            <Button fx:id="btnLogin" layoutX="328.0" layoutY="455.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="121.0" text="Login" textFill="#7c5050">
+            <Button fx:id="btnLogin" layoutX="328.0" layoutY="455.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="121.0" text="Login" textFill="#7c5050">
                <font>
                   <Font name="Georgia" size="16.0" />
                </font>

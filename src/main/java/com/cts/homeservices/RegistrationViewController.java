@@ -175,7 +175,6 @@ public class RegistrationViewController implements Initializable {
                     query = "INSERT INTO tblEmployee VALUES(null, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
                     break;
             }
-            //Build a protected query to add to customer
 
             //Assign data to protected parameters for registration
 
