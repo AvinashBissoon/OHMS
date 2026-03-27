@@ -53,6 +53,9 @@ public class RegistrationViewController implements Initializable {
     @FXML
     private Button btnBackToLogin;
 
+    @FXML
+    private Button btnRegister;
+
 
 
     //Populate Country and Role Combo Boxes
@@ -62,7 +65,88 @@ public class RegistrationViewController implements Initializable {
         cBoxCountry.setStyle("-fx-font: 15px\"Ariel\";");
         cBoxRegisterAccType.setItems(FXCollections.observableArrayList("Customer", "Employee", "Admin"));
         cBoxRegisterAccType.setStyle("-fx-font: 15px\"Ariel\";");
+
+        //Setting up the styles to be used
+        String defaultStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color: #cccccc; -fx-border-width:1; ";
+        String focusedStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color:  #036248; -fx-border-width:2; ";
+        String btnNormal = "-fx-background-color:  white; -fx-text-fill: #7c5050; -fx-background-radius: 15; -fx-font-weight:bold;";
+        String btnHover = "-fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
+
+        //Text Field style on event
+        tbFirstName.setStyle(defaultStyle);
+        tbFirstName.focusedProperty().addListener((observableValue, oldVal, newVal) ->{
+            if (newVal) tbFirstName.setStyle(focusedStyle);
+            else tbFirstName.setStyle(defaultStyle);
+        });
+
+        tbLastName.setStyle(defaultStyle);
+        tbLastName.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbLastName.setStyle(focusedStyle);
+            else tbLastName.setStyle(defaultStyle);
+        });
+
+        tbAddressLine1.setStyle(defaultStyle);
+        tbAddressLine1.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbAddressLine1.setStyle(focusedStyle);
+            else tbAddressLine1.setStyle(defaultStyle);
+        });
+
+        tbAddressLine2.setStyle(defaultStyle);
+        tbAddressLine2.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbAddressLine2.setStyle(focusedStyle);
+            else tbAddressLine2.setStyle(defaultStyle);
+        });
+
+        tbCity.setStyle(defaultStyle);
+        tbCity.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbCity.setStyle(focusedStyle);
+            else tbCity.setStyle(defaultStyle);
+        });
+
+        tbMobileNumber.setStyle(defaultStyle);
+        tbMobileNumber.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbMobileNumber.setStyle(focusedStyle);
+            else tbMobileNumber.setStyle(defaultStyle);
+        });
+
+        tbRegisterEmail.setStyle(defaultStyle);
+        tbRegisterEmail.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbRegisterEmail.setStyle(focusedStyle);
+            else tbRegisterEmail.setStyle(defaultStyle);
+        });
+
+        tbRegisterPassword.setStyle(defaultStyle);
+        tbRegisterPassword.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbRegisterPassword.setStyle(focusedStyle);
+            else tbRegisterPassword.setStyle(defaultStyle);
+        });
+
+        //Combo Box style on event
+        String comboFont = "-fx-font: 15px\"Ariel\";";
+        cBoxCountry.setStyle(defaultStyle + comboFont);
+        cBoxCountry.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) cBoxCountry.setStyle(focusedStyle + comboFont);
+            else cBoxCountry.setStyle(defaultStyle + comboFont);
+        });
+
+        cBoxRegisterAccType.setStyle(defaultStyle + comboFont);
+        cBoxRegisterAccType.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) cBoxRegisterAccType.setStyle(focusedStyle + comboFont);
+            else cBoxRegisterAccType.setStyle(defaultStyle + comboFont);
+        });
+
+        btnBackToLogin.setStyle(btnNormal);
+        btnBackToLogin.setOnMouseEntered(mouseEvent -> btnBackToLogin.setStyle(btnHover));
+        btnBackToLogin.setOnMouseExited(mouseEvent -> btnBackToLogin.setStyle(btnNormal));
+
+        btnRegister.setStyle(btnNormal);
+        btnRegister.setOnMouseEntered(mouseEvent -> btnRegister.setStyle(btnHover));
+        btnRegister.setOnMouseExited(mouseEvent -> btnRegister.setStyle(btnNormal));
+
+
+
     }
+
 
     @FXML
     private void goToLogin(javafx.event.ActionEvent event) throws IOException{
