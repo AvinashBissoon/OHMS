@@ -46,7 +46,7 @@
    <center>
       <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#3b6255" height="58.0" layoutX="36.0" layoutY="24.0" stroke="#dddddd" strokeType="INSIDE" width="707.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#036248" height="58.0" layoutX="36.0" layoutY="24.0" stroke="#dddddd" strokeType="INSIDE" width="707.0" />
             <Label alignment="CENTER" layoutX="51.0" layoutY="33.0" prefWidth="678.0" text="Welcome to Online Home Service Solutions" textFill="WHITE">
                <font>
                   <Font name="Georgia" size="35.0" />
