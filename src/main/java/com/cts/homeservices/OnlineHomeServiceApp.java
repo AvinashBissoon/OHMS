@@ -30,17 +30,17 @@ public class OnlineHomeServiceApp extends Application {
         primaryStage.show();
 
         try {
-            String query = "SELECT * FROM tblcustomer";
+            String query = "SELECT * FROM tblCustomer";
             dc.rst = dc.stat.executeQuery(query);
 
             while (dc.rst.next()) {
                 System.out.print(dc.rst.getInt("customerid"));
                 System.out.print("  ");
-                System.out.print(dc.rst.getString("customerfirstname"));
+                System.out.print(dc.rst.getString("firstname"));
                 System.out.print("  ");
-                System.out.print(dc.rst.getString("customermobilephone"));
+                System.out.print(dc.rst.getString("mobilephone"));
                 System.out.print("  ");
-                System.out.println(dc.rst.getString("customeremail"));
+                System.out.println(dc.rst.getString("email"));
             }
         } catch (SQLException e) {
             // Log the exception using the Java logger
