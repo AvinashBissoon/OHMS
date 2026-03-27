@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cts.homeservices.LoginViewController">
@@ -39,22 +42,98 @@
    <center>
       <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="295.0" layoutY="14.0" stroke="#dddddd" strokeType="INSIDE" width="511.0" />
-            <Label alignment="CENTER" layoutX="311.0" layoutY="22.0" text="Online Home Service Solutions" textFill="WHITE">
-               <font>
-                  <Font name="Georgia" size="35.0" />
-               </font>
-            </Label>
-            <GridPane layoutX="61.0" layoutY="101.0" prefHeight="486.0" prefWidth="978.0">
+            <ImageView fitHeight="149.0" fitWidth="185.0" layoutX="479.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/LogoV1.png" />
+               </image>
+            </ImageView>
+            <GridPane layoutX="145.0" layoutY="180.0" prefHeight="417.0" prefWidth="817.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
+               <children>
+                  <Button alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="500.0" style="-fx-background-color: transparent;" text="HOUSEKEEPING" textAlignment="CENTER" textFill="#036248" underline="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/cleaning-tools.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Button>
+                  <Button blendMode="HARD_LIGHT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="ELECTRICAL" textFill="#046147" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/plug.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button blendMode="HARD_LIGHT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="LANDSCAPING" textFill="#036248" underline="true" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/trimming.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button blendMode="HARD_LIGHT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="PLUMBING" textFill="#036248" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/faucet.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button blendMode="HARD_LIGHT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="VIEW HISTORY" textFill="#036248" underline="true" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/history.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button blendMode="HARD_LIGHT" contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="EDIT PROFILE" textFill="#036248" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../img/editing.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
             </GridPane>
          </children>
       </AnchorPane>
