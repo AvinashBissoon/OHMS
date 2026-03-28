@@ -70,9 +70,9 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Label prefHeight="27.0" prefWidth="120.0" text="First Name" textFill="#7c5050">
+                  <Label prefHeight="27.0" prefWidth="120.0" text="First Name" textFill="#036248">
                      <font>
-                        <Font name="Georgia Bold" size="20.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                   </Label>
                   <TextField fx:id="tbFirstName" promptText="Enter First Name" GridPane.rowIndex="1">
@@ -80,9 +80,9 @@
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="10.0" layoutY="62.0" prefHeight="27.0" prefWidth="120.0" text="Last Name" textFill="#7c5050" GridPane.rowIndex="2">
+                  <Label layoutX="10.0" layoutY="62.0" prefHeight="27.0" prefWidth="120.0" text="Last Name" textFill="#036248" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Georgia Bold" size="20.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                   </Label>
                   <TextField fx:id="tbLastName" promptText="Enter Last Name" GridPane.rowIndex="3">
@@ -90,9 +90,9 @@
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="10.0" layoutY="31.0" prefHeight="24.0" prefWidth="207.0" text="Street Address 1" textFill="#7c5050" GridPane.rowIndex="4">
+                  <Label layoutX="10.0" layoutY="31.0" prefHeight="24.0" prefWidth="207.0" text="Street Address 1" textFill="#036248" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Georgia Bold" size="20.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                   </Label>
                   <TextField fx:id="tbAddressLine1" promptText="Enter Address Line 1" GridPane.rowIndex="5">
@@ -100,9 +100,9 @@
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="10.0" layoutY="54.0" prefHeight="24.0" prefWidth="182.0" text="Street Address 2" textFill="#7c5050" GridPane.rowIndex="6">
+                  <Label layoutX="10.0" layoutY="54.0" prefHeight="24.0" prefWidth="182.0" text="Street Address 2" textFill="#036248" GridPane.rowIndex="6">
                      <font>
-                        <Font name="Georgia Bold" size="20.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                   </Label>
                   <TextField fx:id="tbAddressLine2" promptText="Enter Address Line 2" GridPane.rowIndex="7">
@@ -110,9 +110,9 @@
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="10.0" layoutY="77.0" prefHeight="27.0" prefWidth="120.0" text="City" textFill="#7c5050" GridPane.rowIndex="8">
+                  <Label layoutX="10.0" layoutY="77.0" prefHeight="27.0" prefWidth="120.0" text="City" textFill="#036248" GridPane.rowIndex="8">
                      <font>
-                        <Font name="Georgia Bold" size="20.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                   </Label>
                   <TextField fx:id="tbCity" promptText="Enter City" GridPane.rowIndex="9">
@@ -120,15 +120,15 @@
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <Label layoutX="10.0" layoutY="100.0" prefHeight="27.0" prefWidth="120.0" text="Country" textFill="#7c5050" GridPane.columnIndex="1">
+                  <Label layoutX="10.0" layoutY="100.0" prefHeight="27.0" prefWidth="120.0" text="Country" textFill="#036248" GridPane.columnIndex="1">
                      <font>
-                        <Font name="Georgia Bold" size="20.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                   </Label>
                   <ComboBox fx:id="cBoxCountry" prefHeight="32.0" prefWidth="278.0" promptText="Select Country" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label layoutX="10.0" layoutY="123.0" prefHeight="24.0" prefWidth="261.0" text="Mobile Number" textFill="#7c5050" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                  <Label layoutX="10.0" layoutY="123.0" prefHeight="24.0" prefWidth="261.0" text="Mobile Number" textFill="#036248" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <font>
-                        <Font name="Georgia Bold" size="20.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                   </Label>
                   <TextField fx:id="tbMobileNumber" layoutX="502.0" layoutY="56.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Mobile Number" GridPane.columnIndex="1" GridPane.rowIndex="3">
@@ -139,9 +139,9 @@
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <Label prefHeight="27.0" prefWidth="120.0" text="Email" textFill="#7c5050" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                  <Label prefHeight="27.0" prefWidth="120.0" text="Email" textFill="#036248" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <font>
-                        <Font name="Georgia Bold" size="20.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                   </Label>
                   <TextField fx:id="tbRegisterEmail" prefHeight="32.0" prefWidth="325.0" promptText="Enter Email" GridPane.columnIndex="1" GridPane.rowIndex="5">
@@ -152,9 +152,9 @@
                         <Font size="15.0" />
                      </font>
                   </TextField>
-                  <Label text="Password" textFill="#7c5050" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                  <Label text="Password" textFill="#036248" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <font>
-                        <Font name="Georgia Bold" size="20.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                   </Label>
                   <PasswordField fx:id="tbRegisterPassword" prefHeight="32.0" prefWidth="325.0" promptText="Enter Password" GridPane.columnIndex="1" GridPane.rowIndex="7">
@@ -165,9 +165,9 @@
                         <Font size="15.0" />
                      </font>
                   </PasswordField>
-                  <Label text="Account Type" textFill="#7c5050" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                  <Label text="Account Type" textFill="#036248" GridPane.columnIndex="1" GridPane.rowIndex="8">
                      <font>
-                        <Font name="Georgia Bold" size="20.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                   </Label>
                   <ComboBox fx:id="cBoxRegisterAccType" prefHeight="32.0" prefWidth="325.0" promptText="Select Account Type" GridPane.columnIndex="1" GridPane.rowIndex="9">
@@ -177,17 +177,17 @@
                   </ComboBox>
                </children>
             </GridPane>
-            <Button fx:id="btnRegister" layoutX="189.0" layoutY="540.0" mnemonicParsing="false" onAction="#register" prefHeight="44.0" prefWidth="175.0" text="Register Account" textFill="#7c5050">
+            <Button fx:id="btnRegister" layoutX="189.0" layoutY="540.0" mnemonicParsing="false" onAction="#register" prefHeight="44.0" prefWidth="175.0" text="Register Account" textFill="#036248">
                <font>
-                  <Font name="Georgia Bold" size="16.0" />
+                  <Font name="Leelawadee Bold" size="16.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnBackToLogin" layoutX="406.0" layoutY="540.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="44.0" prefWidth="175.0" text="Back to Login" textFill="#7c5050">
+            <Button fx:id="btnBackToLogin" layoutX="406.0" layoutY="540.0" mnemonicParsing="false" onAction="#goToLogin" prefHeight="44.0" prefWidth="175.0" text="Back to Login" textFill="#036248">
                <font>
-                  <Font name="Georgia Bold" size="16.0" />
+                  <Font name="Leelawadee Bold" size="16.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
