@@ -1,19 +1,19 @@
 package com.cts.homeservices;
 
-import javafx.collections.FXCollections;
+
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.TextField;
+
 
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
 public class CustomerDashboardController implements Initializable {
-    private static final Logger logger = Logger.getLogger(CustomerDashboardController.class.getName());
+    static {
+        Logger.getLogger(CustomerDashboardController.class.getName());
+    }
 
 
     //Class Parameters that connect customer-dashboard.fxml and this controller
@@ -63,9 +63,9 @@ public class CustomerDashboardController implements Initializable {
         btnHistory.setOnMouseEntered(mouseEvent -> btnHistory.setStyle(btnHover));
         btnHistory.setOnMouseExited(mouseEvent -> btnHistory.setStyle(btnNormal));
 
-       //btnEdit.setStyle(btnNormal);
-       //btnEdit.setOnMouseEntered(mouseEvent -> btnEdit.setStyle(btnHover));
-        // btnEdit.setOnMouseExited(mouseEvent -> btnEdit.setStyle(btnNormal));
+        btnEdit.setStyle(btnNormal);
+        btnEdit.setOnMouseEntered(mouseEvent -> btnEdit.setStyle(btnHover));
+        btnEdit.setOnMouseExited(mouseEvent -> btnEdit.setStyle(btnNormal));
 
 
 
