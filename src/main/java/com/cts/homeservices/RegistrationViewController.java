@@ -228,9 +228,16 @@ public class RegistrationViewController implements Initializable {
                     alert.setContentText("Account was successfully created! You can now return to login page.");
                     alert.showAndWait();
                 }
+
+                query = "INSERT INTO tblUsers VALUES(null, ?, ?, ?)";
+                dc.ps = dc.con.prepareStatement(query);
+                dc.ps.setString(1, tbRegisterEmail.getText());
+                dc.ps.setString(2, tbRegisterPassword.getText());
+                dc.ps.setString(3, cBoxRegisterAccType.getValue());
+
+                success = dc.ps.executeUpdate();
             }
 
-            //Build a protected query to retrieve specified
 
         } catch (SQLException e) {
             throw new RuntimeException(e);

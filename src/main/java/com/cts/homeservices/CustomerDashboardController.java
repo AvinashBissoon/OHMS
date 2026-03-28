@@ -67,8 +67,5 @@ public class CustomerDashboardController implements Initializable {
         btnEdit.setOnMouseEntered(mouseEvent -> btnEdit.setStyle(btnHover));
         btnEdit.setOnMouseExited(mouseEvent -> btnEdit.setStyle(btnNormal));
 
-
-
-
     }
 }
