@@ -1,4 +1,74 @@
 package com.cts.homeservices;
 
-public class CustomerDashboardController {
+import javafx.collections.FXCollections;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Hyperlink;
+import javafx.scene.control.TextField;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+import java.util.logging.Logger;
+
+public class CustomerDashboardController implements Initializable {
+    private static final Logger logger = Logger.getLogger(CustomerDashboardController.class.getName());
+
+
+    //Class Parameters that connect customer-dashboard.fxml and this controller
+    @FXML
+    private Button btnHousekeeping;
+
+    @FXML
+    private Button btnElectrical ;
+
+    @FXML
+    private Button btnLandscaping;
+
+    @FXML
+    private Button btnPlumbing;
+
+    @FXML
+    private Button btnHistory;
+
+    @FXML
+    private Button btnEdit;
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        //Setting up the styles to be used
+        String btnNormal = "-fx-font: 20px\"Leelawadee\";-fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
+        String btnHover = "-fx-font: 20px\"Leelawadee\"; -fx-border-radius: 15; -fx-border-color:  #01402e; -fx-border-width:2; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
+
+
+        btnHousekeeping.setStyle(btnNormal);
+        btnHousekeeping.setOnMouseEntered(mouseEvent -> btnHousekeeping.setStyle(btnHover));
+        btnHousekeeping.setOnMouseExited(mouseEvent -> btnHousekeeping.setStyle(btnNormal));
+
+        btnElectrical.setStyle(btnNormal);
+        btnElectrical.setOnMouseEntered(mouseEvent -> btnElectrical.setStyle(btnHover));
+        btnElectrical.setOnMouseExited(mouseEvent -> btnElectrical.setStyle(btnNormal));
+
+        btnLandscaping.setStyle(btnNormal);
+        btnLandscaping.setOnMouseEntered(mouseEvent -> btnLandscaping.setStyle(btnHover));
+        btnLandscaping.setOnMouseExited(mouseEvent -> btnLandscaping.setStyle(btnNormal));
+
+        btnPlumbing.setStyle(btnNormal);
+        btnPlumbing.setOnMouseEntered(mouseEvent -> btnPlumbing.setStyle(btnHover));
+        btnPlumbing.setOnMouseExited(mouseEvent -> btnPlumbing.setStyle(btnNormal));
+
+        btnHistory.setStyle(btnNormal);
+        btnHistory.setOnMouseEntered(mouseEvent -> btnHistory.setStyle(btnHover));
+        btnHistory.setOnMouseExited(mouseEvent -> btnHistory.setStyle(btnNormal));
+
+       //btnEdit.setStyle(btnNormal);
+       //btnEdit.setOnMouseEntered(mouseEvent -> btnEdit.setStyle(btnHover));
+        // btnEdit.setOnMouseExited(mouseEvent -> btnEdit.setStyle(btnNormal));
+
+
+
+
+    }
 }

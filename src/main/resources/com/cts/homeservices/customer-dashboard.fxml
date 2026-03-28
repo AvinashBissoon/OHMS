@@ -133,7 +133,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btnEditPriofile" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="360.0" text="EDIT PROFILE" textAlignment="CENTER" textFill="#014d38" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                  <Button fx:id="btnEditprofile" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="360.0" text="EDIT PROFILE" textAlignment="CENTER" textFill="#014d38" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                      <font>
                         <Font name="Leelawadee Bold" size="20.0" />
                      </font>
@@ -158,7 +158,7 @@
             </Button>
             <ImageView fitHeight="93.0" fitWidth="96.0" layoutX="22.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../img/image-modified.png" />
+                  <Image url="@../../../img/LogoV2.png" />
                </image>
             </ImageView>
             <Label layoutX="195.0" layoutY="45.0" prefHeight="51.0" prefWidth="728.0" text="Premium Home Services at Your Fingertips" textFill="WHITE">
@@ -168,7 +168,7 @@
             </Label>
             <ImageView fitHeight="41.0" fitWidth="42.0" layoutX="1008.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../img/logout%20(1).png" />
+                  <Image url="@../../../img/logout.png" />
                </image>
             </ImageView>
          </children>
