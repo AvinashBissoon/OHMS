@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cts.homeservices.LoginViewController">
+   <top>
+      <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #036248;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="451.0" layoutY="12.0" prefHeight="27.0" prefWidth="199.0" text="Request Confirmation" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #fae8d6;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="23.0" layoutY="11.0" text="Online Home Service Solutions 2026">
+               <font>
+                  <Font name="Serif Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="985.0" layoutY="11.0" text="Version: 1.00">
+               <font>
+                  <Font name="Serif Italic" size="16.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="232.0" layoutY="70.0" prefHeight="252.0" prefWidth="661.0">
+               <children>
+                  <Label layoutX="73.0" layoutY="7.0" prefHeight="53.0" prefWidth="516.0" text="Your request has been received!">
+                     <font>
+                        <Font size="36.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="26.0" layoutY="68.0" text="An email will be sent out once your booking is confirmed with further details.">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button layoutX="247.0" layoutY="184.0" mnemonicParsing="false" style="-fx-background-color: TRANSPARENT;" text="BACK TO DASHBOARD" textFill="#036248" underline="true">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

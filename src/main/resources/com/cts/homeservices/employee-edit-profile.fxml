@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cts.homeservices.LoginViewController">
+   <top>
+      <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #036248;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="27.0" prefWidth="210.0" text="Professional Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #fae8d6;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="23.0" layoutY="11.0" text="Online Home Service Solutions 2026">
+               <font>
+                  <Font name="Serif Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="985.0" layoutY="11.0" text="Version: 1.00">
+               <font>
+                  <Font name="Serif Italic" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
+         <children>
+            <Rectangle arcHeight="30.0" arcWidth="20.0" fill="#3b6255" height="58.0" layoutX="329.0" layoutY="15.0" stroke="#dddddd" strokeType="INSIDE" width="511.0" />
+            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="448.0" layoutY="24.0" prefHeight="41.0" prefWidth="274.0" text="EDIT PROFILE" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="35.0" />
+               </font>
+            </Label>
+            <Button layoutX="635.0" layoutY="545.0" mnemonicParsing="false" style="-fx-background-color: TRANSPARENT;" text="COMMIT" textFill="#036248" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button layoutX="448.0" layoutY="545.0" mnemonicParsing="false" style="-fx-background-color: TRANSPARENT;" text="GO BACK" textFill="#036248" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <GridPane hgap="110.0" layoutX="53.0" layoutY="126.0" prefHeight="394.0" prefWidth="995.0">
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="265.0" minWidth="10.0" prefWidth="246.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="276.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="253.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="48.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="49.0" minHeight="10.0" prefHeight="49.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="45.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label prefHeight="27.0" prefWidth="120.0" text="First Name" textFill="#036248">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tbFirstName" promptText="Enter First Name" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="62.0" prefHeight="27.0" prefWidth="120.0" text="Last Name" textFill="#036248" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tbLastName" promptText="Enter Last Name" GridPane.rowIndex="3">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="31.0" prefHeight="24.0" prefWidth="207.0" text="Street Address 1" textFill="#036248" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tbAddressLine1" promptText="Enter Address Line 1" GridPane.rowIndex="5">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="54.0" prefHeight="24.0" prefWidth="182.0" text="Street Address 2" textFill="#036248" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tbAddressLine2" promptText="Enter Address Line 2" GridPane.rowIndex="7">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="77.0" prefHeight="27.0" prefWidth="120.0" text="City" textFill="#036248" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tbCity" promptText="Enter City" GridPane.rowIndex="9">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                  </TextField>
+                  <Label layoutX="10.0" layoutY="100.0" prefHeight="27.0" prefWidth="120.0" text="Country" textFill="#036248" GridPane.columnIndex="1">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cBoxCountry" prefHeight="32.0" prefWidth="278.0" promptText="Select Country" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ComboBox>
+                  <Label layoutX="10.0" layoutY="123.0" prefHeight="24.0" prefWidth="261.0" text="Mobile Number" textFill="#036248" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tbMobileNumber" layoutX="502.0" layoutY="56.0" prefHeight="32.0" prefWidth="325.0" promptText="Enter Mobile Number" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label prefHeight="27.0" prefWidth="120.0" text="Email" textFill="#036248" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tbRegisterEmail" prefHeight="32.0" prefWidth="325.0" promptText="Enter Email" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+                  <Label text="Password" textFill="#036248" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <PasswordField fx:id="tbRegisterPassword" prefHeight="32.0" prefWidth="325.0" promptText="Enter Password" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </PasswordField>
+                  <Label text="Account Type" textFill="#036248" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cBoxRegisterAccType" prefHeight="32.0" prefWidth="325.0" promptText="Select Account Type" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ComboBox>
+                  <Label layoutX="385.0" layoutY="15.0" prefHeight="27.0" prefWidth="120.0" text="Profession" textFill="#036248" GridPane.columnIndex="2">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cBoxCountry1" layoutX="385.0" layoutY="54.0" prefHeight="32.0" prefWidth="278.0" promptText="Select Profession" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ComboBox>
+                  <Label layoutX="810.0" layoutY="15.0" prefHeight="27.0" prefWidth="135.0" text="Certifications" textFill="#036248" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <font>
+                        <Font name="Leelawadee Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tbMobileNumber1" prefHeight="32.0" prefWidth="325.0" promptText="Enter Certification" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <cursor>
+                        <Cursor fx:constant="TEXT" />
+                     </cursor>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </TextField>
+               </children>
+            </GridPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
