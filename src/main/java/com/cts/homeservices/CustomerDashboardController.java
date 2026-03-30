@@ -1,11 +1,15 @@
 package com.cts.homeservices;
 
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
@@ -34,6 +38,9 @@ public class CustomerDashboardController implements Initializable {
 
     @FXML
     private Button btnEdit;
+
+    @FXML
+    private Button btnLogOut;
 
 
     @Override
@@ -66,6 +73,13 @@ public class CustomerDashboardController implements Initializable {
         btnEdit.setStyle(btnNormal);
         btnEdit.setOnMouseEntered(mouseEvent -> btnEdit.setStyle(btnHover));
         btnEdit.setOnMouseExited(mouseEvent -> btnEdit.setStyle(btnNormal));
+
+    }
+
+    @FXML
+    private void logout(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "login-view.fxml", 1100, 750);
 
     }
 }
