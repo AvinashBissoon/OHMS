@@ -89,8 +89,8 @@
                            <content>
                               <TableView layoutX="550.0" prefHeight="411.0" prefWidth="700.0">
                                 <columns>
-                                  <TableColumn prefWidth="75.0" text="DATE" />
-                                  <TableColumn prefWidth="461.0" text="DETAILS" />
+                                  <TableColumn prefWidth="128.0" text="DATE" />
+                                  <TableColumn prefWidth="547.0" text="DETAILS" />
                                 </columns>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
