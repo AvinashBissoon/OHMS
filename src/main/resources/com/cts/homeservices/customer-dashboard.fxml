@@ -103,7 +103,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btnPlumbing" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="360.0" text="PLUMBING" textAlignment="CENTER" textFill="#014d38" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Button fx:id="btnPlumbing" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#openPlumbing" prefHeight="120.0" prefWidth="360.0" text="PLUMBING" textAlignment="CENTER" textFill="#014d38" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Leelawadee Bold" size="20.0" />
                      </font>
