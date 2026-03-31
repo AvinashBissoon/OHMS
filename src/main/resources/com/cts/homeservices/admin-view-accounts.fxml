@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cts.homeservices.LoginViewController">
+   <top>
+      <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #036248;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="27.0" prefWidth="199.0" text="Customer Dashboard" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #fae8d6;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="23.0" layoutY="11.0" text="Online Home Service Solutions 2026">
+               <font>
+                  <Font name="Serif Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="985.0" layoutY="11.0" text="Version: 1.00">
+               <font>
+                  <Font name="Serif Italic" size="16.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="159.0" layoutY="93.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TabPane prefHeight="425.0" prefWidth="861.0" style="-fx-background-color: transparent;" tabClosingPolicy="UNAVAILABLE">
+                    <tabs>
+                      <Tab text="CUSTOMER">
+                           <content>
+                              <TableView prefHeight="200.0" prefWidth="861.0">
+                                <columns>
+                                  <TableColumn minWidth="0.0" prefWidth="172.0" text="NAME" />
+                                  <TableColumn prefWidth="256.0" text="ADDRESS" />
+                                    <TableColumn prefWidth="97.0" text="COUNTRY" />
+                                    <TableColumn minWidth="0.0" prefWidth="146.0" text="MOBILE NUMBER" />
+                                    <TableColumn prefWidth="188.0" text="EMAIL" />
+                                </columns>
+                              </TableView>
+                           </content>
+                      </Tab>
+                      <Tab text="WORKER">
+                           <content>
+                              <TableView prefHeight="200.0" prefWidth="200.0">
+                                 <columns>
+                                    <TableColumn minWidth="0.0" prefWidth="172.0" text="NAME" />
+                                    <TableColumn prefWidth="256.0" text="ADDRESS" />
+                                    <TableColumn prefWidth="97.0" text="COUNTRY" />
+                                    <TableColumn minWidth="0.0" prefWidth="146.0" text="MOBILE NUMBER" />
+                                    <TableColumn prefWidth="99.0" text="EMAIL" />
+                                    <TableColumn prefWidth="91.0" text="PROFESSION" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                      </Tab>
+                        <Tab text="ARCHIVED">
+                           <content>
+                              <TableView prefHeight="406.0" prefWidth="700.0">
+                                 <columns>
+                                    <TableColumn minWidth="0.0" prefWidth="172.0" text="NAME" />
+                                    <TableColumn prefWidth="256.0" text="ADDRESS" />
+                                    <TableColumn prefWidth="97.0" text="COUNTRY" />
+                                    <TableColumn minWidth="0.0" prefWidth="146.0" text="MOBILE NUMBER" />
+                                    <TableColumn prefWidth="99.0" text="EMAIL" />
+                                    <TableColumn prefWidth="91.0" text="PROFESSION" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                        </Tab>
+                        <Tab text="BLACKLISTED">
+                           <content>
+                              <TableView prefHeight="200.0" prefWidth="200.0">
+                                 <columns>
+                                    <TableColumn minWidth="0.0" prefWidth="174.0" text="NAME" />
+                                    <TableColumn prefWidth="254.0" text="ADDRESS" />
+                                    <TableColumn prefWidth="97.0" text="COUNTRY" />
+                                    <TableColumn minWidth="0.0" prefWidth="146.0" text="MOBILE NUMBER" />
+                                    <TableColumn prefWidth="99.0" text="EMAIL" />
+                                    <TableColumn prefWidth="91.0" text="PROFESSION" />
+                                 </columns>
+                              </TableView>
+                           </content>
+                        </Tab>
+                    </tabs>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+            <Rectangle arcHeight="30.0" arcWidth="20.0" fill="#3b6255" height="58.0" layoutX="335.0" layoutY="15.0" stroke="#dddddd" strokeType="INSIDE" width="511.0" />
+            <Label alignment="CENTER" layoutX="462.0" layoutY="23.0" text="VIEW ACCOUNTS" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="35.0" />
+               </font>
+            </Label>
+            <Button layoutX="550.0" layoutY="536.0" mnemonicParsing="false" style="-fx-background-color: TRANSPARENT;" text="GO BACK" textFill="#036248" underline="true">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
