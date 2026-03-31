@@ -75,6 +75,10 @@ public class OnlineHomeServiceApp extends Application {
             case "admin-dashboard.fxml":
                 currentStg.setTitle("Online Home Service Solutions: Admin Dashboard");
                 break;
+
+            case "admin-manage-bookings.fxml":
+                currentStg.setTitle("Online Home Service Solutions: Manage Bookings");
+                break;
         }
 
     }

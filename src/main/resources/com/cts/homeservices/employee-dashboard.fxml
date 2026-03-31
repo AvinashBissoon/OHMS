@@ -46,7 +46,7 @@
          <children>
             <ImageView fitHeight="580.0" fitWidth="624.0" layoutX="277.0" layoutY="15.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../IdeaProjects/OHMS/target/classes/img/LogoV1.png" />
+                  <Image url="@../../../img/LogoV1.png" />
                </image>
             </ImageView>
             <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="295.0" layoutY="14.0" stroke="#dddddd" strokeType="INSIDE" visible="false" width="511.0" />
@@ -64,14 +64,14 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="204.0" style="-fx-background-color: transparent;" text="ASSIGNED BOOKINGS" textFill="#046147" underline="true" GridPane.halignment="CENTER">
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="204.0" text="ASSIGNED BOOKINGS" textFill="#046147" underline="true" GridPane.halignment="CENTER">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../IdeaProjects/OHMS/target/classes/img/appointment.png" />
+                              <Image url="@../../../img/appointment.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -79,14 +79,14 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="200.0" style="-fx-background-color: transparent;" text="EDIT PROFILE" textFill="#046147" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="200.0" text="EDIT PROFILE" textFill="#046147" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                      <font>
                         <Font name="System Bold" size="14.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../IdeaProjects/OHMS/target/classes/img/editing.png" />
+                              <Image url="@../../../img/editing.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -117,7 +117,7 @@
             </Label>
             <ImageView fitHeight="85.0" fitWidth="145.0" layoutX="194.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../IdeaProjects/OHMS/src/main/resources/img/rating.png" />
+                  <Image url="@../../../img/rating.png" />
                </image>
             </ImageView>
             <Label layoutX="561.0" layoutY="162.0" prefHeight="21.0" prefWidth="13.0" text="0" textFill="WHITE">
