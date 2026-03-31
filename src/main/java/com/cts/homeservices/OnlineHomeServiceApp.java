@@ -103,6 +103,10 @@ public class  OnlineHomeServiceApp extends Application {
             case "customer-view-history.fxml":
                 currentStg.setTitle("Online Home Service Solutions: Customer History");
                 break;
+
+            case "customer-edit-profile.fxml":
+                currentStg.setTitle("Online Home Service Solutions: Edit Account");
+                break;
         }
 
     }
