@@ -107,6 +107,10 @@ public class  OnlineHomeServiceApp extends Application {
             case "customer-edit-profile.fxml":
                 currentStg.setTitle("Online Home Service Solutions: Edit Account");
                 break;
+
+            case "employee-edit-profile.fxml":
+                currentStg.setTitle("Online Home Service Solutions: Employee Edit Account");
+                break;
         }
 
     }
