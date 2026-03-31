@@ -93,4 +93,10 @@ public class CustomerDashboardController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "electrical-view.fxml", 1100, 750);
     }
+
+    @FXML
+    private void landscaping(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "landscaping-view.fxml", 1100, 750);
+    }
 }

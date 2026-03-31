@@ -91,6 +91,10 @@ public class  OnlineHomeServiceApp extends Application {
             case "electrical-view.fxml":
                 currentStg.setTitle("Online Home Service Solutions: Electrical Booking");
                 break;
+
+            case "landscaping-view.fxml":
+                currentStg.setTitle("Online Home Service Solutions: Landscaping Booking");
+                break;
         }
 
     }

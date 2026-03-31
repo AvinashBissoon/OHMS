@@ -88,7 +88,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btnLandscaping" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="360.0" text="LANDSCAPING" textAlignment="CENTER" textFill="#014d38" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
+                  <Button fx:id="btnLandscaping" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#landscaping" prefHeight="120.0" prefWidth="360.0" text="LANDSCAPING" textAlignment="CENTER" textFill="#014d38" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Leelawadee Bold" size="20.0" />
                      </font>
