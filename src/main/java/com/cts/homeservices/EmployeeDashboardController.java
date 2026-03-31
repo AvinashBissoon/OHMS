@@ -56,4 +56,10 @@ public class EmployeeDashboardController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "employee-edit-profile.fxml", 1100, 750);
     }
+
+    @FXML
+    private void openBooking(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "employee-assigned-bookings.fxml", 1100, 750);
+    }
 }

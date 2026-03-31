@@ -58,7 +58,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btnBooking" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="360.0" text="ACTIVE/COMPLETED BOOKING" textFill="#036248" GridPane.halignment="CENTER">
+                  <Button fx:id="btnBooking" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#openBooking" prefHeight="120.0" prefWidth="360.0" text="ACTIVE/COMPLETED BOOKING" textFill="#036248" GridPane.halignment="CENTER">
                      <font>
                         <Font name="Leelawadee Bold" size="20.0" />
                      </font>
