@@ -80,6 +80,17 @@ public class CustomerDashboardController implements Initializable {
     private void logout(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "login-view.fxml", 1100, 750);
+    }
 
+    @FXML
+    private void openHousekeeping(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "housekeeping-view.fxml", 1100, 750);
+    }
+
+    @FXML
+    private void openElectrical(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "electrical-view.fxml", 1100, 750);
     }
 }

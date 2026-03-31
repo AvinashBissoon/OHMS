@@ -55,7 +55,7 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button fx:id="btnHousekeeping" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="360.0" text="HOUSEKEEPING" textFill="#014d38" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="btnHousekeeping" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#openHousekeeping" prefHeight="120.0" prefWidth="360.0" text="HOUSEKEEPING" textFill="#014d38" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Leelawadee Bold" size="20.0" />
                      </font>
@@ -73,7 +73,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button fx:id="btnElectrical" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="360.0" text="ELECTRICAL" textAlignment="CENTER" textFill="#014d38" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
+                  <Button fx:id="btnElectrical" alignment="CENTER" blendMode="HARD_LIGHT" contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" onAction="#openElectrical" prefHeight="120.0" prefWidth="360.0" text="ELECTRICAL" textAlignment="CENTER" textFill="#014d38" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER">
                      <font>
                         <Font name="Leelawadee Bold" size="20.0" />
                      </font>

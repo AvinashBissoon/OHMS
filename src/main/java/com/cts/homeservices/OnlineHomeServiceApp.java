@@ -83,6 +83,14 @@ public class  OnlineHomeServiceApp extends Application {
             case "admin-view-accounts.fxml":
                 currentStg.setTitle("Online Home Service Solutions: View Accounts");
                 break;
+
+            case "housekeeping-view.fxml":
+                currentStg.setTitle("Online Home Service Solutions: Housekeeping Booking");
+                break;
+
+            case "electrical-view.fxml":
+                currentStg.setTitle("Online Home Service Solutions: Electrical Booking");
+                break;
         }
 
     }
