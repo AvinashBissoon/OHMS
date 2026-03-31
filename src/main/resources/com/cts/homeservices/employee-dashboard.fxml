@@ -3,7 +3,6 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,11 +13,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cts.homeservices.LoginViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cts.homeservices.EmployeeDashboardController">
    <top>
-      <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #036248;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="27.0" prefWidth="223.0" text="Professional Dashboard" textFill="#036248">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="27.0" prefWidth="223.0" text="Employee Dashboard" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -27,35 +26,30 @@
       </AnchorPane>
    </top>
    <bottom>
-      <AnchorPane prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #000000;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #fae8d6;" BorderPane.alignment="CENTER">
          <children>
-            <Label layoutX="23.0" layoutY="11.0" text="Online Home Service Solutions 2026" textFill="WHITE">
+            <Label layoutX="23.0" layoutY="11.0" text="Online Home Service Solutions 2026">
                <font>
                   <Font name="Serif Italic" size="16.0" />
                </font>
             </Label>
-            <Label layoutX="985.0" layoutY="11.0" text="Version: 1.00" textFill="WHITE">
+            <Label layoutX="985.0" layoutY="11.0" text="Version: 1.00">
                <font>
-                  <Font name="SansSerif Bold" size="16.0" />
+                  <Font name="Serif Italic" size="16.0" />
                </font>
             </Label>
          </children></AnchorPane>
    </bottom>
    <center>
-      <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: FFFFFF;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="580.0" fitWidth="624.0" layoutX="277.0" layoutY="15.0" opacity="0.08" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../img/LogoV1.png" />
-               </image>
-            </ImageView>
             <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="295.0" layoutY="14.0" stroke="#dddddd" strokeType="INSIDE" visible="false" width="511.0" />
             <Label alignment="CENTER" layoutX="311.0" layoutY="22.0" text="Online Home Service Solutions" textFill="WHITE" visible="false">
                <font>
                   <Font name="Georgia" size="35.0" />
                </font>
             </Label>
-            <GridPane layoutX="159.0" layoutY="243.0" prefHeight="212.0" prefWidth="805.0">
+            <GridPane layoutX="160.0" layoutY="326.0" prefHeight="212.0" prefWidth="805.0">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -64,9 +58,9 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="204.0" text="ASSIGNED BOOKINGS" textFill="#046147" underline="true" GridPane.halignment="CENTER">
+                  <Button contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="360.0" text="YOUR BOOKINGS" textFill="#046147" GridPane.halignment="CENTER">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
@@ -79,9 +73,9 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Button>
-                  <Button contentDisplay="TOP" mnemonicParsing="false" prefHeight="95.0" prefWidth="200.0" text="EDIT PROFILE" textFill="#046147" underline="true" GridPane.columnIndex="1" GridPane.halignment="CENTER">
+                  <Button contentDisplay="TOP" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="120.0" prefWidth="360.0" text="EDIT PROFILE" textFill="#046147" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                      <font>
-                        <Font name="System Bold" size="14.0" />
+                        <Font name="Leelawadee Bold" size="20.0" />
                      </font>
                      <graphic>
                         <ImageView fitHeight="35.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
@@ -96,43 +90,63 @@
                   </Button>
                </children>
             </GridPane>
-            <TextArea layoutX="123.0" layoutY="107.0" prefHeight="108.0" prefWidth="242.0" style="-fx-background-color: C8203;" />
-            <Rectangle arcHeight="30.0" arcWidth="20.0" fill="#3b6255" height="99.0" layoutX="129.0" layoutY="112.0" smooth="false" stroke="#dddddd" strokeType="INSIDE" width="214.0" />
-            <Rectangle arcHeight="30.0" arcWidth="20.0" fill="#3b6255" height="99.0" layoutX="794.0" layoutY="116.0" smooth="false" stroke="#dddddd" strokeType="INSIDE" width="214.0" />
-            <Rectangle arcHeight="30.0" arcWidth="20.0" fill="#3b6255" height="99.0" layoutX="460.0" layoutY="116.0" smooth="false" stroke="#dddddd" strokeType="INSIDE" width="214.0" />
-            <Label layoutX="199.0" layoutY="124.0" prefHeight="21.0" prefWidth="83.0" text="RATING:" textFill="WHITE">
+            <Rectangle arcHeight="30.0" arcWidth="20.0" fill="#036248" height="85.0" layoutX="122.0" layoutY="190.0" smooth="false" stroke="#dddddd" strokeType="INSIDE" width="214.0" />
+            <Rectangle arcHeight="30.0" arcWidth="20.0" fill="#036248" height="85.0" layoutX="789.0" layoutY="190.0" smooth="false" stroke="#dddddd" strokeType="INSIDE" width="214.0" />
+            <Rectangle arcHeight="30.0" arcWidth="20.0" fill="#036248" height="85.0" layoutX="455.0" layoutY="190.0" smooth="false" stroke="#dddddd" strokeType="INSIDE" width="214.0" />
+            <Label layoutX="191.0" layoutY="200.0" prefHeight="21.0" prefWidth="83.0" text="RATING:" textFill="WHITE">
                <font>
-                  <Font name="SansSerif Bold" size="18.0" />
+                  <Font name="Leelawadee UI Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="480.0" layoutY="124.0" prefHeight="21.0" prefWidth="175.0" text="JOBS COMPLETED:" textFill="WHITE">
+            <Label layoutX="482.0" layoutY="200.0" prefHeight="21.0" prefWidth="175.0" text="JOBS COMPLETED:" textFill="WHITE">
                <font>
-                  <Font name="SansSerif Bold" size="18.0" />
+                  <Font name="Leelawadee UI Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="823.0" layoutY="124.0" prefHeight="21.0" prefWidth="175.0" text="NEW REQUESTS:" textFill="WHITE">
+            <Label layoutX="828.0" layoutY="200.0" prefHeight="27.0" prefWidth="152.0" text="NEW REQUESTS:" textFill="WHITE">
                <font>
-                  <Font name="SansSerif Bold" size="18.0" />
+                  <Font name="Leelawadee UI Bold" size="18.0" />
                </font>
             </Label>
-            <ImageView fitHeight="85.0" fitWidth="145.0" layoutX="194.0" layoutY="130.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="83.0" fitWidth="85.0" layoutX="186.0" layoutY="208.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../img/rating.png" />
                </image>
             </ImageView>
-            <Label layoutX="561.0" layoutY="162.0" prefHeight="21.0" prefWidth="13.0" text="0" textFill="WHITE">
+            <Label layoutX="563.0" layoutY="239.0" prefHeight="21.0" prefWidth="13.0" text="5" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="18.0" />
                </font>
             </Label>
-            <Label layoutX="895.0" layoutY="162.0" prefHeight="21.0" prefWidth="13.0" text="0" textFill="WHITE">
+            <Label layoutX="898.0" layoutY="239.0" prefHeight="21.0" prefWidth="13.0" text="0" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="18.0" />
                </font>
             </Label>
-            <Button layoutX="527.0" layoutY="508.0" mnemonicParsing="false" style="-fx-background-color: TRANSPARENT;" text="GO BACK" textFill="#036248" underline="true">
+            <Rectangle arcHeight="150.0" arcWidth="100.0" fill="#036248" height="109.0" layoutX="-57.0" layoutY="18.0" stroke="#05c692" strokeType="INSIDE" width="1134.0" />
+            <ImageView fitHeight="93.0" fitWidth="96.0" layoutX="22.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/LogoV2.png" />
+               </image>
+            </ImageView>
+            <Label layoutX="389.0" layoutY="51.0" text="Welcome, Employee!" textFill="WHITE">
                <font>
-                  <Font name="System Bold" size="14.0" />
+                  <Font name="Leelawadee Bold" size="35.0" />
+               </font>
+            </Label>
+            <Button contentDisplay="TOP" layoutX="954.0" layoutY="36.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="93.0" style="-fx-background-color: transparent;" text="Log Out" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="38.0" pickOnBounds="true" preserveRatio="true">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <image>
+                        <Image url="@../../../img/logout.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="Leelawadee Bold" size="10.0" />
                </font>
                <cursor>
                   <Cursor fx:constant="HAND" />
