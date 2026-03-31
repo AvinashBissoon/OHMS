@@ -12,11 +12,11 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cts.homeservices.LoginViewController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cts.homeservices.AdminViewAccountsController">
    <top>
       <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #036248;" BorderPane.alignment="CENTER">
          <children>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="27.0" prefWidth="199.0" text="Customer Dashboard" textFill="WHITE">
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="14.0" layoutY="12.0" prefHeight="27.0" prefWidth="199.0" text="Administrator Control" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
@@ -44,31 +44,34 @@
          <children>
             <AnchorPane layoutX="159.0" layoutY="93.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TabPane prefHeight="425.0" prefWidth="861.0" style="-fx-background-color: transparent;" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane prefHeight="425.0" prefWidth="862.0" style="-fx-background-color: transparent;" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab text="CUSTOMER">
                            <content>
-                              <TableView prefHeight="200.0" prefWidth="861.0">
+                              <TableView prefHeight="396.0" prefWidth="852.0">
                                 <columns>
-                                  <TableColumn minWidth="0.0" prefWidth="172.0" text="NAME" />
-                                  <TableColumn prefWidth="256.0" text="ADDRESS" />
-                                    <TableColumn prefWidth="97.0" text="COUNTRY" />
-                                    <TableColumn minWidth="0.0" prefWidth="146.0" text="MOBILE NUMBER" />
-                                    <TableColumn prefWidth="188.0" text="EMAIL" />
+                                  <TableColumn minWidth="0.0" prefWidth="125.0" text="FIRST NAME" />
+                                    <TableColumn prefWidth="125.0" text="LAST NAME" />
+                                    <TableColumn prefWidth="125.0" text="EMAIL" />
+                                    <TableColumn minWidth="0.0" prefWidth="125.0" text="MOBILE NUMBER" />
+                                  <TableColumn prefWidth="125.0" text="ADDRESS 1" />
+                                    <TableColumn prefWidth="125.0" text="ADDRESS 2" />
+                                    <TableColumn prefWidth="112.0" text="COUNTRY" />
                                 </columns>
                               </TableView>
                            </content>
                       </Tab>
-                      <Tab text="WORKER">
+                      <Tab text="EMPLOYEE">
                            <content>
                               <TableView prefHeight="200.0" prefWidth="200.0">
                                  <columns>
-                                    <TableColumn minWidth="0.0" prefWidth="172.0" text="NAME" />
-                                    <TableColumn prefWidth="256.0" text="ADDRESS" />
-                                    <TableColumn prefWidth="97.0" text="COUNTRY" />
-                                    <TableColumn minWidth="0.0" prefWidth="146.0" text="MOBILE NUMBER" />
-                                    <TableColumn prefWidth="99.0" text="EMAIL" />
-                                    <TableColumn prefWidth="91.0" text="PROFESSION" />
+                                    <TableColumn minWidth="0.0" prefWidth="125.0" text="FIRST NAME" />
+                                    <TableColumn prefWidth="125.0" text="LAST NAME" />
+                                    <TableColumn prefWidth="125.0" text="EMAIL" />
+                                    <TableColumn minWidth="0.0" prefWidth="125.0" text="MOBILE NUMBER" />
+                                    <TableColumn prefWidth="125.0" text="ADDRESS 1" />
+                                    <TableColumn prefWidth="125.0" text="ADDRESS 2" />
+                                    <TableColumn prefWidth="112.0" text="COUNTRY" />
                                  </columns>
                               </TableView>
                            </content>
@@ -108,13 +111,13 @@
                   </TabPane>
                </children>
             </AnchorPane>
-            <Rectangle arcHeight="30.0" arcWidth="20.0" fill="#3b6255" height="58.0" layoutX="335.0" layoutY="15.0" stroke="#dddddd" strokeType="INSIDE" width="511.0" />
-            <Label alignment="CENTER" layoutX="462.0" layoutY="23.0" text="VIEW ACCOUNTS" textFill="WHITE">
+            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="295.0" layoutY="21.0" stroke="#dddddd" strokeType="INSIDE" width="511.0" />
+            <Label alignment="CENTER" layoutX="422.0" layoutY="29.0" text="VIEW ACCOUNTS" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="35.0" />
                </font>
             </Label>
-            <Button layoutX="550.0" layoutY="536.0" mnemonicParsing="false" style="-fx-background-color: TRANSPARENT;" text="GO BACK" textFill="#036248" underline="true">
+            <Button fx:id="btnReturnToHome" layoutX="509.0" layoutY="566.0" mnemonicParsing="false" onAction="#returnToHome" text="Return to Home" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

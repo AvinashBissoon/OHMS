@@ -10,7 +10,7 @@ import java.sql.SQLException;
 import java.util.Objects;
 import java.util.logging.Logger;
 
-public class OnlineHomeServiceApp extends Application {
+public class  OnlineHomeServiceApp extends Application {
 
     private static final Logger logger = Logger.getLogger(OnlineHomeServiceApp.class.getName());
 
@@ -78,6 +78,10 @@ public class OnlineHomeServiceApp extends Application {
 
             case "admin-manage-bookings.fxml":
                 currentStg.setTitle("Online Home Service Solutions: Manage Bookings");
+                break;
+
+            case "admin-view-accounts.fxml":
+                currentStg.setTitle("Online Home Service Solutions: View Accounts");
                 break;
         }
 

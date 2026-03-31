@@ -75,5 +75,12 @@ public class AdminDashboardController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "admin-manage-bookings.fxml", 1100, 750);
     }
+
+    @FXML
+    private void viewAccounts(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "admin-view-accounts.fxml", 1100, 750);
+    }
+
 }
 

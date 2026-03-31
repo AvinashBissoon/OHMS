@@ -12,9 +12,9 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
-public class AdminManageBookingsController implements Initializable {
+public class AdminViewAccountsController implements Initializable {
     static {
-        Logger.getLogger(AdminManageBookingsController.class.getName());
+        Logger.getLogger(AdminViewAccountsController.class.getName());
     }
 
     @FXML
