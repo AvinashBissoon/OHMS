@@ -99,6 +99,10 @@ public class  OnlineHomeServiceApp extends Application {
             case "plumbing-view.fxml":
                 currentStg.setTitle("Online Home Service Solutions: Plumbing Booking");
                 break;
+
+            case "customer-view-history.fxml":
+                currentStg.setTitle("Online Home Service Solutions: Customer History");
+                break;
         }
 
     }

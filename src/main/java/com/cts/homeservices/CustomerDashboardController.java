@@ -105,4 +105,10 @@ public class CustomerDashboardController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "plumbing-view.fxml", 1100, 750);
     }
+
+    @FXML
+    private void openHistory(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "customer-view-history.fxml", 1100, 750);
+    }
 }
