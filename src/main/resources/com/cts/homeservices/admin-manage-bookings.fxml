@@ -44,8 +44,8 @@
    <center>
       <AnchorPane prefHeight="610.0" prefWidth="1092.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="329.0" layoutY="15.0" stroke="#dddddd" strokeType="INSIDE" width="511.0" />
-            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="418.0" layoutY="24.0" text="MANAGE BOOKINGS" textFill="WHITE">
+            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="330.0" layoutY="16.0" stroke="#dddddd" strokeType="INSIDE" width="499.0" />
+            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="408.0" layoutY="24.0" text="MANAGE BOOKINGS" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="35.0" />
                </font>

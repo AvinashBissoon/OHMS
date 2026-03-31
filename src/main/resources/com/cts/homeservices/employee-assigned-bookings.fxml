@@ -42,13 +42,13 @@
    <center>
       <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="329.0" layoutY="15.0" stroke="#dddddd" strokeType="INSIDE" width="511.0" />
-            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="393.0" layoutY="24.0" text="ASSIGNED BOOKINGS" textFill="WHITE">
+            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="295.0" layoutY="14.0" stroke="#dddddd" strokeType="INSIDE" width="511.0" />
+            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="359.0" layoutY="23.0" text="ASSIGNED BOOKINGS" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="35.0" />
                </font>
             </Label>
-            <Button fx:id="btnReturnToHome" layoutX="521.0" layoutY="505.0" mnemonicParsing="false" onAction="#returnToHome" text="Return To Home" textFill="#036248">
+            <Button fx:id="btnReturnToHome" layoutX="487.0" layoutY="504.0" mnemonicParsing="false" onAction="#returnToHome" text="Return To Home" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -58,7 +58,7 @@
             </Button>
             <AnchorPane layoutX="141.0" layoutY="117.0" prefHeight="350.0" prefWidth="840.0">
                <children>
-                  <TabPane layoutX="-1.0" layoutY="2.0" prefHeight="348.0" prefWidth="841.0" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane layoutX="-43.0" layoutY="1.0" prefHeight="348.0" prefWidth="911.0" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
                       <Tab text="NEW">
                            <content>
@@ -72,9 +72,8 @@
                            <content>
                               <TableView prefHeight="200.0" prefWidth="200.0">
                                 <columns>
-                                  <TableColumn prefWidth="91.0" text="Date" />
-                                  <TableColumn prefWidth="649.0" text="Details" />
-                                    <TableColumn prefWidth="101.0" />
+                                  <TableColumn prefWidth="129.0" text="Date" />
+                                  <TableColumn prefWidth="782.0" text="Details" />
                                 </columns>
                                  <cursor>
                                     <Cursor fx:constant="HAND" />

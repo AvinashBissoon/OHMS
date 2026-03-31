@@ -45,7 +45,7 @@
    <center>
       <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <GridPane hgap="110.0" layoutX="249.0" layoutY="97.0" prefHeight="417.0" prefWidth="653.0">
+            <GridPane hgap="110.0" layoutX="224.0" layoutY="87.0" prefHeight="417.0" prefWidth="653.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="269.0" minWidth="10.0" prefWidth="269.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="274.0" />
@@ -160,18 +160,18 @@
                   </PasswordField>
                </children>
             </GridPane>
-            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="320.0" layoutY="15.0" stroke="#dddddd" strokeType="INSIDE" width="511.0" />
-            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="439.0" layoutY="23.0" prefHeight="41.0" prefWidth="274.0" text="EDIT PROFILE" textFill="WHITE">
+            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="301.0" layoutY="15.0" stroke="#dddddd" strokeType="INSIDE" width="499.0" />
+            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="413.0" layoutY="23.0" prefHeight="41.0" prefWidth="274.0" text="EDIT PROFILE" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="35.0" />
                </font>
             </Label>
-            <Button fx:id="btnSave" layoutX="628.0" layoutY="543.0" mnemonicParsing="false" text="Save Edits" textFill="#036248">
+            <Button fx:id="btnSave" layoutX="603.0" layoutY="542.0" mnemonicParsing="false" text="Save Edits" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </Button>
-            <Button fx:id="btnReturnToHome" layoutX="391.0" layoutY="543.0" mnemonicParsing="false" onAction="#returnToHome" text="Return To Home" textFill="#036248">
+            <Button fx:id="btnReturnToHome" layoutX="367.0" layoutY="542.0" mnemonicParsing="false" onAction="#returnToHome" text="Return To Home" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

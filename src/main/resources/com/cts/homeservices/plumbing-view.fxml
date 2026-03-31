@@ -43,30 +43,30 @@
    <center>
       <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="478.0" layoutY="15.0" stroke="#dddddd" strokeType="INSIDE" width="232.0" />
-            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="504.0" layoutY="24.0" text="PLUMBING" textFill="WHITE">
+            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="471.0" layoutY="14.0" stroke="#dddddd" strokeType="INSIDE" width="232.0" />
+            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="497.0" layoutY="23.0" text="PLUMBING" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="35.0" />
                </font>
             </Label>
-            <Label layoutX="54.0" layoutY="142.0" text="Service Type" textFill="#036248">
+            <Label layoutX="45.0" layoutY="127.0" text="Service Type" textFill="#036248">
                <font>
                   <Font name="Leelawadee Bold" size="20.0" />
                </font>
             </Label>
-            <ComboBox fx:id="cBoxService" layoutX="188.0" layoutY="139.0" prefHeight="32.0" prefWidth="278.0" promptText="Select Service">
+            <ComboBox fx:id="cBoxService" layoutX="179.0" layoutY="124.0" prefHeight="32.0" prefWidth="278.0" promptText="Select Service">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
             </ComboBox>
-            <TextArea fx:id="tAreaDetails" layoutX="187.0" layoutY="186.0" prefHeight="131.0" prefWidth="409.0" promptText="Please provide details" style="-fx-background-radius: 10px; -fx-border-radius: 10px;">
+            <TextArea fx:id="tAreaDetails" layoutX="178.0" layoutY="171.0" prefHeight="131.0" prefWidth="409.0" promptText="Please provide details" style="-fx-background-radius: 10px; -fx-border-radius: 10px;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
                <font>
                   <Font name="Leelawadee" size="18.0" />
                </font></TextArea>
-            <TextField fx:id="tbAddress" layoutX="186.0" layoutY="343.0" prefHeight="25.0" prefWidth="411.0" promptText="Enter Address">
+            <TextField fx:id="tbAddress" layoutX="177.0" layoutY="328.0" prefHeight="25.0" prefWidth="411.0" promptText="Enter Address">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
@@ -74,53 +74,53 @@
                   <Font name="Leelawadee" size="15.0" />
                </font>
             </TextField>
-            <Label layoutX="71.0" layoutY="342.0" text="Address" textFill="#036248">
+            <Label layoutX="62.0" layoutY="327.0" text="Address" textFill="#036248">
                <font>
                   <Font name="Leelawadee Bold" size="20.0" />
                </font>
             </Label>
-            <Label layoutX="91.0" layoutY="409.0" text="Date" textFill="#036248">
+            <Label layoutX="82.0" layoutY="394.0" text="Date" textFill="#036248">
                <font>
                   <Font name="Leelawadee Bold" size="20.0" />
                </font>
             </Label>
-            <DatePicker fx:id="date" layoutX="188.0" layoutY="410.0" prefHeight="25.0" prefWidth="408.0" style="-fx-background-color: TRANSPARENT;">
+            <DatePicker fx:id="date" layoutX="179.0" layoutY="395.0" prefHeight="25.0" prefWidth="408.0" style="-fx-background-color: TRANSPARENT;">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor></DatePicker>
-            <Label layoutX="91.0" layoutY="472.0" text="Time" textFill="#036248">
+            <Label layoutX="82.0" layoutY="457.0" text="Time" textFill="#036248">
                <font>
                   <Font name="Leelawadee Bold" size="20.0" />
                </font>
             </Label>
-            <TextField fx:id="tbTime" layoutX="188.0" layoutY="473.0" prefHeight="25.0" prefWidth="408.0" promptText="e.g. 8:00 AM">
+            <TextField fx:id="tbTime" layoutX="179.0" layoutY="458.0" prefHeight="25.0" prefWidth="408.0" promptText="e.g. 8:00 AM">
                <cursor>
                   <Cursor fx:constant="TEXT" />
                </cursor>
                <font>
                   <Font name="Leelawadee" size="15.0" />
                </font></TextField>
-            <Label layoutX="670.0" layoutY="142.0" prefHeight="24.0" prefWidth="88.0" text="Checklist" textFill="#036248">
+            <Label layoutX="661.0" layoutY="127.0" prefHeight="24.0" prefWidth="88.0" text="Checklist" textFill="#036248">
                <font>
                   <Font name="Leelawadee Bold" size="20.0" />
                </font>
             </Label>
-            <CheckBox fx:id="checkBoxParking" layoutX="670.0" layoutY="185.0" mnemonicParsing="false" text="Is there On Site Parking Available?" textFill="#036248">
+            <CheckBox fx:id="checkBoxParking" layoutX="661.0" layoutY="170.0" mnemonicParsing="false" text="Is there On Site Parking Available?" textFill="#036248">
                <font>
                   <Font name="Leelawadee" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="checkBoxPresent" layoutX="671.0" layoutY="239.0" mnemonicParsing="false" text="Will there be a spare key or an adult present?" textFill="#036248">
+            <CheckBox fx:id="checkBoxPresent" layoutX="662.0" layoutY="224.0" mnemonicParsing="false" text="Will there be a spare key or an adult present?" textFill="#036248">
                <font>
                   <Font name="Leelawadee" size="18.0" />
                </font>
             </CheckBox>
-            <CheckBox fx:id="checkBoxPet" layoutX="670.0" layoutY="293.0" mnemonicParsing="false" text="Are there any pets that need to be secured?" textFill="#036248">
+            <CheckBox fx:id="checkBoxPet" layoutX="661.0" layoutY="278.0" mnemonicParsing="false" text="Are there any pets that need to be secured?" textFill="#036248">
                <font>
                   <Font name="Leelawadee" size="18.0" />
                </font>
             </CheckBox>
-            <Button fx:id="btnBookNow" layoutX="671.0" layoutY="546.0" mnemonicParsing="false" text="Book Now" textFill="#036248">
+            <Button fx:id="btnBookNow" layoutX="660.0" layoutY="546.0" mnemonicParsing="false" text="Book Now" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -128,7 +128,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnReturnToHome" layoutX="466.0" layoutY="546.0" mnemonicParsing="false" onAction="#returnToHome" text="Return To Home" textFill="#036248">
+            <Button fx:id="btnReturnToHome" layoutX="457.0" layoutY="546.0" mnemonicParsing="false" onAction="#returnToHome" text="Return To Home" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

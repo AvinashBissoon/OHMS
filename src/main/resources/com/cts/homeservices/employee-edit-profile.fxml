@@ -45,13 +45,13 @@
    <center>
       <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
          <children>
-            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="329.0" layoutY="15.0" stroke="#dddddd" strokeType="INSIDE" width="511.0" />
-            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="448.0" layoutY="24.0" prefHeight="41.0" prefWidth="274.0" text="EDIT PROFILE" textFill="WHITE">
+            <Rectangle arcHeight="50.0" arcWidth="65.0" fill="#036248" height="58.0" layoutX="340.0" layoutY="15.0" stroke="#dddddd" strokeType="INSIDE" width="415.0" />
+            <Label alignment="CENTER" contentDisplay="RIGHT" layoutX="413.0" layoutY="24.0" prefHeight="41.0" prefWidth="274.0" text="EDIT PROFILE" textFill="WHITE">
                <font>
                   <Font name="SansSerif Bold" size="35.0" />
                </font>
             </Label>
-            <Button fx:id="btnSave" layoutX="637.0" layoutY="545.0" mnemonicParsing="false" text="Save Edits" textFill="#036248">
+            <Button fx:id="btnSave" layoutX="603.0" layoutY="545.0" mnemonicParsing="false" text="Save Edits" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -59,7 +59,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnReturnToHome" layoutX="399.0" layoutY="545.0" mnemonicParsing="false" onAction="#returnToHome" text="Return To Home" textFill="#036248">
+            <Button fx:id="btnReturnToHome" layoutX="366.0" layoutY="545.0" mnemonicParsing="false" onAction="#returnToHome" text="Return To Home" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -67,7 +67,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <GridPane hgap="110.0" layoutX="229.0" layoutY="107.0" prefHeight="396.0" prefWidth="711.0">
+            <GridPane hgap="110.0" layoutX="195.0" layoutY="99.0" prefHeight="396.0" prefWidth="711.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="313.0" minWidth="10.0" prefWidth="296.0" />
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="332.0" minWidth="10.0" prefWidth="305.0" />
