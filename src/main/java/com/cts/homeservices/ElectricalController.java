@@ -31,17 +31,13 @@ public class ElectricalController implements Initializable {
     private TextField tbAddress;
 
     @FXML
+    private TextField tbCity;
+
+    @FXML
     private DatePicker date;
 
     @FXML
-    private CheckBox checkBoxParking;
-
-    @FXML
-    private CheckBox checkBoxPresent;
-
-    @FXML
-    private CheckBox checkBoxPet;
-
+    private TextField tbTime;
 
     @FXML
     private Button btnReturnToHome;
@@ -76,10 +72,22 @@ public class ElectricalController implements Initializable {
             else tbAddress.setStyle(defaultStyle);
         });
 
+        tbCity.setStyle(defaultStyle);
+        tbCity.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbCity.setStyle(focusedStyle);
+            else tbCity.setStyle(defaultStyle);
+        });
+
         date.setStyle(defaultStyle);
         date.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
             if (newVal) date.setStyle(focusedStyle);
             else date.setStyle(defaultStyle);
+        });
+
+        tbTime.setStyle(defaultStyle);
+        tbTime.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbTime.setStyle(focusedStyle);
+            else tbTime.setStyle(defaultStyle);
         });
 
         btnReturnToHome.setStyle(btnNormal);
@@ -97,5 +105,36 @@ public class ElectricalController implements Initializable {
     private void returnToHome(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "customer-dashboard.fxml", 1100, 750);
+    }
+
+    @FXML
+    private void book(ActionEvent event) throws IOException {
+        DatabaseConnection dc = new DatabaseConnection();
+
+        String query = "INSERT INTO tblBooking (userid, servicetype, servicedetails, address, city, booking_date, booking_time) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        try {
+            dc.ps = dc.con.prepareStatement(query);
+
+            dc.ps.setInt(1,UserSession.getUserId());
+
+            dc.ps.setString(2, cBoxService.getValue());
+            dc.ps.setString(3, tAreaDetails.getText());
+            dc.ps.setString(4, tbAddress.getText());
+            dc.ps.setString(5, tbCity.getText());
+
+            if (date.getValue() != null){
+                dc.ps.setDate(6, java.sql.Date.valueOf(date.getValue()));
+            }
+
+            String timeString = tbTime.getText();
+            dc.ps.setTime(7, java.sql.Time.valueOf(timeString + ":00"));
+
+            dc.ps.executeUpdate();
+            System.out.println("Booking successful for: " + UserSession.getFirstName());
+        } catch (Exception e){
+            System.out.println("Booking Failed!");
+            e.printStackTrace();
+        }
+
     }
 }
