@@ -56,14 +56,18 @@ public class HousekeepingController implements Initializable {
         //Setting up the styles to be used
         String defaultStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color: #cccccc; -fx-border-width:1; ";
         String focusedStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color:  #036248; -fx-border-width:2; ";
+
         String btnNormal = "-fx-font: 18px\"Leelawadee\"; -fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnHover = "-fx-font: 18px\"Leelawadee\"; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
 
+        String defStyle = "-fx-background-color: white; -fx-border-color: #cccccc; -fx-border-width:1; ";
+        String focusStyle = "-fx-background-color: white; -fx-border-color:  #036248; -fx-border-width:2; ";
+
         //Text Field style on event
-        tAreaDetails.setStyle(defaultStyle);
+        tAreaDetails.setStyle(defStyle);
         tAreaDetails.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
-            if (newVal) tAreaDetails.setStyle(focusedStyle);
-            else tAreaDetails.setStyle(defaultStyle);
+            if (newVal) tAreaDetails.setStyle(focusStyle);
+            else tAreaDetails.setStyle(defStyle);
         });
 
         tbAddress.setStyle(defaultStyle);
@@ -78,16 +82,23 @@ public class HousekeepingController implements Initializable {
             else tbCity.setStyle(defaultStyle);
         });
 
-        date.setStyle(defaultStyle);
+        date.setStyle(defStyle);
         date.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
-            if (newVal) date.setStyle(focusedStyle);
-            else date.setStyle(defaultStyle);
+            if (newVal) date.setStyle(focusStyle);
+            else date.setStyle(defStyle);
         });
 
         tbTime.setStyle(defaultStyle);
         tbTime.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
             if (newVal) tbTime.setStyle(focusedStyle);
             else tbTime.setStyle(defaultStyle);
+        });
+
+        String comboFont = "-fx-font: 15px\"Ariel\";";
+        cBoxService.setStyle(defaultStyle + comboFont);
+        cBoxService.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) cBoxService.setStyle(focusedStyle + comboFont);
+            else cBoxService.setStyle(defaultStyle + comboFont);
         });
 
         btnReturnToHome.setStyle(btnNormal);
