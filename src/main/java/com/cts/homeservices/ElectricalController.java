@@ -49,7 +49,7 @@ public class ElectricalController implements Initializable {
     //Populate Country and Role Combo Boxes
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cBoxService.setItems(FXCollections.observableArrayList("Trinidad", "Tobago"));
+        cBoxService.setItems(FXCollections.observableArrayList("Electrical: Outlet & Switch Replacement", "Electrical: Light Fixture Installation", "Electrical: Smart Home Integration", "Electrical: Panel Upgrade"));
         cBoxService.setStyle("-fx-font: 15px\"Ariel\";");
 
 
