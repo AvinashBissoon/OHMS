@@ -229,11 +229,14 @@ public class RegistrationViewController implements Initializable {
                     alert.showAndWait();
                 }
 
-                query = "INSERT INTO tblUsers VALUES(null, ?, ?, ?)";
+                query = "INSERT INTO tblUsers VALUES(null, ?, ?, ?, ?, ?, ?)";
                 dc.ps = dc.con.prepareStatement(query);
-                dc.ps.setString(1, tbRegisterEmail.getText());
-                dc.ps.setString(2, tbRegisterPassword.getText());
-                dc.ps.setString(3, cBoxRegisterAccType.getValue());
+                dc.ps.setString(1, tbFirstName.getText());
+                dc.ps.setString(2, tbLastName.getText());
+                dc.ps.setString(3, tbMobileNumber.getText());
+                dc.ps.setString(4, tbRegisterEmail.getText());
+                dc.ps.setString(5, tbRegisterPassword.getText());
+                dc.ps.setString(6, cBoxRegisterAccType.getValue());
 
                 success = dc.ps.executeUpdate();
             }
