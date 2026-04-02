@@ -16,6 +16,7 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
+
 public class EmployeeEditProfileController implements Initializable {
     private static final Logger logger = Logger.getLogger(EmployeeEditProfileController.class.getName());
 
@@ -133,12 +134,88 @@ public class EmployeeEditProfileController implements Initializable {
         btnSave.setOnMouseEntered(mouseEvent -> btnSave.setStyle(btnHover));
         btnSave.setOnMouseExited(mouseEvent -> btnSave.setStyle(btnNormal));
 
+        loadUserData();
+    }
 
+    private void loadUserData(){
+        DatabaseConnection dc = new DatabaseConnection();
+        String query = "SELECT * FROM tblemployee WHERE employeeid = ?";
+
+        try {
+            dc.ps = dc.con.prepareStatement(query);
+            dc.ps.setInt(1, UserSession.getEmployeeId());
+            dc.rst = dc.ps.executeQuery();
+
+            if (dc.rst.next()) {
+                tbFirstName.setText(dc.rst.getString("firstname"));
+                tbLastName.setText(dc.rst.getString("lastname"));
+                tbAddressLine1.setText(dc.rst.getString("streetaddress1"));
+                tbAddressLine2.setText(dc.rst.getString("streetaddress2"));
+                tbCity.setText(dc.rst.getString("city"));
+                cBoxCountry.setValue(dc.rst.getString("country"));
+                tbMobileNumber.setText(dc.rst.getString("mobilephone"));
+                tbEmployeeEmail.setText(dc.rst.getString("email"));
+                tbEmployeePassword.setText(dc.rst.getString("password"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML
     private void returnToHome(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "employee-dashboard.fxml", 1100, 750);
+    }
+
+    @FXML
+    private void saveEdits(ActionEvent event) {
+        String query = "UPDATE tblemployee SET firstname = ?, lastname = ?, streetaddress1 = ?, streetaddress2 = ?, city = ?, country = ?, mobilephone = ?, email = ?, password = ? WHERE employeeid = ?";
+
+        try {
+            DatabaseConnection dc = new DatabaseConnection();
+            dc.ps = dc.con.prepareStatement(query);
+
+            dc.ps.setString(1, tbFirstName.getText());
+            dc.ps.setString(2, tbLastName.getText());
+            dc.ps.setString(3, tbAddressLine1.getText());
+            dc.ps.setString(4, tbAddressLine2.getText());
+            dc.ps.setString(5, tbCity.getText());
+            dc.ps.setString(6, cBoxCountry.getValue());
+            dc.ps.setString(7, tbMobileNumber.getText());
+            dc.ps.setString(8, tbEmployeeEmail.getText());
+            dc.ps.setString(9, tbEmployeePassword.getText());
+            dc.ps.setInt(10, UserSession.getEmployeeId());
+
+            int rowsUpdated = dc.ps.executeUpdate();
+            if (rowsUpdated >0){
+                System.out.println("Employee Profile Updated!");
+
+                UserSession.init(UserSession.getUserId(),
+                        tbFirstName.getText(),
+                        tbLastName.getText(),
+                        tbEmployeeEmail.getText());
+
+                UserSession.setEmployeeId(UserSession.getEmployeeId());
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Online Home Service Solution: Info Dialog");
+                alert.setHeaderText("Account Edits Successful");
+                alert.setContentText("Account changes were successfully updated!");
+                alert.showAndWait();
+
+            } else {
+                System.out.println("No Update saved!");
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Online Home Service Solution: Info Dialog");
+                alert.setHeaderText("Account Edit Error");
+                alert.setContentText("Account changes were not saved! Please try again.");
+                alert.showAndWait();
+            }
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

@@ -16,7 +16,6 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
-import static com.cts.homeservices.UserSession.getUserId;
 
 public class CustomerEditProfileController implements Initializable {
     private static final Logger logger = Logger.getLogger(CustomerEditProfileController.class.getName());
@@ -139,7 +138,6 @@ public class CustomerEditProfileController implements Initializable {
     }
 
     private void loadUserData(){
-        System.out.println("DEBUG: UserSession ID is: " + getUserId());
         DatabaseConnection dc = new DatabaseConnection();
         String query = "SELECT * FROM tblcustomer WHERE customerid = ?";
 

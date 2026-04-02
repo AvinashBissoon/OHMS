@@ -115,8 +115,8 @@ public class LoginViewController implements Initializable {
                 UserSession.init(id, fName, lName, uEmail);
 
                 if ("Customer".equals(accountType)) {
-                    String custQuery = "SELECT customerid FROM tblcustomer WHERE email = ?";
-                    dc.ps = dc.con.prepareStatement(custQuery);
+                    String customerQuery = "SELECT customerid FROM tblcustomer WHERE email = ?";
+                    dc.ps = dc.con.prepareStatement(customerQuery);
                     dc.ps.setString(1, uEmail);
                     dc.rst = dc.ps.executeQuery();
                     if (dc.rst.next()) {
@@ -124,6 +124,17 @@ public class LoginViewController implements Initializable {
                         UserSession.setCustomerId(customerId);
                     }
                 }
+                if ("Employee".equals(accountType)) {
+                    String employeeQuery = "SELECT employeeid FROM tblemployee WHERE email = ?";
+                    dc.ps = dc.con.prepareStatement(employeeQuery);
+                    dc.ps.setString(1, uEmail);
+                    dc.rst = dc.ps.executeQuery();
+                    if (dc.rst.next()) {
+                        int employeeId = dc.rst.getInt("employeeid");
+                        UserSession.setEmployeeId(employeeId);
+                    }
+                }
+
 
                 System.out.println("Session started for: " + UserSession.getFirstName());
 
