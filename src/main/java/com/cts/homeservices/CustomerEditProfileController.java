@@ -16,6 +16,8 @@ import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
+import static com.cts.homeservices.UserSession.getUserId;
+
 public class CustomerEditProfileController implements Initializable {
     private static final Logger logger = Logger.getLogger(CustomerEditProfileController.class.getName());
 
@@ -137,7 +139,7 @@ public class CustomerEditProfileController implements Initializable {
     }
 
     private void loadUserData(){
-        System.out.println("DEBUG: UserSession ID is: " + UserSession.getUserId());
+        System.out.println("DEBUG: UserSession ID is: " + getUserId());
         DatabaseConnection dc = new DatabaseConnection();
         String query = "SELECT * FROM tblcustomer WHERE customerid = ?";
 
@@ -166,5 +168,43 @@ public class CustomerEditProfileController implements Initializable {
     private void returnToHome(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "customer-dashboard.fxml", 1100, 750);
+    }
+
+    @FXML
+    private void saveEdits(ActionEvent event) {
+        String query = "UPDATE tblcustomer SET firstname = ?, lastname = ?, streetaddress1 = ?, streetaddress2 = ?, city = ?, country = ?, mobilephone = ?, email = ?, password = ? WHERE customerid = ?";
+
+        try {
+            DatabaseConnection dc = new DatabaseConnection();
+            dc.ps = dc.con.prepareStatement(query);
+
+            dc.ps.setString(1, tbFirstName.getText());
+            dc.ps.setString(2, tbLastName.getText());
+            dc.ps.setString(3, tbAddressLine1.getText());
+            dc.ps.setString(4, tbAddressLine2.getText());
+            dc.ps.setString(5, tbCity.getText());
+            dc.ps.setString(6, cBoxCountry.getValue());
+            dc.ps.setString(7, tbMobileNumber.getText());
+            dc.ps.setString(8, tbCustomerEmail.getText());
+            dc.ps.setString(9, tbCustomerPassword.getText());
+            dc.ps.setInt(10, UserSession.getCustomerId());
+
+            int rowsUpdated = dc.ps.executeUpdate();
+            if (rowsUpdated >0){
+                System.out.println("Customer Profile Updated!");
+
+                UserSession.init(UserSession.getUserId(),
+                        tbFirstName.getText(),
+                        tbLastName.getText(),
+                        tbCustomerEmail.getText());
+
+                UserSession.setCustomerId(UserSession.getCustomerId());
+            } else {
+                System.out.println("No Update saved!");
+            }
+
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

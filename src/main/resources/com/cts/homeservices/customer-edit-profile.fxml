@@ -166,7 +166,7 @@
                   <Font name="SansSerif Bold" size="35.0" />
                </font>
             </Label>
-            <Button fx:id="btnSave" layoutX="603.0" layoutY="542.0" mnemonicParsing="false" text="Save Edits" textFill="#036248">
+            <Button fx:id="btnSave" layoutX="603.0" layoutY="542.0" mnemonicParsing="false" onAction="#saveEdits" text="Save Edits" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
