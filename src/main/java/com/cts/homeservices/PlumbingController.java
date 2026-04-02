@@ -49,7 +49,7 @@ public class PlumbingController implements Initializable {
     //Populate Country and Role Combo Boxes
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cBoxService.setItems(FXCollections.observableArrayList("Housekeeping: Interior Cleaning", "Housekeeping: Window Cleaning", "Housekeeping: Post Construction Cleaning", "Housekeeping: Laundry and Ironing"));
+        cBoxService.setItems(FXCollections.observableArrayList("Plumbing: Waste Water Management", "Plumbing: Pipeline Repair", "Plumbing: Faucet Installation", "Plumbing: Water Quality and Pressure", "Plumbing: Other"));
         cBoxService.setStyle("-fx-font: 15px\"Ariel\";");
 
 
