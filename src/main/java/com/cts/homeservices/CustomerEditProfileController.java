@@ -199,8 +199,21 @@ public class CustomerEditProfileController implements Initializable {
                         tbCustomerEmail.getText());
 
                 UserSession.setCustomerId(UserSession.getCustomerId());
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Online Home Service Solution: Info Dialog");
+                alert.setHeaderText("Account Edits Successful");
+                alert.setContentText("Account changes were successfully updated!");
+                alert.showAndWait();
+
             } else {
                 System.out.println("No Update saved!");
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Online Home Service Solution: Info Dialog");
+                alert.setHeaderText("Account Edit Error");
+                alert.setContentText("Account changes were not saved! Please try again.");
+                alert.showAndWait();
             }
 
         } catch (Exception e){
