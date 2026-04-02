@@ -20,7 +20,7 @@ public class CustomerEditProfileController implements Initializable {
     private static final Logger logger = Logger.getLogger(CustomerEditProfileController.class.getName());
 
 
-    //Class Parameters that connect register-view.fxml to this controller
+    //Class Parameters
     @FXML
     private TextField tbFirstName;
 
@@ -133,7 +133,33 @@ public class CustomerEditProfileController implements Initializable {
         btnSave.setOnMouseEntered(mouseEvent -> btnSave.setStyle(btnHover));
         btnSave.setOnMouseExited(mouseEvent -> btnSave.setStyle(btnNormal));
 
+        loadUserData();
+    }
 
+    private void loadUserData(){
+        System.out.println("DEBUG: UserSession ID is: " + UserSession.getUserId());
+        DatabaseConnection dc = new DatabaseConnection();
+        String query = "SELECT * FROM tblcustomer WHERE customerid = ?";
+
+        try {
+            dc.ps = dc.con.prepareStatement(query);
+            dc.ps.setInt(1, UserSession.getCustomerId());
+            dc.rst = dc.ps.executeQuery();
+
+            if (dc.rst.next()) {
+                tbFirstName.setText(dc.rst.getString("firstname"));
+                tbLastName.setText(dc.rst.getString("lastname"));
+                tbAddressLine1.setText(dc.rst.getString("streetaddress1"));
+                tbAddressLine2.setText(dc.rst.getString("streetaddress2"));
+                tbCity.setText(dc.rst.getString("city"));
+                cBoxCountry.setValue(dc.rst.getString("country"));
+                tbMobileNumber.setText(dc.rst.getString("mobilephone"));
+                tbCustomerEmail.setText(dc.rst.getString("email"));
+                tbCustomerPassword.setText(dc.rst.getString("password"));
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     @FXML

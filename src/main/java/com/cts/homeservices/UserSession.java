@@ -2,6 +2,7 @@ package com.cts.homeservices;
 
 public class UserSession {
     private static int userId;
+    private static int customerId;
     private static String firstName;
     private static String lastName;
     private static String email;
@@ -20,8 +21,12 @@ public class UserSession {
     public static String getLastName() { return lastName; }
     public static String getEmail() { return email; }
 
+    public static void setCustomerId(int id){ customerId = id;}
+    public static int getCustomerId(){return customerId;}
+
     public static void cleanUserSession() {
         userId = 0;
+        customerId = 0;
         firstName = null;
         lastName = null;
         email = null;

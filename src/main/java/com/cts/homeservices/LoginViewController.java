@@ -114,6 +114,17 @@ public class LoginViewController implements Initializable {
 
                 UserSession.init(id, fName, lName, uEmail);
 
+                if ("Customer".equals(accountType)) {
+                    String custQuery = "SELECT customerid FROM tblcustomer WHERE email = ?";
+                    dc.ps = dc.con.prepareStatement(custQuery);
+                    dc.ps.setString(1, uEmail);
+                    dc.rst = dc.ps.executeQuery();
+                    if (dc.rst.next()) {
+                        int customerId = dc.rst.getInt("customerid");
+                        UserSession.setCustomerId(customerId);
+                    }
+                }
+
                 System.out.println("Session started for: " + UserSession.getFirstName());
 
                 String fxmlFile = "";
