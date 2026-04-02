@@ -122,4 +122,42 @@ public class CustomerHistoryController implements Initializable {
         OnlineHomeServiceApp.changeScene(stage, "customer-dashboard.fxml", 1100, 750);
     }
 
+    @FXML
+    private void cancelBooking (ActionEvent event) {
+        Booking selectedBooking = tableBookings.getSelectionModel().getSelectedItem();
+
+        if (selectedBooking != null) {
+            try {
+                DatabaseConnection dc = new DatabaseConnection();
+                String query = "UPDATE tblbooking SET assigned_to = ?, status = ? WHERE bookingid = ?";
+
+                dc.ps = dc.con.prepareStatement(query);
+                dc.ps.setString(1, "Cancelled");
+                dc.ps.setString(2, "Cancelled");
+                dc.ps.setInt(3, selectedBooking.getBookingId());
+
+                int rowUpdated = dc.ps.executeUpdate();
+                if (rowUpdated > 0) {
+                    selectedBooking.setAssignedTo("Cancelled");
+                    selectedBooking.setStatus("Cancelled");
+                    tableBookings.refresh();
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Online Home Service Solution: Info Dialog");
+                    alert.setHeaderText("Booking Information");
+                    alert.setContentText("Your booking was successfully cancelled!");
+                    alert.showAndWait();
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Online Home Service Solution: Info Dialog");
+            alert.setHeaderText("Booking Information: No booking selected");
+            alert.setContentText("Please select a booking to cancel");
+            alert.showAndWait();
+        }
+    }
 }

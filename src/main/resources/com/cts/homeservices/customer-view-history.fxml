@@ -65,7 +65,7 @@
                   <TableColumn fx:id="colStatus" prefWidth="117.0" text="Status" />
               </columns>
             </TableView>
-            <Button fx:id="btnCancelBooking" layoutX="386.0" layoutY="560.0" mnemonicParsing="false" text="Cancel Booking" textFill="#036248">
+            <Button fx:id="btnCancelBooking" layoutX="386.0" layoutY="560.0" mnemonicParsing="false" onAction="#cancelBooking" text="Cancel Booking" textFill="#036248">
                <font>
                   <Font name="Leelawadee Bold" size="14.0" />
                </font>
