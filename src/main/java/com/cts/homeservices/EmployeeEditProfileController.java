@@ -198,6 +198,17 @@ public class EmployeeEditProfileController implements Initializable {
 
                 UserSession.setEmployeeId(UserSession.getEmployeeId());
 
+
+                String userQuery = "UPDATE tblusers SET firstname = ?, lastname = ?, mobilephone = ?, email = ?, password = ? WHERE userid = ?";
+                dc.ps =dc.con.prepareStatement(userQuery);
+                dc.ps.setString(1, tbFirstName.getText());
+                dc.ps.setString(2, tbLastName.getText());
+                dc.ps.setString(3, tbMobileNumber.getText());
+                dc.ps.setString(4, tbEmployeeEmail.getText());
+                dc.ps.setString(5, tbEmployeePassword.getText());
+                dc.ps.setInt(6, UserSession.getUserId());
+                dc.ps.executeUpdate();
+
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Online Home Service Solution: Info Dialog");
                 alert.setHeaderText("Account Edits Successful");
