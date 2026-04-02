@@ -49,7 +49,7 @@ public class LandscapingController implements Initializable {
     //Populate Country and Role Combo Boxes
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        cBoxService.setItems(FXCollections.observableArrayList("Housekeeping: Interior Cleaning", "Housekeeping: Window Cleaning", "Housekeeping: Post Construction Cleaning", "Housekeeping: Laundry and Ironing"));
+        cBoxService.setItems(FXCollections.observableArrayList("landscaping: General Maintenance", "Landscaping: Cleaning", "Landscaping: Design and Layout", "Landscaping: Plant Care", "Landscaping: Other"));
         cBoxService.setStyle("-fx-font: 15px\"Ariel\";");
 
 
