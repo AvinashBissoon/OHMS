@@ -25,6 +25,9 @@ public class CustomerHistoryController implements Initializable {
     private TableView<Booking> tableBookings;
 
     @FXML
+    private TableColumn<Booking, Integer> colBookingId;
+
+    @FXML
     private TableColumn<Booking, String> colDate;
 
     @FXML
@@ -72,7 +75,7 @@ public class CustomerHistoryController implements Initializable {
         btnCancelBooking.setOnMouseExited(mouseEvent -> btnCancelBooking.setStyle(btnNormal));
 
         //Mapping Columns to booking class
-
+        colBookingId.setCellValueFactory(new PropertyValueFactory<>("bookingId"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colTime.setCellValueFactory(new PropertyValueFactory<>("time"));
         colService.setCellValueFactory(new PropertyValueFactory<>("service"));
@@ -87,7 +90,7 @@ public class CustomerHistoryController implements Initializable {
         bookingList.clear();
         DatabaseConnection dc = new DatabaseConnection();
 
-        String query = "SELECT booking_date, booking_time, servicetype, servicedetails, assigned_to, status " + "FROM tblBooking WHERE userid = ?";
+        String query = "SELECT bookingid, booking_date, booking_time, servicetype, servicedetails, assigned_to, status FROM tblBooking WHERE userid = ?";
 
         try{
             dc.ps = dc.con.prepareStatement(query);
@@ -96,6 +99,7 @@ public class CustomerHistoryController implements Initializable {
 
             while (dc.rst.next()){
                 bookingList.add(new Booking(
+                    dc.rst.getInt("bookingid"),
                     dc.rst.getString("booking_date"),
                     dc.rst.getString("booking_time"),
                     dc.rst.getString("servicetype"),
