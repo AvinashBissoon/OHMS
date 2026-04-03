@@ -1,6 +1,7 @@
 package com.cts.homeservices;
 
 public class Customer {
+    private int customerId;
     private String firstName;
     private String lastName;
     private String streetAddress1;
@@ -10,8 +11,9 @@ public class Customer {
     private String mobilePhone;
     private String email;
 
-    public Customer(String firstName, String lastName, String email, String mobilePhone, String streetAddress1,
+    public Customer(int customerId, String firstName, String lastName, String email, String mobilePhone, String streetAddress1,
                     String streetAddress2, String city, String country) {
+        this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -24,6 +26,7 @@ public class Customer {
     }
 
     // Getters for TableView
+    public int getCustomerId() { return customerId; }
     public String getFirstName() { return firstName; }
     public String getLastName() { return lastName; }
     public String getEmail() { return email; }

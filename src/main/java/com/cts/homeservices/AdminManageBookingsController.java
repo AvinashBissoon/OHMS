@@ -154,11 +154,6 @@ public class AdminManageBookingsController implements Initializable {
         String bookId = tbBookingID1.getText();
         String assignEmployee = tbAssignedEmployee.getText();
 
-        if (bookId.isEmpty() || assignEmployee.isEmpty()) {
-            System.out.println("please enter emp name");
-            return;
-        }
-
         String query = "UPDATE tblBooking SET assigned_to = ?, status = 'Assigned' WHERE bookingid = ?";
 
         try {

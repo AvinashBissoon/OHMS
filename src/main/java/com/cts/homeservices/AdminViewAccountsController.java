@@ -53,21 +53,21 @@ public class AdminViewAccountsController implements Initializable {
     @FXML
     private TableView<Employee> tblViewEmployee;
     @FXML
-    private TableColumn<Customer, String> colEmpFirstName;
+    private TableColumn<Employee, String> colEmpFirstName;
     @FXML
-    private TableColumn<Customer, String> colEmpLastName;
+    private TableColumn<Employee, String> colEmpLastName;
     @FXML
-    private TableColumn<Customer, String> colEmpEmail;
+    private TableColumn<Employee, String> colEmpEmail;
     @FXML
-    private TableColumn<Customer, String> colEmpMobileNum;
+    private TableColumn<Employee, String> colEmpMobileNum;
     @FXML
-    private TableColumn<Customer, String> colEmpAddress1;
+    private TableColumn<Employee, String> colEmpAddress1;
     @FXML
-    private TableColumn<Customer, String> colEmpAddress2;
+    private TableColumn<Employee, String> colEmpAddress2;
     @FXML
-    private TableColumn<Customer, String> colEmpCity;
+    private TableColumn<Employee, String> colEmpCity;
     @FXML
-    private TableColumn<Customer, String> colEmpCountry;
+    private TableColumn<Employee, String> colEmpCountry;
 
     @FXML
     private TextField tbFirstName;
@@ -104,6 +104,9 @@ public class AdminViewAccountsController implements Initializable {
 
     @FXML
     private ObservableList<Employee> employeeList = FXCollections.observableArrayList();
+
+    @FXML
+    private int selectedUserId = -1;
 
 
 
@@ -144,46 +147,36 @@ public class AdminViewAccountsController implements Initializable {
 
         tblViewCustomer.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) ->{
             if (newSelection != null) {
-                tbFirstName.setText(String.valueOf(newSelection.getFirstName()));
-                tbLastName.setText(newSelection.getLastName());
-                tbEmail.setText(newSelection.getEmail());
-                tbMobileNumber.setText(String.valueOf(newSelection.getMobilePhone()));
-                tbAddressLine1.setText(newSelection.getStreetAddress1());
-                tbAddressLine2.setText(newSelection.getStreetAddress2());
-                tbCity.setText(newSelection.getCity());
-                tbCountry.setText(newSelection.getCountry());
+                selectedUserId = newSelection.getCustomerId();
+                fillFields(newSelection.getFirstName(), newSelection.getLastName(), newSelection.getEmail(), newSelection.getMobilePhone(), newSelection.getStreetAddress1(), newSelection.getStreetAddress2(), newSelection.getCity(), newSelection.getCountry());
             }
         });
 
         tblViewEmployee.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) ->{
             if (newSelection != null) {
-                tbFirstName.setText(String.valueOf(newSelection.getFirstName()));
-                tbLastName.setText(newSelection.getLastName());
-                tbEmail.setText(newSelection.getEmail());
-                tbMobileNumber.setText(String.valueOf(newSelection.getMobilePhone()));
-                tbAddressLine1.setText(newSelection.getStreetAddress1());
-                tbAddressLine2.setText(newSelection.getStreetAddress2());
-                tbCity.setText(newSelection.getCity());
-                tbCountry.setText(newSelection.getCountry());
+                selectedUserId = newSelection.getEmployeeId();
+                fillFields(newSelection.getFirstName(), newSelection.getLastName(), newSelection.getEmail(), newSelection.getMobilePhone(), newSelection.getStreetAddress1(), newSelection.getStreetAddress2(), newSelection.getCity(), newSelection.getCountry());
             }
         });
 
         loadCustomerData();
         loadEmployeeData();
     }
+    private void fillFields(String fn, String ln, String em, String ph, String a1, String a2, String ct, String co) {
+        tbFirstName.setText(fn); tbLastName.setText(ln); tbEmail.setText(em); tbMobileNumber.setText(ph);
+        tbAddressLine1.setText(a1); tbAddressLine2.setText(a2); tbCity.setText(ct); tbCountry.setText(co);
+    }
 
     public void loadCustomerData(){
         customerList.clear();
         DatabaseConnection dc = new DatabaseConnection();
-
         String query = "SELECT * FROM tblcustomer";
-
         try {
             dc.ps = dc.con.prepareStatement(query);
             dc.rst = dc.ps.executeQuery();
-
             while (dc.rst.next()) {
                 customerList.add(new Customer(
+                        dc.rst.getInt("customerid"),
                         dc.rst.getString("firstname"),
                         dc.rst.getString("lastname"),
                         dc.rst.getString("email"),
@@ -212,6 +205,7 @@ public class AdminViewAccountsController implements Initializable {
 
             while (dc.rst.next()) {
                 employeeList.add(new Employee(
+                        dc.rst.getInt("employeeid"),
                         dc.rst.getString("firstname"),
                         dc.rst.getString("lastname"),
                         dc.rst.getString("email"),
@@ -228,6 +222,62 @@ public class AdminViewAccountsController implements Initializable {
         }
     }
 
+
+    @FXML
+    private void saveEdit(ActionEvent event) {
+        if (selectedUserId == -1) return;
+        DatabaseConnection dc = new DatabaseConnection();
+
+        String query ;
+
+        Tab activeTab = tabPane.getSelectionModel().getSelectedItem();
+
+
+        if (activeTab == tabCustomer) {
+            query =  "UPDATE tblcustomer SET firstname = ?, lastname = ?, email = ?, mobilephone = ?, streetaddress1 = ?, streetaddress2 = ?, city = ?, country = ? WHERE customerid = ?";
+        } else  {
+            query =  "UPDATE tblemployee SET firstname = ?, lastname = ?, email = ?, mobilephone = ?, streetaddress1 = ?, streetaddress2 = ?, city = ?, country = ? WHERE employeeid = ?";
+        }
+
+        try {
+            dc.ps = dc.con.prepareStatement(query);
+            dc.ps.setString(1, tbFirstName.getText());
+            dc.ps.setString(2, tbLastName.getText());
+            dc.ps.setString(3, tbEmail.getText());
+            dc.ps.setString(4, tbMobileNumber.getText());
+            dc.ps.setString(5, tbAddressLine1.getText());
+            dc.ps.setString(6, tbAddressLine2.getText());
+            dc.ps.setString(7, tbCity.getText());
+            dc.ps.setString(8, tbCountry.getText());
+            dc.ps.setInt(9, selectedUserId);
+
+
+            if (dc.ps.executeUpdate() >0) {
+                loadCustomerData();
+                loadEmployeeData();
+                clearFields();
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Online Home Service Solution: Info Dialog");
+                alert.setHeaderText("Account Information");
+                alert.setContentText("Account Information Updated Successfully!");
+                alert.showAndWait();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    private void clearFields() {
+        tbFirstName.clear();
+        tbLastName.clear();
+        tbEmail.clear();
+        tbMobileNumber.clear();
+        tbAddressLine1.clear();
+        tbAddressLine2.clear();
+        tbCity.clear();
+        tbCountry.clear();
+        selectedUserId = -1;
+    }
 
 
     @FXML
