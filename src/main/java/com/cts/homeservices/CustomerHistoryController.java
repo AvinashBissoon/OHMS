@@ -116,11 +116,6 @@ public class CustomerHistoryController implements Initializable {
         }
     }
 
-    @FXML
-    private void returnToHome(ActionEvent event) throws IOException {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        OnlineHomeServiceApp.changeScene(stage, "customer-dashboard.fxml", 1100, 750);
-    }
 
     @FXML
     private void cancelBooking (ActionEvent event) {
@@ -132,13 +127,13 @@ public class CustomerHistoryController implements Initializable {
                 String query = "UPDATE tblbooking SET assigned_to = ?, status = ? WHERE bookingid = ?";
 
                 dc.ps = dc.con.prepareStatement(query);
-                dc.ps.setString(1, "Cancelled");
+                dc.ps.setString(1, "N/A");
                 dc.ps.setString(2, "Cancelled");
                 dc.ps.setInt(3, selectedBooking.getBookingId());
 
                 int rowUpdated = dc.ps.executeUpdate();
                 if (rowUpdated > 0) {
-                    selectedBooking.setAssignedTo("Cancelled");
+                    selectedBooking.setAssignedTo("N/A");
                     selectedBooking.setStatus("Cancelled");
                     tableBookings.refresh();
 
@@ -160,4 +155,11 @@ public class CustomerHistoryController implements Initializable {
             alert.showAndWait();
         }
     }
+
+    @FXML
+    private void returnToHome(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "customer-dashboard.fxml", 1100, 750);
+    }
+
 }

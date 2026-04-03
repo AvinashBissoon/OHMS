@@ -7,10 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
@@ -172,8 +169,6 @@ public class AdminManageBookingsController implements Initializable {
             int rowsUpdated = dc.ps.executeUpdate();
 
             if (rowsUpdated > 0) {
-                System.out.println("Booking " + bookId + "successfully assigned to " + assignEmployee);
-
                 loadData();
 
                 tbBookingID1.clear();
@@ -181,10 +176,60 @@ public class AdminManageBookingsController implements Initializable {
                 tbService1.clear();
                 tbService2.clear();
                 tbAssignedEmployee.clear();
+
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Online Home Service Solution: Info Dialog");
+                alert.setHeaderText("Booking Information");
+                alert.setContentText(assignEmployee + " was successfully assigned to booking " + bookId);
+                alert.showAndWait();
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+
+    @FXML
+    private void cancelBooking (ActionEvent event) {
+        Booking selectedBooking = tblViewBooking.getSelectionModel().getSelectedItem();
+
+        if (selectedBooking != null) {
+            try {
+                DatabaseConnection dc = new DatabaseConnection();
+                String query = "UPDATE tblbooking SET assigned_to = ?, status = ? WHERE bookingid = ?";
+
+                dc.ps = dc.con.prepareStatement(query);
+                dc.ps.setString(1, "N/A");
+                dc.ps.setString(2, "Cancelled");
+                dc.ps.setInt(3, selectedBooking.getBookingId());
+
+                int rowUpdated = dc.ps.executeUpdate();
+                if (rowUpdated > 0) {
+                    loadData();
+
+                    tbBookingID1.clear();
+                    tbBookingID2.clear();
+                    tbService1.clear();
+                    tbService2.clear();
+                    tbAssignedEmployee.clear();
+
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Online Home Service Solution: Info Dialog");
+                    alert.setHeaderText("Booking Information");
+                    alert.setContentText("Customer booking was successfully cancelled!");
+                    alert.showAndWait();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Online Home Service Solution: Info Dialog");
+            alert.setHeaderText("Booking Information: No booking selected");
+            alert.setContentText("Please select a booking to cancel");
+            alert.showAndWait();
+        }
+
     }
 
     @FXML
@@ -192,7 +237,4 @@ public class AdminManageBookingsController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "admin-dashboard.fxml", 1100, 750);
     }
-
-
-
 }
