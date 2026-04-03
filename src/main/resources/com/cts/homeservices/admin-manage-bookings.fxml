@@ -4,10 +4,9 @@
 <?import javafx.scene.control.Accordion?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -52,57 +51,92 @@
             </Label>
             <AnchorPane layoutX="146.0" layoutY="93.0" prefHeight="440.0" prefWidth="879.0">
                <children>
-                  <Accordion layoutX="-1.0" layoutY="-2.0" prefHeight="442.0" prefWidth="203.0">
+                  <Accordion layoutX="-146.0" layoutY="-8.0" prefHeight="459.0" prefWidth="200.0">
                     <panes>
-                      <TitledPane animated="false" layoutX="550.0" text="CUSTOMERS">
+                      <TitledPane animated="false" prefHeight="434.0" prefWidth="188.0" text="Assign Employee" textFill="#036248">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="205.0">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
+                                 <children>
+                                    <Label layoutX="25.0" layoutY="34.0" text="Booking ID" textFill="#036248">
+                                       <font>
+                                          <Font name="Leelawadee Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tbBookingID1" layoutX="25.0" layoutY="55.0" />
+                                    <Label layoutX="25.0" layoutY="135.0" text="Service" textFill="#036248">
+                                       <font>
+                                          <Font name="Leelawadee Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tbService1" layoutX="25.0" layoutY="156.0" />
+                                    <Label layoutX="25.0" layoutY="234.0" text="Assigned Employee" textFill="#036248">
+                                       <font>
+                                          <Font name="Leelawadee Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tbAssignedEmployee" layoutX="25.0" layoutY="255.0" prefWidth="149.0" />
+                                    <Button fx:id="btnAssignEmployee" layoutX="34.0" layoutY="343.0" mnemonicParsing="false" text="Assign Employee" textFill="#036248">
+                                       <font>
+                                          <Font name="Leelawadee Bold" size="14.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
                               </AnchorPane>
                         </content>
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
                       </TitledPane>
-                      <TitledPane animated="false" text="PROFESSIONALS">
+                      <TitledPane animated="false" text="Cancel Booking" textFill="#036248">
                         <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="412.0" prefWidth="204.0">
                                  <cursor>
                                     <Cursor fx:constant="HAND" />
                                  </cursor>
+                                 <children>
+                                    <Label layoutX="25.0" layoutY="43.0" text="Booking ID" textFill="#036248">
+                                       <font>
+                                          <Font name="Leelawadee Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tbBookingID2" layoutX="24.0" layoutY="64.0" />
+                                    <Label layoutX="25.0" layoutY="143.0" text="Service" textFill="#036248">
+                                       <font>
+                                          <Font name="Leelawadee Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField fx:id="tbService2" layoutX="24.0" layoutY="164.0" />
+                                    <Button fx:id="btnCancelBooking" layoutX="39.0" layoutY="247.0" mnemonicParsing="false" text="Cancel Booking" textFill="#036248">
+                                       <font>
+                                          <Font name="Leelawadee Bold" size="14.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
                               </AnchorPane>
                         </content>
-                      </TitledPane>
-                      <TitledPane animated="false" text="ASSIGNMENTS">
-                        <content>
-                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </AnchorPane>
-                        </content>
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
                       </TitledPane>
                     </panes>
                   </Accordion>
-                  <TabPane layoutX="202.0" prefHeight="440.0" prefWidth="675.0" tabClosingPolicy="UNAVAILABLE">
-                    <tabs>
-                      <Tab text="SERVICE">
-                           <content>
-                              <TableView layoutX="550.0" prefHeight="411.0" prefWidth="700.0">
-                                <columns>
-                                  <TableColumn prefWidth="128.0" text="DATE" />
-                                  <TableColumn prefWidth="547.0" text="DETAILS" />
-                                </columns>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </TableView>
-                           </content>
-                      </Tab>
-                    </tabs>
-                  </TabPane>
+                  <TableView fx:id="tblViewBooking" layoutX="53.0" layoutY="-8.0" prefHeight="459.0" prefWidth="900.0">
+                    <columns>
+                      <TableColumn fx:id="colBookingId" prefWidth="98.0" text="Booking ID" />
+                      <TableColumn fx:id="colDate" prefWidth="83.0" text="Date" />
+                        <TableColumn fx:id="colTime" prefWidth="77.0" text="Time" />
+                        <TableColumn fx:id="colService" prefWidth="166.0" text="Service" />
+                        <TableColumn fx:id="colDetails" prefWidth="222.0" text="Details" />
+                        <TableColumn fx:id="colAssignedTo" prefWidth="145.0" text="Assigned To" />
+                        <TableColumn fx:id="colStatus" prefWidth="108.0" text="Status" />
+                    </columns>
+                  </TableView>
                </children>
             </AnchorPane>
-            <Button fx:id="btnReturnToHome" layoutX="550.0" layoutY="560.0" mnemonicParsing="false" onAction="#returnToHome" text="Return to Home" textFill="#036248">
+            <Button fx:id="btnReturnToHome" layoutX="524.0" layoutY="560.0" mnemonicParsing="false" onAction="#returnToHome" text="Return to Home" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
