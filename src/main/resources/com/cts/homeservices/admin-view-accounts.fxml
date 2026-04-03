@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.TitledPane?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
@@ -51,14 +52,14 @@
                            <content>
                               <TableView prefHeight="528.0" prefWidth="885.0">
                                 <columns>
-                                  <TableColumn minWidth="0.0" prefWidth="100.0" text="FIRST NAME" />
-                                    <TableColumn prefWidth="100.0" text="LAST NAME" />
-                                    <TableColumn prefWidth="100.0" text="EMAIL" />
-                                    <TableColumn minWidth="0.0" prefWidth="125.0" text="MOBILE NUMBER" />
-                                  <TableColumn prefWidth="120.0" text="ADDRESS 1" />
-                                    <TableColumn prefWidth="120.0" text="ADDRESS 2" />
-                                    <TableColumn prefWidth="110.0" text="CITY" />
-                                    <TableColumn prefWidth="104.0" text="COUNTRY" />
+                                  <TableColumn fx:id="colFirstName" minWidth="0.0" prefWidth="100.0" text="FIRST NAME" />
+                                    <TableColumn fx:id="colLastName" prefWidth="100.0" text="LAST NAME" />
+                                    <TableColumn fx:id="colEmail" prefWidth="100.0" text="EMAIL" />
+                                    <TableColumn fx:id="colMobileNum" minWidth="0.0" prefWidth="125.0" text="MOBILE NUMBER" />
+                                  <TableColumn fx:id="colAddress1" prefWidth="120.0" text="ADDRESS 1" />
+                                    <TableColumn fx:id="colAddress2" prefWidth="120.0" text="ADDRESS 2" />
+                                    <TableColumn fx:id="colCity" prefWidth="110.0" text="CITY" />
+                                    <TableColumn fx:id="colCountry" prefWidth="104.0" text="COUNTRY" />
                                 </columns>
                               </TableView>
                            </content>
@@ -67,14 +68,14 @@
                            <content>
                               <TableView prefHeight="200.0" prefWidth="200.0">
                                  <columns>
-                                    <TableColumn minWidth="0.0" prefWidth="100.0" text="FIRST NAME" />
-                                    <TableColumn prefWidth="100.0" text="LAST NAME" />
-                                    <TableColumn prefWidth="100.0" text="EMAIL" />
-                                    <TableColumn minWidth="0.0" prefWidth="125.0" text="MOBILE NUMBER" />
-                                    <TableColumn prefWidth="120.0" text="ADDRESS 1" />
-                                    <TableColumn prefWidth="120.0" text="ADDRESS 2" />
-                                    <TableColumn prefWidth="110.0" text="CITY" />
-                                    <TableColumn prefWidth="104.0" text="COUNTRY" />
+                                    <TableColumn fx:id="colEmpFirstName" minWidth="0.0" prefWidth="100.0" text="FIRST NAME" />
+                                    <TableColumn fx:id="colEmpLastName" prefWidth="100.0" text="LAST NAME" />
+                                    <TableColumn fx:id="colEmpEmail" prefWidth="100.0" text="EMAIL" />
+                                    <TableColumn fx:id="colEmpMobileNum" minWidth="0.0" prefWidth="125.0" text="MOBILE NUMBER" />
+                                    <TableColumn fx:id="colEmpAddress1" prefWidth="120.0" text="ADDRESS 1" />
+                                    <TableColumn fx:id="colEmpAddress2" prefWidth="120.0" text="ADDRESS 2" />
+                                    <TableColumn fx:id="colEmpCity" prefWidth="110.0" text="CITY" />
+                                    <TableColumn fx:id="colEmpCountry" prefWidth="104.0" text="COUNTRY" />
                                  </columns>
                               </TableView>
                            </content>
@@ -86,7 +87,7 @@
                   </TabPane>
                </children>
             </AnchorPane>
-            <Button fx:id="btnReturnToHome" layoutX="394.0" layoutY="568.0" mnemonicParsing="false" onAction="#returnToHome" text="Return to Home" textFill="#036248">
+            <Button fx:id="btnReturnToHome" layoutX="382.0" layoutY="566.0" mnemonicParsing="false" onAction="#returnToHome" text="Return to Home" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
@@ -100,17 +101,64 @@
    <left>
       <Accordion prefHeight="612.0" prefWidth="212.0" BorderPane.alignment="CENTER">
         <panes>
-          <TitledPane animated="false" prefHeight="560.0" prefWidth="296.0" text="General Information" textFill="#036248">
+          <TitledPane animated="false" prefHeight="560.0" prefWidth="296.0" text="Edit Account" textFill="#036248">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="534.0" prefWidth="248.0" />
-            </content>
-               <font>
-                  <Font name="Leelawadee Bold" size="12.0" />
-               </font>
-          </TitledPane>
-          <TitledPane animated="false" text="Address and Contact Information" textFill="#036248">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="534.0" prefWidth="248.0">
+                     <children>
+                        <Label layoutX="30.0" layoutY="14.0" text="First Name" textFill="#036248">
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="30.0" layoutY="39.0" />
+                        <Label layoutX="30.0" layoutY="75.0" text="Last Name" textFill="#036248">
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="30.0" layoutY="100.0" />
+                        <Label layoutX="30.0" layoutY="136.0" text="Email" textFill="#036248">
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="30.0" layoutY="161.0" />
+                        <Label layoutX="30.0" layoutY="197.0" text="Mobile Number" textFill="#036248">
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="30.0" layoutY="222.0" />
+                        <Label layoutX="30.0" layoutY="257.0" text="Address 1" textFill="#036248">
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="30.0" layoutY="282.0" />
+                        <Label layoutX="30.0" layoutY="315.0" text="Address 2" textFill="#036248">
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="30.0" layoutY="340.0" />
+                        <Label layoutX="30.0" layoutY="374.0" text="City" textFill="#036248">
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="30.0" layoutY="399.0" />
+                        <Label layoutX="30.0" layoutY="432.0" text="Country" textFill="#036248">
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="30.0" layoutY="457.0" />
+                        <Button layoutX="76.0" layoutY="513.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="56.0" text="Save" textFill="#036248">
+                           <font>
+                              <Font name="Leelawadee Bold" size="12.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
             </content>
                <font>
                   <Font name="Leelawadee Bold" size="12.0" />
