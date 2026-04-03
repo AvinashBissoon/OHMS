@@ -46,27 +46,27 @@
          <children>
             <AnchorPane layoutX="159.0" layoutY="93.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <TabPane layoutX="-160.0" layoutY="-93.0" prefHeight="557.0" prefWidth="878.0" style="-fx-background-color: transparent;" tabClosingPolicy="UNAVAILABLE">
+                  <TabPane fx:id="tabPane" layoutX="-160.0" layoutY="-93.0" prefHeight="557.0" prefWidth="878.0" style="-fx-background-color: transparent;" tabClosingPolicy="UNAVAILABLE">
                     <tabs>
-                      <Tab text="CUSTOMER">
+                      <Tab fx:id="tabCustomer" text="CUSTOMER">
                            <content>
-                              <TableView prefHeight="528.0" prefWidth="885.0">
+                              <TableView fx:id="tblViewCustomer" prefHeight="528.0" prefWidth="885.0">
                                 <columns>
-                                  <TableColumn fx:id="colFirstName" minWidth="0.0" prefWidth="100.0" text="FIRST NAME" />
-                                    <TableColumn fx:id="colLastName" prefWidth="100.0" text="LAST NAME" />
-                                    <TableColumn fx:id="colEmail" prefWidth="100.0" text="EMAIL" />
-                                    <TableColumn fx:id="colMobileNum" minWidth="0.0" prefWidth="125.0" text="MOBILE NUMBER" />
-                                  <TableColumn fx:id="colAddress1" prefWidth="120.0" text="ADDRESS 1" />
-                                    <TableColumn fx:id="colAddress2" prefWidth="120.0" text="ADDRESS 2" />
-                                    <TableColumn fx:id="colCity" prefWidth="110.0" text="CITY" />
-                                    <TableColumn fx:id="colCountry" prefWidth="104.0" text="COUNTRY" />
+                                  <TableColumn fx:id="colCustFirstName" minWidth="0.0" prefWidth="100.0" text="FIRST NAME" />
+                                    <TableColumn fx:id="colCustLastName" prefWidth="100.0" text="LAST NAME" />
+                                    <TableColumn fx:id="colCustEmail" prefWidth="100.0" text="EMAIL" />
+                                    <TableColumn fx:id="colCustMobileNum" minWidth="0.0" prefWidth="125.0" text="MOBILE NUMBER" />
+                                  <TableColumn fx:id="colCustAddress1" prefWidth="120.0" text="ADDRESS 1" />
+                                    <TableColumn fx:id="colCustAddress2" prefWidth="120.0" text="ADDRESS 2" />
+                                    <TableColumn fx:id="colCustCity" prefWidth="110.0" text="CITY" />
+                                    <TableColumn fx:id="colCustCountry" prefWidth="104.0" text="COUNTRY" />
                                 </columns>
                               </TableView>
                            </content>
                       </Tab>
-                      <Tab text="EMPLOYEE">
+                      <Tab fx:id="tabEmployee" text="EMPLOYEE">
                            <content>
-                              <TableView prefHeight="200.0" prefWidth="200.0">
+                              <TableView fx:id="tblViewEmployee" prefHeight="200.0" prefWidth="200.0">
                                  <columns>
                                     <TableColumn fx:id="colEmpFirstName" minWidth="0.0" prefWidth="100.0" text="FIRST NAME" />
                                     <TableColumn fx:id="colEmpLastName" prefWidth="100.0" text="LAST NAME" />
@@ -110,50 +110,50 @@
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="30.0" layoutY="39.0" />
+                        <TextField fx:id="tbFirstName" layoutX="30.0" layoutY="39.0" />
                         <Label layoutX="30.0" layoutY="75.0" text="Last Name" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="30.0" layoutY="100.0" />
+                        <TextField fx:id="tbLastName" layoutX="30.0" layoutY="100.0" />
                         <Label layoutX="30.0" layoutY="136.0" text="Email" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="30.0" layoutY="161.0" />
+                        <TextField fx:id="tbEmail" layoutX="30.0" layoutY="161.0" />
                         <Label layoutX="30.0" layoutY="197.0" text="Mobile Number" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="30.0" layoutY="222.0" />
+                        <TextField fx:id="tbMobileNumber" layoutX="30.0" layoutY="222.0" />
                         <Label layoutX="30.0" layoutY="257.0" text="Address 1" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="30.0" layoutY="282.0" />
+                        <TextField fx:id="tbAddressLine1" layoutX="30.0" layoutY="282.0" />
                         <Label layoutX="30.0" layoutY="315.0" text="Address 2" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="30.0" layoutY="340.0" />
+                        <TextField fx:id="tbAddressLine2" layoutX="30.0" layoutY="340.0" />
                         <Label layoutX="30.0" layoutY="374.0" text="City" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="30.0" layoutY="399.0" />
+                        <TextField fx:id="tbCity" layoutX="30.0" layoutY="399.0" />
                         <Label layoutX="30.0" layoutY="432.0" text="Country" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField layoutX="30.0" layoutY="457.0" />
-                        <Button layoutX="76.0" layoutY="513.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="56.0" text="Save" textFill="#036248">
+                        <TextField fx:id="tbCountry" layoutX="30.0" layoutY="457.0" />
+                        <Button fx:id="btnSave" layoutX="76.0" layoutY="513.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="56.0" text="Save" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
