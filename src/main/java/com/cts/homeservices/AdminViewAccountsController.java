@@ -228,7 +228,7 @@ public class AdminViewAccountsController implements Initializable {
         if (selectedUserId == -1) return;
         DatabaseConnection dc = new DatabaseConnection();
 
-        String query ;
+        String query;
 
         Tab activeTab = tabPane.getSelectionModel().getSelectedItem();
 
