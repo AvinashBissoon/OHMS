@@ -151,9 +151,48 @@ public class AdminManageBookingsController implements Initializable {
     }
 
     @FXML
+    private void assignEmployee(ActionEvent event) {
+        DatabaseConnection dc = new DatabaseConnection();
+
+        String bookId = tbBookingID1.getText();
+        String assignEmployee = tbAssignedEmployee.getText();
+
+        if (bookId.isEmpty() || assignEmployee.isEmpty()) {
+            System.out.println("please enter emp name");
+            return;
+        }
+
+        String query = "UPDATE tblBooking SET assigned_to = ?, status = 'Assigned' WHERE bookingid = ?";
+
+        try {
+            dc.ps = dc.con.prepareStatement(query);
+            dc.ps.setString(1, assignEmployee);
+            dc.ps.setString(2, bookId);
+
+            int rowsUpdated = dc.ps.executeUpdate();
+
+            if (rowsUpdated > 0) {
+                System.out.println("Booking " + bookId + "successfully assigned to " + assignEmployee);
+
+                loadData();
+
+                tbBookingID1.clear();
+                tbBookingID2.clear();
+                tbService1.clear();
+                tbService2.clear();
+                tbAssignedEmployee.clear();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void returnToHome(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "admin-dashboard.fxml", 1100, 750);
     }
+
+
 
 }
