@@ -13,6 +13,7 @@ import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
@@ -108,6 +109,9 @@ public class AdminViewAccountsController implements Initializable {
     @FXML
     private int selectedUserId = -1;
 
+    @FXML
+    private String emailBeforeEdit = "";
+
 
 
 
@@ -165,6 +169,7 @@ public class AdminViewAccountsController implements Initializable {
     private void fillFields(String fn, String ln, String em, String ph, String a1, String a2, String ct, String co) {
         tbFirstName.setText(fn); tbLastName.setText(ln); tbEmail.setText(em); tbMobileNumber.setText(ph);
         tbAddressLine1.setText(a1); tbAddressLine2.setText(a2); tbCity.setText(ct); tbCountry.setText(co);
+        this.emailBeforeEdit = em;
     }
 
     public void loadCustomerData(){
@@ -227,9 +232,7 @@ public class AdminViewAccountsController implements Initializable {
     private void saveEdit(ActionEvent event) {
         if (selectedUserId == -1) return;
         DatabaseConnection dc = new DatabaseConnection();
-
         String query;
-
         Tab activeTab = tabPane.getSelectionModel().getSelectedItem();
 
 
@@ -240,6 +243,16 @@ public class AdminViewAccountsController implements Initializable {
         }
 
         try {
+
+            String findIdQuery = "SELECT userid FROM tblusers where email = ?";
+            dc.ps = dc.con.prepareStatement(findIdQuery);
+            dc.ps.setString(1, emailBeforeEdit);
+            ResultSet rst = dc.ps.executeQuery();
+            int foundUserId = -1;
+            if (rst.next()) {
+                foundUserId = rst.getInt("userid");
+            }
+
             dc.ps = dc.con.prepareStatement(query);
             dc.ps.setString(1, tbFirstName.getText());
             dc.ps.setString(2, tbLastName.getText());
@@ -250,12 +263,23 @@ public class AdminViewAccountsController implements Initializable {
             dc.ps.setString(7, tbCity.getText());
             dc.ps.setString(8, tbCountry.getText());
             dc.ps.setInt(9, selectedUserId);
+            dc.ps.executeUpdate();
+
+            String userQuery = "UPDATE tblusers SET firstname = ?, lastname = ?, email = ?, mobilephone = ? WHERE userid = ?";
+            dc.ps = dc.con.prepareStatement(userQuery);
+            dc.ps.setString(1, tbFirstName.getText());
+            dc.ps.setString(2, tbLastName.getText());
+            dc.ps.setString(3, tbEmail.getText());
+            dc.ps.setString(4, tbMobileNumber.getText());
+            dc.ps.setInt(5, foundUserId);
+            dc.ps.executeUpdate();
 
 
             if (dc.ps.executeUpdate() >0) {
                 loadCustomerData();
                 loadEmployeeData();
                 clearFields();
+                emailBeforeEdit = "";
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Online Home Service Solution: Info Dialog");
