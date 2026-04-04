@@ -208,7 +208,7 @@ public class AdminManageBookingsController implements Initializable {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Online Home Service Solution: Info Dialog");
                 alert.setHeaderText("Booking Information");
-                alert.setContentText(assignEmployee + " was successfully assigned to booking " + bookId);
+                alert.setContentText(assignEmployee + " was successfully assigned to booking # " + bookId);
                 alert.showAndWait();
             }else {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
