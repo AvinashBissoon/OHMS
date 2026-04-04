@@ -83,6 +83,39 @@ public class AdminManageBookingsController implements Initializable {
         String btnHover = "-fx-font: 20px\"Leelawadee\"; -fx-border-radius: 15; -fx-border-color:  #01402e; -fx-border-width:2; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnNormalAccordian = "-fx-font: 14px\"Leelawadee\";-fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnHoverAccordian = "-fx-font: 14px\"Leelawadee\"; -fx-border-radius: 15; -fx-border-color:  #01402e; -fx-border-width:2; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
+        String defaultStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color: #cccccc; -fx-border-width:1; ";
+        String focusedStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color:  #036248; -fx-border-width:2; ";
+
+
+        tbBookingID1.setStyle(defaultStyle);
+        tbBookingID1.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbBookingID1.setStyle(focusedStyle);
+            else tbBookingID1.setStyle(defaultStyle);
+        });
+
+        tbBookingID2.setStyle(defaultStyle);
+        tbBookingID2.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbBookingID2.setStyle(focusedStyle);
+            else tbBookingID2.setStyle(defaultStyle);
+        });
+
+        tbService1.setStyle(defaultStyle);
+        tbService1.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbService1.setStyle(focusedStyle);
+            else tbService1.setStyle(defaultStyle);
+        });
+
+        tbService2.setStyle(defaultStyle);
+        tbService2.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbService2.setStyle(focusedStyle);
+            else tbService2.setStyle(defaultStyle);
+        });
+
+        tbAssignedEmployee.setStyle(defaultStyle);
+        tbAssignedEmployee.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbAssignedEmployee.setStyle(focusedStyle);
+            else tbAssignedEmployee.setStyle(defaultStyle);
+        });
 
 
         btnReturnToHome.setStyle(btnNormal);
@@ -177,6 +210,12 @@ public class AdminManageBookingsController implements Initializable {
                 alert.setHeaderText("Booking Information");
                 alert.setContentText(assignEmployee + " was successfully assigned to booking " + bookId);
                 alert.showAndWait();
+            }else {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Online Home Service Solution: Info Dialog");
+                alert.setHeaderText("Booking Information: No booking selected");
+                alert.setContentText("Please select a booking to Assign an Employee!");
+                alert.showAndWait();
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -221,7 +260,7 @@ public class AdminManageBookingsController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("Online Home Service Solution: Info Dialog");
             alert.setHeaderText("Booking Information: No booking selected");
-            alert.setContentText("Please select a booking to cancel");
+            alert.setContentText("Please select a booking to cancel!");
             alert.showAndWait();
         }
 

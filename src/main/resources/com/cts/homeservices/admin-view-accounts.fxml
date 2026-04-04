@@ -110,63 +110,79 @@
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tbFirstName" layoutX="30.0" layoutY="39.0" />
+                        <TextField fx:id="tbFirstName" layoutX="30.0" layoutY="39.0">
+                           <font>
+                              <Font name="Leelawadee" size="12.0" />
+                           </font></TextField>
                         <Label layoutX="30.0" layoutY="75.0" text="Last Name" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tbLastName" layoutX="30.0" layoutY="100.0" />
+                        <TextField fx:id="tbLastName" layoutX="30.0" layoutY="100.0">
+                           <font>
+                              <Font name="Leelawadee" size="12.0" />
+                           </font></TextField>
                         <Label layoutX="30.0" layoutY="136.0" text="Email" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tbEmail" layoutX="30.0" layoutY="161.0" />
+                        <TextField fx:id="tbEmail" layoutX="30.0" layoutY="161.0">
+                           <font>
+                              <Font name="Leelawadee" size="12.0" />
+                           </font></TextField>
                         <Label layoutX="30.0" layoutY="197.0" text="Mobile Number" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tbMobileNumber" layoutX="30.0" layoutY="222.0" />
+                        <TextField fx:id="tbMobileNumber" layoutX="30.0" layoutY="222.0">
+                           <font>
+                              <Font name="Leelawadee" size="12.0" />
+                           </font></TextField>
                         <Label layoutX="30.0" layoutY="257.0" text="Address 1" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tbAddressLine1" layoutX="30.0" layoutY="282.0" />
+                        <TextField fx:id="tbAddressLine1" layoutX="30.0" layoutY="282.0">
+                           <font>
+                              <Font name="Leelawadee" size="12.0" />
+                           </font></TextField>
                         <Label layoutX="30.0" layoutY="315.0" text="Address 2" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tbAddressLine2" layoutX="30.0" layoutY="340.0" />
+                        <TextField fx:id="tbAddressLine2" layoutX="30.0" layoutY="340.0">
+                           <font>
+                              <Font name="Leelawadee" size="12.0" />
+                           </font></TextField>
                         <Label layoutX="30.0" layoutY="374.0" text="City" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tbCity" layoutX="30.0" layoutY="399.0" />
+                        <TextField fx:id="tbCity" layoutX="30.0" layoutY="399.0">
+                           <font>
+                              <Font name="Leelawadee" size="12.0" />
+                           </font></TextField>
                         <Label layoutX="30.0" layoutY="432.0" text="Country" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tbCountry" layoutX="30.0" layoutY="457.0" />
+                        <TextField fx:id="tbCountry" layoutX="30.0" layoutY="457.0">
+                           <font>
+                              <Font name="Leelawadee" size="12.0" />
+                           </font></TextField>
                         <Button fx:id="btnSave" layoutX="76.0" layoutY="513.0" mnemonicParsing="false" onAction="#saveEdit" prefHeight="23.0" prefWidth="56.0" text="Save" textFill="#036248">
                            <font>
                               <Font name="Leelawadee Bold" size="12.0" />
                            </font>
                         </Button>
                      </children></AnchorPane>
-            </content>
-               <font>
-                  <Font name="Leelawadee Bold" size="12.0" />
-               </font>
-          </TitledPane>
-          <TitledPane animated="false" text="Add New Account" textFill="#036248">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
                <font>
                   <Font name="Leelawadee Bold" size="12.0" />

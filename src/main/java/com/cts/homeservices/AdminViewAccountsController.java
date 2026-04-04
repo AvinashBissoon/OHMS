@@ -120,6 +120,62 @@ public class AdminViewAccountsController implements Initializable {
         //Setting up the styles to be used
         String btnNormal = "-fx-font: 20px\"Leelawadee\";-fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnHover = "-fx-font: 20px\"Leelawadee\"; -fx-border-radius: 15; -fx-border-color:  #01402e; -fx-border-width:2; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
+        String btnNormalAccordian = "-fx-font: 14px\"Leelawadee\";-fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
+        String btnHoverAccordian = "-fx-font: 14px\"Leelawadee\"; -fx-border-radius: 15; -fx-border-color:  #01402e; -fx-border-width:2; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
+        String defaultStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color: #cccccc; -fx-border-width:1; ";
+        String focusedStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color:  #036248; -fx-border-width:2; ";
+
+        tbFirstName.setStyle(defaultStyle);
+        tbFirstName.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbFirstName.setStyle(focusedStyle);
+            else tbFirstName.setStyle(defaultStyle);
+        });
+
+        tbLastName.setStyle(defaultStyle);
+        tbLastName.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbLastName.setStyle(focusedStyle);
+            else tbLastName.setStyle(defaultStyle);
+        });
+
+        tbEmail.setStyle(defaultStyle);
+        tbEmail.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbEmail.setStyle(focusedStyle);
+            else tbEmail.setStyle(defaultStyle);
+        });
+
+        tbMobileNumber.setStyle(defaultStyle);
+        tbMobileNumber.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbMobileNumber.setStyle(focusedStyle);
+            else tbMobileNumber.setStyle(defaultStyle);
+        });
+
+        tbAddressLine1.setStyle(defaultStyle);
+        tbAddressLine1.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbAddressLine1.setStyle(focusedStyle);
+            else tbAddressLine1.setStyle(defaultStyle);
+        });
+
+        tbAddressLine2.setStyle(defaultStyle);
+        tbAddressLine2.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbAddressLine2.setStyle(focusedStyle);
+            else tbAddressLine2.setStyle(defaultStyle);
+        });
+
+        tbCity.setStyle(defaultStyle);
+        tbCity.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbCity.setStyle(focusedStyle);
+            else tbCity.setStyle(defaultStyle);
+        });
+
+        tbCountry.setStyle(defaultStyle);
+        tbCountry.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
+            if (newVal) tbCountry.setStyle(focusedStyle);
+            else tbCountry.setStyle(defaultStyle);
+        });
+
+        btnSave.setStyle(btnNormalAccordian);
+        btnSave.setOnMouseEntered(mouseEvent -> btnSave.setStyle(btnHoverAccordian));
+        btnSave.setOnMouseExited(mouseEvent -> btnSave.setStyle(btnNormalAccordian));
 
 
         btnReturnToHome.setStyle(btnNormal);
