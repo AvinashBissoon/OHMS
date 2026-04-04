@@ -141,9 +141,22 @@ public class PlumbingController implements Initializable {
             dc.ps.setTime(7, java.sql.Time.valueOf(timeString + ":00"));
 
             dc.ps.executeUpdate();
-            System.out.println("Booking successful for: " + UserSession.getFirstName());
+
+            cBoxService.setValue(null);
+            tAreaDetails.clear();
+            tbCity.clear();
+            tbAddress.clear();
+            date.setValue((null));
+            tbTime.clear();
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Online Home Service Solution: Info Dialog");
+            alert.setHeaderText("Booking Confirmation");
+            alert.setContentText("Your booking has been placed successfully. An employee will be assigned to your booking shortly. Thank you for booking with us!");
+            alert.showAndWait();
+
+
         } catch (Exception e){
-            System.out.println("Booking Failed!");
             e.printStackTrace();
         }
 
