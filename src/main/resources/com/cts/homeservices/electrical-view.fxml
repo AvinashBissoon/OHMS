@@ -128,7 +128,7 @@
                   <Font name="Leelawadee" size="18.0" />
                </font>
             </CheckBox>
-            <Button fx:id="btnBookNow" layoutX="634.0" layoutY="546.0" mnemonicParsing="false" onAction="#book" text="Book Now" textFill="#036248">
+            <Button fx:id="btnBookNow" layoutX="634.0" layoutY="546.0" mnemonicParsing="false" onAction="#placeBooking" text="Book Now" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

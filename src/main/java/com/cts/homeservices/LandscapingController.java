@@ -3,16 +3,13 @@ package com.cts.homeservices;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
@@ -119,7 +116,7 @@ public class LandscapingController implements Initializable {
     }
 
     @FXML
-    private void book(ActionEvent event) throws IOException {
+    private void placeBooking(ActionEvent event) throws IOException {
         DatabaseConnection dc = new DatabaseConnection();
 
         String query = "INSERT INTO tblBooking (userid, servicetype, servicedetails, address, city, booking_date, booking_time) VALUES (?, ?, ?, ?, ?, ?, ?)";
