@@ -79,7 +79,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Button fx:id="btnInProgress" layoutX="249.0" layoutY="545.0" mnemonicParsing="false" onAction="#inProgress" text="In Progress" textFill="#036248">
+            <Button fx:id="btnInProgress" layoutX="249.0" layoutY="545.0" mnemonicParsing="false" onAction="#changeBookingStatus" text="In Progress" textFill="#036248">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

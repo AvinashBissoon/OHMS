@@ -3,16 +3,13 @@ package com.cts.homeservices;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
@@ -169,7 +166,7 @@ public class EmployeeEditProfileController implements Initializable {
     }
 
     @FXML
-    private void saveEdits(ActionEvent event) {
+    private void saveAccountEdits(ActionEvent event) {
         String query = "UPDATE tblemployee SET firstname = ?, lastname = ?, streetaddress1 = ?, streetaddress2 = ?, city = ?, country = ?, mobilephone = ?, email = ?, password = ? WHERE employeeid = ?";
 
         try {

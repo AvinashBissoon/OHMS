@@ -4,18 +4,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.security.PrivateKey;
-import java.sql.SQLException;
 import java.util.ResourceBundle;
 import java.util.logging.Logger;
 
@@ -100,10 +96,10 @@ public class EmployeeBookingsController implements Initializable {
         colAssignedTo.setCellValueFactory(new PropertyValueFactory<>("assignedTo"));
         colStatus.setCellValueFactory(new PropertyValueFactory<>("status"));
 
-        loadData();
+        loadBookingData();
     }
 
-    private void loadData(){
+    private void loadBookingData(){
         bookingList.clear();
         DatabaseConnection dc = new DatabaseConnection();
 
@@ -132,7 +128,7 @@ public class EmployeeBookingsController implements Initializable {
     }
 
     @FXML
-    private void inProgress(ActionEvent event){
+    private void changeBookingStatus(ActionEvent event){
         EmployeeBooking selectedBooking = tblViewBooking.getSelectionModel().getSelectedItem();
 
         if (selectedBooking != null){
@@ -146,7 +142,7 @@ public class EmployeeBookingsController implements Initializable {
 
                 int rowUpdated = dc.ps.executeUpdate();
                 if (rowUpdated > 0) {
-                    loadData();
+                    loadBookingData();
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Online Home Service Solution: Info Dialog");
@@ -175,7 +171,7 @@ public class EmployeeBookingsController implements Initializable {
 
                 int rowUpdated = dc.ps.executeUpdate();
                 if (rowUpdated > 0) {
-                    loadData();
+                    loadBookingData();
 
                     Alert alert = new Alert(Alert.AlertType.INFORMATION);
                     alert.setTitle("Online Home Service Solution: Info Dialog");
