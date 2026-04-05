@@ -9,7 +9,6 @@ import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import org.w3c.dom.Text;
 
 import java.io.IOException;
 import java.net.URL;
@@ -285,7 +284,7 @@ public class AdminViewAccountsController implements Initializable {
 
 
     @FXML
-    private void saveEdit(ActionEvent event) {
+    private void saveAccountEdits(ActionEvent event) {
         if (selectedUserId == -1) return;
         DatabaseConnection dc = new DatabaseConnection();
         String query;
