@@ -76,7 +76,7 @@ public class DatabaseConnection  {
             /* Returns a database connection from the currently active connection provider */
             //--------------------------------------------------------------------------
             //JavaFXProject is the name of our database
-            String JDBC_URL = "JDBC:mysql://localhost:3306/javafxproject";
+            String JDBC_URL = "JDBC:mysql://localhost:3306/homeservicesdb";
             con = DriverManager.getConnection(JDBC_URL, "root", "mysql");
 
             /*
