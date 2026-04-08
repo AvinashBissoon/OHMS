@@ -14,10 +14,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.stage.Stage;
 
 
@@ -165,8 +162,13 @@ public class LoginViewController implements Initializable {
                 Stage currentStage = (Stage) tbLoginEmail.getScene().getWindow();
                 OnlineHomeServiceApp.changeScene(currentStage, fxmlFile, 1100, 750);
             } else {
-                System.out.println("Invalid Login Credentials.");
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Online Home Service Solution: Info Dialog");
+                alert.setHeaderText("Login Error");
+                alert.setContentText("Please enter valid credentials to login! If you do not have an account, please register first. ");
+                alert.showAndWait();
             }
+
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
