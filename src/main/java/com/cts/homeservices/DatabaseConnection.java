@@ -73,8 +73,8 @@ public class DatabaseConnection  {
 
             /* Returns a database connection from the currently active connection provider */
             //--------------------------------------------------------------------------
-            //homeservicesdb is the name of our database
-            String JDBC_URL = "JDBC:mysql://localhost:3306/homeservicesdb";
+            //HomeServicesDB is the name of our database
+            String JDBC_URL = "JDBC:mysql://localhost:3306/HomeServicesDB";
             con = DriverManager.getConnection(JDBC_URL, "root", "mysql");
 
             /*

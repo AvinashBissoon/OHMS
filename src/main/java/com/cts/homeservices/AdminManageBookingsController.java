@@ -169,7 +169,7 @@ public class AdminManageBookingsController implements Initializable {
         bookingList.clear();
         DatabaseConnection dc = new DatabaseConnection();
 
-        String query = "SELECT bookingid, booking_date, booking_time, servicetype, servicedetails, assigned_to, status FROM tblBooking";
+        String query = "SELECT BookingID, BookingDate, BookingTime, ServiceType, ServiceDetails, AssignedTo, Status FROM tblBooking";
 
         try {
             dc.ps = dc.con.prepareStatement(query);
@@ -177,13 +177,13 @@ public class AdminManageBookingsController implements Initializable {
 
             while (dc.rst.next()) {
                 bookingList.add(new Booking(
-                        dc.rst.getInt("bookingid"),
-                        dc.rst.getString("booking_date"),
-                        dc.rst.getString("booking_time"),
-                        dc.rst.getString("servicetype"),
-                        dc.rst.getString("servicedetails"),
-                        dc.rst.getString("assigned_to"),
-                        dc.rst.getString("status")
+                        dc.rst.getInt("BookingID"),
+                        dc.rst.getString("BookingDate"),
+                        dc.rst.getString("BookingTime"),
+                        dc.rst.getString("ServiceType"),
+                        dc.rst.getString("ServiceDetails"),
+                        dc.rst.getString("AssignedTo"),
+                        dc.rst.getString("Status")
                 ));
             }
             tblViewBooking.setItems(bookingList);
@@ -199,7 +199,7 @@ public class AdminManageBookingsController implements Initializable {
         String bookId = tbBookingID1.getText();
         String assignEmployee = tbAssignedEmployee.getText();
 
-        String query = "UPDATE tblBooking SET assigned_to = ?, status = 'Assigned' WHERE bookingid = ?";
+        String query = "UPDATE tblBooking SET AssignedTo = ?, Status = 'Assigned' WHERE BookingID = ?";
 
         try {
             dc.ps = dc.con.prepareStatement(query);
@@ -243,7 +243,7 @@ public class AdminManageBookingsController implements Initializable {
         if (selectedBooking != null) {
             try {
                 DatabaseConnection dc = new DatabaseConnection();
-                String query = "UPDATE tblbooking SET assigned_to = ?, status = ? WHERE bookingid = ?";
+                String query = "UPDATE tblBooking SET AssignedTo = ?, Status = ? WHERE BookingID = ?";
 
                 dc.ps = dc.con.prepareStatement(query);
                 dc.ps.setString(1, "N/A");

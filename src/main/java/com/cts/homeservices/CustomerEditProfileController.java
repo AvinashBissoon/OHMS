@@ -150,7 +150,7 @@ public class CustomerEditProfileController implements Initializable {
     //Loads Customer data into the respective Text Fields and Combo Box
     private void loadUserData(){
         DatabaseConnection dc = new DatabaseConnection();
-        String query = "SELECT * FROM tblcustomer WHERE customerid = ?";
+        String query = "SELECT * FROM tblCustomer WHERE CustomerID = ?";
 
         try {
             dc.ps = dc.con.prepareStatement(query);
@@ -158,15 +158,15 @@ public class CustomerEditProfileController implements Initializable {
             dc.rst = dc.ps.executeQuery();
 
             if (dc.rst.next()) {
-                tbFirstName.setText(dc.rst.getString("firstname"));
-                tbLastName.setText(dc.rst.getString("lastname"));
-                tbAddressLine1.setText(dc.rst.getString("streetaddress1"));
-                tbAddressLine2.setText(dc.rst.getString("streetaddress2"));
-                tbCity.setText(dc.rst.getString("city"));
-                cBoxCountry.setValue(dc.rst.getString("country"));
-                tbMobileNumber.setText(dc.rst.getString("mobilephone"));
-                tbCustomerEmail.setText(dc.rst.getString("email"));
-                tbCustomerPassword.setText(dc.rst.getString("password"));
+                tbFirstName.setText(dc.rst.getString("FirstName"));
+                tbLastName.setText(dc.rst.getString("LastName"));
+                tbAddressLine1.setText(dc.rst.getString("StreetAddress1"));
+                tbAddressLine2.setText(dc.rst.getString("StreetAddress2"));
+                tbCity.setText(dc.rst.getString("City"));
+                cBoxCountry.setValue(dc.rst.getString("Country"));
+                tbMobileNumber.setText(dc.rst.getString("MobilePhone"));
+                tbCustomerEmail.setText(dc.rst.getString("Email"));
+                tbCustomerPassword.setText(dc.rst.getString("Password"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -183,7 +183,7 @@ public class CustomerEditProfileController implements Initializable {
     //Save edits made to customer accounts
     @FXML
     private void saveEdits(ActionEvent event) {
-        String query = "UPDATE tblcustomer SET firstname = ?, lastname = ?, streetaddress1 = ?, streetaddress2 = ?, city = ?, country = ?, mobilephone = ?, email = ?, password = ? WHERE customerid = ?";
+        String query = "UPDATE tblCustomer SET FirstName = ?, LastName = ?, StreetAddress1 = ?, StreetAddress2 = ?, City = ?, Country = ?, MobilePhone = ?, Email = ?, Password = ? WHERE CustomerID = ?";
 
         try {
             DatabaseConnection dc = new DatabaseConnection();
@@ -211,7 +211,7 @@ public class CustomerEditProfileController implements Initializable {
 
                 UserSession.setCustomerId(UserSession.getCustomerId());
 
-                String userQuery = "UPDATE tblusers SET firstname = ?, lastname = ?, mobilephone = ?, email = ?, password = ? WHERE userid = ?";
+                String userQuery = "UPDATE tblUsers SET FirstName = ?, LastName = ?, MobilePhone = ?, Email = ?, Password = ? WHERE UserID = ?";
                 dc.ps =dc.con.prepareStatement(userQuery);
                 dc.ps.setString(1, tbFirstName.getText());
                 dc.ps.setString(2, tbLastName.getText());

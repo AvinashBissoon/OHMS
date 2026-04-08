@@ -34,11 +34,11 @@ public class  OnlineHomeServiceApp extends Application {
             dc.rst = dc.stat.executeQuery(query);
 
             while (dc.rst.next()) {
-                System.out.print(dc.rst.getString("email"));
+                System.out.print(dc.rst.getString("Email"));
                 System.out.print("  ");
-                System.out.print(dc.rst.getString("password"));
+                System.out.print(dc.rst.getString("Password"));
                 System.out.print("  ");
-                System.out.println(dc.rst.getString("accountType"));
+                System.out.println(dc.rst.getString("AccountType"));
             }
         } catch (SQLException e) {
             // Log the exception using the Java logger

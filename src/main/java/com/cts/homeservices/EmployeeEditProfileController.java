@@ -143,7 +143,7 @@ public class EmployeeEditProfileController implements Initializable {
 
     private void loadUserData(){
         DatabaseConnection dc = new DatabaseConnection();
-        String query = "SELECT * FROM tblemployee WHERE employeeid = ?";
+        String query = "SELECT * FROM tblEmployee WHERE EmployeeID = ?";
 
         try {
             dc.ps = dc.con.prepareStatement(query);
@@ -151,15 +151,15 @@ public class EmployeeEditProfileController implements Initializable {
             dc.rst = dc.ps.executeQuery();
 
             if (dc.rst.next()) {
-                tbFirstName.setText(dc.rst.getString("firstname"));
-                tbLastName.setText(dc.rst.getString("lastname"));
-                tbAddressLine1.setText(dc.rst.getString("streetaddress1"));
-                tbAddressLine2.setText(dc.rst.getString("streetaddress2"));
-                tbCity.setText(dc.rst.getString("city"));
-                cBoxCountry.setValue(dc.rst.getString("country"));
-                tbMobileNumber.setText(dc.rst.getString("mobilephone"));
-                tbEmployeeEmail.setText(dc.rst.getString("email"));
-                tbEmployeePassword.setText(dc.rst.getString("password"));
+                tbFirstName.setText(dc.rst.getString("FirstName"));
+                tbLastName.setText(dc.rst.getString("LastName"));
+                tbAddressLine1.setText(dc.rst.getString("StreetAddress1"));
+                tbAddressLine2.setText(dc.rst.getString("StreetAddress2"));
+                tbCity.setText(dc.rst.getString("City"));
+                cBoxCountry.setValue(dc.rst.getString("Country"));
+                tbMobileNumber.setText(dc.rst.getString("MobilePhone"));
+                tbEmployeeEmail.setText(dc.rst.getString("Email"));
+                tbEmployeePassword.setText(dc.rst.getString("Password"));
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -174,7 +174,7 @@ public class EmployeeEditProfileController implements Initializable {
 
     @FXML
     private void saveAccountEdits(ActionEvent event) {
-        String query = "UPDATE tblemployee SET firstname = ?, lastname = ?, streetaddress1 = ?, streetaddress2 = ?, city = ?, country = ?, mobilephone = ?, email = ?, password = ? WHERE employeeid = ?";
+        String query = "UPDATE tblEmployee SET FirstName = ?, LastName = ?, StreetAddress1 = ?, StreetAddress2 = ?, City = ?, Country = ?, MobilePhone = ?, Email = ?, Password = ? WHERE EmployeeID = ?";
 
         try {
             DatabaseConnection dc = new DatabaseConnection();
@@ -203,7 +203,7 @@ public class EmployeeEditProfileController implements Initializable {
                 UserSession.setEmployeeId(UserSession.getEmployeeId());
 
 
-                String userQuery = "UPDATE tblusers SET firstname = ?, lastname = ?, mobilephone = ?, email = ?, password = ? WHERE userid = ?";
+                String userQuery = "UPDATE tblUsers SET FirstName = ?, LastName = ?, MobilePhone = ?, Email = ?, Password = ? WHERE UserID = ?";
                 dc.ps =dc.con.prepareStatement(userQuery);
                 dc.ps.setString(1, tbFirstName.getText());
                 dc.ps.setString(2, tbLastName.getText());

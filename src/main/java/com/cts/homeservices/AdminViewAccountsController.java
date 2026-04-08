@@ -244,21 +244,21 @@ public class AdminViewAccountsController implements Initializable {
     public void loadCustomerData(){
         customerList.clear();
         DatabaseConnection dc = new DatabaseConnection();
-        String query = "SELECT * FROM tblcustomer";
+        String query = "SELECT * FROM tblCustomer";
         try {
             dc.ps = dc.con.prepareStatement(query);
             dc.rst = dc.ps.executeQuery();
             while (dc.rst.next()) {
                 customerList.add(new Customer(
-                        dc.rst.getInt("customerid"),
-                        dc.rst.getString("firstname"),
-                        dc.rst.getString("lastname"),
-                        dc.rst.getString("email"),
-                        dc.rst.getString("mobilephone"),
-                        dc.rst.getString("streetaddress1"),
-                        dc.rst.getString("streetaddress2"),
-                        dc.rst.getString("city"),
-                        dc.rst.getString("country")
+                        dc.rst.getInt("CustomerID"),
+                        dc.rst.getString("FirstName"),
+                        dc.rst.getString("LastName"),
+                        dc.rst.getString("Email"),
+                        dc.rst.getString("MobilePhone"),
+                        dc.rst.getString("StreetAddress1"),
+                        dc.rst.getString("StreetAddress2"),
+                        dc.rst.getString("City"),
+                        dc.rst.getString("Country")
                 ));
             }
             tblViewCustomer.setItems(customerList);
@@ -273,7 +273,7 @@ public class AdminViewAccountsController implements Initializable {
        employeeList.clear();
         DatabaseConnection dc = new DatabaseConnection();
 
-        String query = "SELECT * FROM tblemployee";
+        String query = "SELECT * FROM tblEmployee";
 
         try {
             dc.ps = dc.con.prepareStatement(query);
@@ -281,15 +281,15 @@ public class AdminViewAccountsController implements Initializable {
 
             while (dc.rst.next()) {
                 employeeList.add(new Employee(
-                        dc.rst.getInt("employeeid"),
-                        dc.rst.getString("firstname"),
-                        dc.rst.getString("lastname"),
-                        dc.rst.getString("email"),
-                        dc.rst.getString("mobilephone"),
-                        dc.rst.getString("streetaddress1"),
-                        dc.rst.getString("streetaddress2"),
-                        dc.rst.getString("city"),
-                        dc.rst.getString("country")
+                        dc.rst.getInt("EmployeeID"),
+                        dc.rst.getString("FirstName"),
+                        dc.rst.getString("LastName"),
+                        dc.rst.getString("Email"),
+                        dc.rst.getString("MobilePhone"),
+                        dc.rst.getString("StreetAddress1"),
+                        dc.rst.getString("StreetAddress2"),
+                        dc.rst.getString("City"),
+                        dc.rst.getString("Country")
                 ));
             }
             tblViewEmployee.setItems(employeeList);
@@ -310,20 +310,20 @@ public class AdminViewAccountsController implements Initializable {
 
 
         if (activeTab == tabCustomer) {
-            query =  "UPDATE tblcustomer SET firstname = ?, lastname = ?, email = ?, mobilephone = ?, streetaddress1 = ?, streetaddress2 = ?, city = ?, country = ? WHERE customerid = ?";
+            query =  "UPDATE tblCustomer SET FirstName = ?, LastName = ?, Email = ?, MobilePhone = ?, StreetAddress1 = ?, StreetAddress2 = ?, City = ?, Country = ? WHERE CustomerID = ?";
         } else  {
-            query =  "UPDATE tblemployee SET firstname = ?, lastname = ?, email = ?, mobilephone = ?, streetaddress1 = ?, streetaddress2 = ?, city = ?, country = ? WHERE employeeid = ?";
+            query =  "UPDATE tblemployee SET FirstName = ?, LastName = ?, Email = ?, MobilePhone = ?, StreetAddress1 = ?, StreetAddress2 = ?, City = ?, Country = ? WHERE EmployeeID = ?";
         }
 
         try {
 
-            String findIdQuery = "SELECT userid FROM tblusers where email = ?";
+            String findIdQuery = "SELECT UserID FROM tblUsers where Email = ?";
             dc.ps = dc.con.prepareStatement(findIdQuery);
             dc.ps.setString(1, emailBeforeEdit);
             ResultSet rst = dc.ps.executeQuery();
             int foundUserId = -1;
             if (rst.next()) {
-                foundUserId = rst.getInt("userid");
+                foundUserId = rst.getInt("UserID");
             }
 
             dc.ps = dc.con.prepareStatement(query);
@@ -338,7 +338,7 @@ public class AdminViewAccountsController implements Initializable {
             dc.ps.setInt(9, selectedUserId);
             dc.ps.executeUpdate();
 
-            String userQuery = "UPDATE tblusers SET firstname = ?, lastname = ?, email = ?, mobilephone = ? WHERE userid = ?";
+            String userQuery = "UPDATE tblUsers SET FirstName = ?, LastName = ?, Email = ?, MobilePhone = ? WHERE UserID = ?";
             dc.ps = dc.con.prepareStatement(userQuery);
             dc.ps.setString(1, tbFirstName.getText());
             dc.ps.setString(2, tbLastName.getText());

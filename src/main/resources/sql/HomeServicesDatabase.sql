@@ -1,34 +1,34 @@
 /*-------------------------------------------------------------------------------------*/
-DROP DATABASE homeservicesdb;
-CREATE DATABASE homeservicesdb;
-USE homeservicesdb;
+DROP DATABASE HomeServicesDB;
+CREATE DATABASE HomeServicesDB;
+USE HomeServicesDB;
 
 /*-------------------------------------------------------------------------------------*/
-DROP SCHEMA homeservicesdb;
-CREATE SCHEMA homeservicesdb;
-USE homeservicesdb;
+DROP SCHEMA HomeServicesDB;
+CREATE SCHEMA HomeServicesDB;
+USE HomeServicesDB;
 
 /*-------------------------------------------------------------------------------------*/
---Create tblcustomer
+--Create tblCustomer
 
-CREATE TABLE homeservicesdb.tblcustomer (
-  customerid INT NOT NULL AUTO_INCREMENT,
-  firstname VARCHAR(45) NOT NULL,
-  lastname VARCHAR(45) NOT NULL,
-  streetaddress1 VARCHAR(45) NOT NULL,
-  streetaddress2 VARCHAR(45) NOT NULL,
-  city VARCHAR(45) NOT NULL,
-  country VARCHAR(45) NOT NULL,
-  mobilephone VARCHAR(45) NOT NULL,
-  email VARCHAR(45) NOT NULL,
-  password VARCHAR(45) NOT NULL,
-  accounttype VARCHAR(45) NOT NULL,
-  active TINYINT NOT NULL,
-  PRIMARY KEY (customerid),
-  UNIQUE INDEX customerid_UNIQUE (customerid ASC) VISIBLE);
+CREATE TABLE HomeServicesDB.tblCustomer (
+  CustomerID INT NOT NULL AUTO_INCREMENT,
+  FirstName VARCHAR(45) NOT NULL,
+  LastName VARCHAR(45) NOT NULL,
+  StreetAddress1 VARCHAR(45) NOT NULL,
+  StreetAddress2 VARCHAR(45) NOT NULL,
+  City VARCHAR(45) NOT NULL,
+  Country VARCHAR(45) NOT NULL,
+  MobilePhone VARCHAR(45) NOT NULL,
+  Email VARCHAR(45) NOT NULL,
+  Password VARCHAR(45) NOT NULL,
+  AccountType VARCHAR(45) NOT NULL,
+  Active TINYINT NOT NULL,
+  PRIMARY KEY (CustomerID),
+  UNIQUE INDEX CustomerID_UNIQUE (CustomerID ASC) VISIBLE);
 
 /*-------------------------------------------------------------------------------------*/
-INSERT INTO homeservicesdb.tblcustomer (customerid, firstname, lastname, streetaddress1, streetaddress2, city, country, mobilephone, email, password, accounttype, active)
+INSERT INTO HomeServicesDB.tblCustomer (CustomerID, FirstName, LastName, StreetAddress1, StreetAddress2, City, Country, MobilePhone, Email, Password, AccountType, Active)
 
 VALUES
 	(null, "Aaron", "Kalloo", "#7 Valley View Drive", "Pinto Road", "Arima", "Trinidad", "(868)717-8916", "aaronkalloo@gmail.com", "Pass", "Customer", 1),
@@ -39,26 +39,26 @@ VALUES
 ;
 
 /*-------------------------------------------------------------------------------------*/
-  --Create tblemployee
+  --Create tblEmployee
 
-CREATE TABLE homeservicesdb.tblemployee (
-employeeid INT NOT NULL AUTO_INCREMENT,
-firstname VARCHAR(45) NOT NULL,
-lastname VARCHAR(45) NOT NULL,
-streetaddress1 VARCHAR(45) NOT NULL,
-streetaddress2 VARCHAR(45) NOT NULL,
-city VARCHAR(45) NOT NULL,
-country VARCHAR(45) NOT NULL,
-mobilephone VARCHAR(45) NOT NULL,
-email VARCHAR(45) NOT NULL,
-password VARCHAR(45) NOT NULL,
-accounttype VARCHAR(45) NOT NULL,
-active TINYINT NOT NULL,
-PRIMARY KEY (employeeid),
-UNIQUE INDEX employeeid_UNIQUE (employeeid ASC) VISIBLE);
+CREATE TABLE HomeServicesDB.tblEmployee (
+EmployeeID INT NOT NULL AUTO_INCREMENT,
+FirstName VARCHAR(45) NOT NULL,
+LastName VARCHAR(45) NOT NULL,
+StreetAddress1 VARCHAR(45) NOT NULL,
+StreetAddress2 VARCHAR(45) NOT NULL,
+City VARCHAR(45) NOT NULL,
+Country VARCHAR(45) NOT NULL,
+MobilePhone VARCHAR(45) NOT NULL,
+Email VARCHAR(45) NOT NULL,
+Password VARCHAR(45) NOT NULL,
+AccountType VARCHAR(45) NOT NULL,
+Active TINYINT NOT NULL,
+PRIMARY KEY (EmployeeID),
+UNIQUE INDEX EmployeeID_UNIQUE (EmployeeID ASC) VISIBLE);
 
 /*-------------------------------------------------------------------------------------*/
-INSERT INTO homeservicesdb.tblemployee (employeeid, firstname, lastname, streetaddress1, streetaddress2, city, country, mobilephone, email, password, accounttype, active)
+INSERT INTO HomeServicesDB.tblEmployee (EmployeeID, FirstName, LastName, StreetAddress1, StreetAddress2, City, Country, MobilePhone, Email, Password, AccountType, Active)
 
 VALUES
 	(null, "Matthew", "Chandoo", "#18 Point Road", "Hich Estate", "Chagunas", "Trinidad", "(868)668-0198", "matty@gmail.com", "Pass", "Employee", 1),
@@ -69,27 +69,27 @@ VALUES
 ;
 
 /*-------------------------------------------------------------------------------------*/
- --Create tbladmin
+ --Create tblAdmin
 
-  CREATE TABLE homeservicesdb.tbladmin (
-  adminid INT NOT NULL AUTO_INCREMENT,
-  firstname VARCHAR(45) NOT NULL,
-  lastname VARCHAR(45) NOT NULL,
-  streetaddress1 VARCHAR(45) NOT NULL,
-  streetaddress2 VARCHAR(45) NOT NULL,
-  city VARCHAR(45) NOT NULL,
-  country VARCHAR(45) NOT NULL,
-  mobilephone VARCHAR(45) NOT NULL,
-  email VARCHAR(45) NOT NULL,
-  password VARCHAR(45) NOT NULL,
-  accounttype VARCHAR(45) NOT NULL,
-  active TINYINT NOT NULL,
-  PRIMARY KEY (adminid),
-  UNIQUE INDEX adminid_UNIQUE (adminid ASC) VISIBLE);
+  CREATE TABLE HomeServicesDB.tblAdmin (
+  AdminID INT NOT NULL AUTO_INCREMENT,
+  FirstName VARCHAR(45) NOT NULL,
+  LastName VARCHAR(45) NOT NULL,
+  StreetAddress1 VARCHAR(45) NOT NULL,
+  StreetAddress2 VARCHAR(45) NOT NULL,
+  City VARCHAR(45) NOT NULL,
+  Country VARCHAR(45) NOT NULL,
+  MobilePhone VARCHAR(45) NOT NULL,
+  Email VARCHAR(45) NOT NULL,
+  Password VARCHAR(45) NOT NULL,
+  AccountType VARCHAR(45) NOT NULL,
+  Active TINYINT NOT NULL,
+  PRIMARY KEY (AdminID),
+  UNIQUE INDEX AdminID_UNIQUE (AdminID ASC) VISIBLE);
   
 /*-------------------------------------------------------------------------------------*/
   
-INSERT INTO homeservicesdb.tbladmin (adminid, firstname, lastname, streetaddress1, streetaddress2, city, country, mobilephone, email, password, accounttype, active)
+INSERT INTO HomeServicesDB.tblAdmin (AdminID, FirstName, LastName, StreetAddress1, StreetAddress2, City, Country, MobilePhone, Email, Password, AccountType, Active)
 
 VALUES
 	(null, "Avinash", "Bissoon", "#25 Honey Bee Drive", "Bye Pass Road", "Arima", "Trinidad", "(868)723-0141", "avi@gmail.com", "Pass", "Administrator", 1),
@@ -98,48 +98,48 @@ VALUES
 ;
 
 /*-------------------------------------------------------------------------------------*/
--- Create tblusers
-CREATE TABLE homeservicesdb.tblusers (
-userid INT NOT NULL AUTO_INCREMENT,
-firstname VARCHAR(45) NOT NULL,
-lastname VARCHAR(45) NOT NULL,
-mobilephone VARCHAR(45) NULL DEFAULT NULL,
-email VARCHAR(255) NOT NULL,
-password VARCHAR(255) NOT NULL,
-accounttype VARCHAR(50) NOT NULL,
-PRIMARY KEY (userid),
-UNIQUE INDEX email_UNIQUE (email ASC)
+-- Create tblUsers
+CREATE TABLE HomeServicesDB.tblUsers (
+UserID INT NOT NULL AUTO_INCREMENT,
+FirstName VARCHAR(45) NOT NULL,
+LastName VARCHAR(45) NOT NULL,
+MobilePhone VARCHAR(45) NULL DEFAULT NULL,
+Email VARCHAR(45) NOT NULL,
+Password VARCHAR(45) NOT NULL,
+AccountType VARCHAR(45) NOT NULL,
+PRIMARY KEY (UserID),
+UNIQUE INDEX Email_UNIQUE (Email ASC)
 );
 
 
--- Sync Customer Information to tblusers
-INSERT INTO homeservicesdb.tblusers (firstname, lastname, mobilephone, email, password, accounttype)
-SELECT firstname, lastname, mobilephone, email, password, 'Customer'
-FROM homeservicesdb.tblcustomer;
+-- Sync Customer Information to tblUsers
+INSERT INTO HomeServicesDB.tblUsers (FirstName, LastName, MobilePhone, Email, Password, AccountType)
+SELECT FirstName, LastName, MobilePhone, Email, Password, 'Customer'
+FROM HomeServicesDB.tblCustomer;
 
--- Sync Employee Information to tblusers
-INSERT INTO homeservicesdb.tblusers (firstname, lastname, mobilephone, email, password, accounttype)
-SELECT firstname, lastname, mobilephone, email, password, 'Employee'
-FROM homeservicesdb.tblemployee;
+-- Sync Employee Information to tblUsers
+INSERT INTO HomeServicesDB.tblUsers (FirstName, LastName, MobilePhone, Email, Password, AccountType)
+SELECT FirstName, LastName, MobilePhone, Email, Password, 'Employee'
+FROM HomeServicesDB.tblEmployee;
 
--- Sync Admin Information to tblusers
-INSERT INTO homeservicesdb.tblusers (firstname, lastname, mobilephone, email, password, accounttype)
-SELECT firstname, lastname, mobilephone, email, password, 'Admin'
-FROM homeservicesdb.tbladmin;
+-- Sync Admin Information to tblUsers
+INSERT INTO HomeServicesDB.tblUsers (FirstName, LastName, MobilePhone, Email, Password, AccountType)
+SELECT FirstName, LastName, MobilePhone, Email, Password, 'Admin'
+FROM HomeServicesDB.tblAdmin;
 
 
 /*-------------------------------------------------------------------------------------*/
-CREATE TABLE homeservicesdb.tblBooking (
-bookingid INT NOT NULL AUTO_INCREMENT,
-userid INT NOT NULL,
-servicetype VARCHAR(45) NOT NULL,
-servicedetails VARCHAR (45) NOT NULL,
-address VARCHAR(45) NOT NULL,
-city VARCHAR(45) NOT NULL,
-booking_date DATE NOT NULL,
-booking_time TIME NOT NULL,
-status varchar(255) DEFAULT "Pending",
-assigned_to varchar(255) DEFAULT "Awaiting Professional",
-PRIMARY KEY (bookingid),
-FOREIGN KEY (userid) REFERENCES javafxproject.tblusers(userid)
+CREATE TABLE HomeServicesDB.tblBooking (
+BookingID INT NOT NULL AUTO_INCREMENT,
+UserID INT NOT NULL,
+ServiceType VARCHAR(45) NOT NULL,
+ServiceDetails VARCHAR (255) NOT NULL,
+Address VARCHAR(45) NOT NULL,
+City VARCHAR(45) NOT NULL,
+BookingDate DATE NOT NULL,
+BookingTime TIME NOT NULL,
+Status varchar(45) DEFAULT "Pending",
+AssignedTo varchar(50) DEFAULT "Awaiting Professional",
+PRIMARY KEY (BookingID),
+FOREIGN KEY (UserID) REFERENCES HomeServicesDB.tblUsers(UserID)
 );

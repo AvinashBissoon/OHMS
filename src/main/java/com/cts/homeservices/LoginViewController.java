@@ -106,7 +106,7 @@ public class LoginViewController implements Initializable {
             return;
         }
 
-        String query = "SELECT * FROM tblUsers WHERE email = ? AND password = ? AND accountType = ?";
+        String query = "SELECT * FROM tblUsers WHERE Email = ? AND Password = ? AND AccountType = ?";
         try {
             dc.ps = dc.con.prepareStatement(query);
             dc.ps.setString(1, email);
@@ -116,30 +116,30 @@ public class LoginViewController implements Initializable {
             dc.rst = dc.ps.executeQuery();
             if (dc.rst.next()) {
 
-                int id = dc.rst.getInt("userid");
-                String fName = dc.rst.getString("firstname");
-                String lName = dc.rst.getString("lastname");
-                String uEmail = dc.rst.getString("email");
+                int id = dc.rst.getInt("UserID");
+                String fName = dc.rst.getString("FirstName");
+                String lName = dc.rst.getString("LastName");
+                String uEmail = dc.rst.getString("Email");
 
                 UserSession.init(id, fName, lName, uEmail);
 
                 if ("Customer".equals(accountType)) {
-                    String customerQuery = "SELECT customerid FROM tblcustomer WHERE email = ?";
+                    String customerQuery = "SELECT CustomerID FROM tblCustomer WHERE Email = ?";
                     dc.ps = dc.con.prepareStatement(customerQuery);
                     dc.ps.setString(1, uEmail);
                     dc.rst = dc.ps.executeQuery();
                     if (dc.rst.next()) {
-                        int customerId = dc.rst.getInt("customerid");
+                        int customerId = dc.rst.getInt("CustomerID");
                         UserSession.setCustomerId(customerId);
                     }
                 }
                 if ("Employee".equals(accountType)) {
-                    String employeeQuery = "SELECT employeeid FROM tblemployee WHERE email = ?";
+                    String employeeQuery = "SELECT EmployeeID FROM tblEmployee WHERE Email = ?";
                     dc.ps = dc.con.prepareStatement(employeeQuery);
                     dc.ps.setString(1, uEmail);
                     dc.rst = dc.ps.executeQuery();
                     if (dc.rst.next()) {
-                        int employeeId = dc.rst.getInt("employeeid");
+                        int employeeId = dc.rst.getInt("EmployeeID");
                         UserSession.setEmployeeId(employeeId);
                     }
                 }
@@ -173,5 +173,3 @@ public class LoginViewController implements Initializable {
         }
     }
 }
-
-

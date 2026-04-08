@@ -131,7 +131,7 @@ public class ElectricalController implements Initializable {
     private void placeBooking(ActionEvent event) throws IOException {
         DatabaseConnection dc = new DatabaseConnection();
 
-        String query = "INSERT INTO tblBooking (userid, servicetype, servicedetails, address, city, booking_date, booking_time) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String query = "INSERT INTO tblBooking (UserID, ServiceType, ServiceDetails, Address, City, BookingDate, BookingTime) VALUES (?, ?, ?, ?, ?, ?, ?)";
         try {
             dc.ps = dc.con.prepareStatement(query);
 

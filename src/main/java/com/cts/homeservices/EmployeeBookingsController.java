@@ -119,15 +119,15 @@ public class EmployeeBookingsController implements Initializable {
 
             while (dc.rst.next()) {
                 bookingList.add(new EmployeeBooking(
-                        dc.rst.getInt("bookingid"),
-                        dc.rst.getString("booking_date"),
-                        dc.rst.getString("booking_time"),
-                        dc.rst.getString("servicetype"),
-                        dc.rst.getString("servicedetails"),
-                        dc.rst.getString("address"),
-                        dc.rst.getString("city"),
-                        dc.rst.getString("assigned_to"),
-                        dc.rst.getString("status")
+                        dc.rst.getInt("BookingID"),
+                        dc.rst.getString("BookingDate"),
+                        dc.rst.getString("BookingTime"),
+                        dc.rst.getString("ServiceType"),
+                        dc.rst.getString("ServiceDetails"),
+                        dc.rst.getString("Address"),
+                        dc.rst.getString("City"),
+                        dc.rst.getString("AssignedTo"),
+                        dc.rst.getString("Status")
                 ));
             }
             tblViewBooking.setItems(bookingList);
@@ -142,7 +142,7 @@ public class EmployeeBookingsController implements Initializable {
         if (selectedBooking != null){
             try {
                 DatabaseConnection dc = new DatabaseConnection();
-                String query = "UPDATE tblbooking SET status = ? WHERE bookingid = ?";
+                String query = "UPDATE tblBooking SET Status = ? WHERE BookingID = ?";
 
                 dc.ps = dc.con.prepareStatement(query);
                 dc.ps.setString(1, "In Progress");
@@ -171,7 +171,7 @@ public class EmployeeBookingsController implements Initializable {
         if (selectedBooking != null){
             try {
                 DatabaseConnection dc = new DatabaseConnection();
-                String query = "UPDATE tblbooking SET status = ? WHERE bookingid = ?";
+                String query = "UPDATE tblBooking SET Status = ? WHERE BookingID = ?";
 
                 dc.ps = dc.con.prepareStatement(query);
                 dc.ps.setString(1, "Completed");
