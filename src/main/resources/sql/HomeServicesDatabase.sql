@@ -28,6 +28,8 @@ CREATE TABLE HomeServicesDB.tblCustomer (
   UNIQUE INDEX CustomerID_UNIQUE (CustomerID ASC) VISIBLE);
 
 /*-------------------------------------------------------------------------------------*/
+-- Insert data into tblCustomer
+
 INSERT INTO HomeServicesDB.tblCustomer (CustomerID, FirstName, LastName, StreetAddress1, StreetAddress2, City, Country, MobilePhone, Email, Password, AccountType, Active)
 
 VALUES
@@ -58,6 +60,8 @@ PRIMARY KEY (EmployeeID),
 UNIQUE INDEX EmployeeID_UNIQUE (EmployeeID ASC) VISIBLE);
 
 /*-------------------------------------------------------------------------------------*/
+-- Insert data into tblEmployee
+
 INSERT INTO HomeServicesDB.tblEmployee (EmployeeID, FirstName, LastName, StreetAddress1, StreetAddress2, City, Country, MobilePhone, Email, Password, AccountType, Active)
 
 VALUES
@@ -88,7 +92,8 @@ VALUES
   UNIQUE INDEX AdminID_UNIQUE (AdminID ASC) VISIBLE);
   
 /*-------------------------------------------------------------------------------------*/
-  
+  -- Insert data into tblAdmin
+
 INSERT INTO HomeServicesDB.tblAdmin (AdminID, FirstName, LastName, StreetAddress1, StreetAddress2, City, Country, MobilePhone, Email, Password, AccountType, Active)
 
 VALUES
@@ -143,6 +148,9 @@ AssignedTo varchar(50) DEFAULT "Awaiting Professional",
 PRIMARY KEY (BookingID),
 FOREIGN KEY (UserID) REFERENCES HomeServicesDB.tblUsers(UserID)
 );
+
+/*-------------------------------------------------------------------------------------*/
+-- Insert data into tblBooking
 
 INSERT INTO homeservicesdb.tblBooking (UserID, ServiceType, ServiceDetails, Address, City, BookingDate, BookingTime, Status, AssignedTo)
 VALUES
