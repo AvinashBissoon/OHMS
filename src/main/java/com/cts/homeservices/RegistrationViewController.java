@@ -1,3 +1,12 @@
+/** This class provides control for the customers, employees and administrators to register an account on the system.
+ * It also adds interactive designs to UI elements, such as buttons and textboxes.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
+
 package com.cts.homeservices;
 
 import javafx.collections.FXCollections;
@@ -59,21 +68,22 @@ public class RegistrationViewController implements Initializable {
 
 
 
-    //Populate Country and Role Combo Boxes
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        //Populate Country and Role Combo Boxes
         cBoxCountry.setItems(FXCollections.observableArrayList("Trinidad", "Tobago"));
         cBoxCountry.setStyle("-fx-font: 15px\"Ariel\";");
         cBoxRegisterAccType.setItems(FXCollections.observableArrayList("Customer", "Employee", "Admin"));
         cBoxRegisterAccType.setStyle("-fx-font: 15px\"Ariel\";");
 
-        //Setting up the styles to be used
+        //Set up of the styles to be used for UI elements
         String defaultStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color: #cccccc; -fx-border-width:1; ";
         String focusedStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color:  #036248; -fx-border-width:2; ";
         String btnNormal = "-fx-font: 18px\"Leelawadee\"; -fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnHover = "-fx-font: 18px\"Leelawadee\"; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
 
-        //Text Field style on event
+        //Applying styles to the UI elements
         tbFirstName.setStyle(defaultStyle);
         tbFirstName.focusedProperty().addListener((observableValue, oldVal, newVal) ->{
             if (newVal) tbFirstName.setStyle(focusedStyle);
@@ -143,11 +153,9 @@ public class RegistrationViewController implements Initializable {
         btnRegister.setStyle(btnNormal);
         btnRegister.setOnMouseEntered(mouseEvent -> btnRegister.setStyle(btnHover));
         btnRegister.setOnMouseExited(mouseEvent -> btnRegister.setStyle(btnNormal));
-
-
-
     }
 
+    //Takes user to login page after account registration
     @FXML
     private void goToLogin(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

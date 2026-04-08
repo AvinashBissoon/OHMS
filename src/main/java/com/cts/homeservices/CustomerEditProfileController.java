@@ -1,3 +1,11 @@
+/** This class provides controls for a customer to edit their profile details.
+ * It also adds interactive designs to UI elements, such as buttons and textboxes.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
 package com.cts.homeservices;
 
 import javafx.collections.FXCollections;
@@ -21,7 +29,7 @@ public class CustomerEditProfileController implements Initializable {
     private static final Logger logger = Logger.getLogger(CustomerEditProfileController.class.getName());
 
 
-    //Class Parameters
+    //Class Parameters that connect customer-edit-profile.fxml and this controller
     @FXML
     private TextField tbFirstName;
 
@@ -56,20 +64,22 @@ public class CustomerEditProfileController implements Initializable {
     private Button btnSave;
 
 
-    //Populate Country and Role Combo Boxes
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        //Populate Country and Role Combo Boxes
         cBoxCountry.setItems(FXCollections.observableArrayList("Trinidad", "Tobago"));
         cBoxCountry.setStyle("-fx-font: 15px\"Ariel\";");
 
 
-        //Setting up the styles to be used
+        //Set up of the styles to be used for UI elements
         String defaultStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color: #cccccc; -fx-border-width:1; ";
         String focusedStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color:  #036248; -fx-border-width:2; ";
         String btnNormal = "-fx-font: 18px\"Leelawadee\"; -fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnHover = "-fx-font: 18px\"Leelawadee\"; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
 
-        //Text Field style on event
+        //Applying styles to the UI elements
         tbFirstName.setStyle(defaultStyle);
         tbFirstName.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
             if (newVal) tbFirstName.setStyle(focusedStyle);
@@ -137,6 +147,7 @@ public class CustomerEditProfileController implements Initializable {
         loadUserData();
     }
 
+    //Loads Customer data into the respective Text Fields and Combo Box
     private void loadUserData(){
         DatabaseConnection dc = new DatabaseConnection();
         String query = "SELECT * FROM tblcustomer WHERE customerid = ?";
@@ -162,12 +173,14 @@ public class CustomerEditProfileController implements Initializable {
         }
     }
 
+    //Takes the customer back to the Customer Dashboard
     @FXML
     private void returnToHome(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "customer-dashboard.fxml", 1100, 750);
     }
 
+    //Save edits made to customer accounts
     @FXML
     private void saveEdits(ActionEvent event) {
         String query = "UPDATE tblcustomer SET firstname = ?, lastname = ?, streetaddress1 = ?, streetaddress2 = ?, city = ?, country = ?, mobilephone = ?, email = ?, password = ? WHERE customerid = ?";

@@ -1,3 +1,10 @@
+/** This class provides controls for an employee to edit their profile details.
+ * It also adds interactive designs to UI elements, such as buttons and textboxes.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
 package com.cts.homeservices;
 
 import javafx.collections.FXCollections;

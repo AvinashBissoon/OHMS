@@ -1,3 +1,12 @@
+/** This class provides controls for an administrator to view and edit user accounts.
+ * It also adds interactive designs to UI elements, such as buttons and textboxes.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
+
 package com.cts.homeservices;
 
 import javafx.collections.FXCollections;
@@ -21,14 +30,12 @@ public class AdminViewAccountsController implements Initializable {
         Logger.getLogger(AdminViewAccountsController.class.getName());
     }
 
+    //Class Parameters that connect admin-view-accounts.fxml and this controller
     @FXML
     private TabPane tabPane;
 
     @FXML
     private Tab tabCustomer;
-
-    @FXML
-    private Tab tabEmployee;
 
     @FXML
     private TableView<Customer> tblViewCustomer;
@@ -116,7 +123,8 @@ public class AdminViewAccountsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Setting up the styles to be used
+
+        //Set up of the styles to be used for UI elements
         String btnNormal = "-fx-font: 20px\"Leelawadee\";-fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnHover = "-fx-font: 20px\"Leelawadee\"; -fx-border-radius: 15; -fx-border-color:  #01402e; -fx-border-width:2; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnNormalAccordian = "-fx-font: 14px\"Leelawadee\";-fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
@@ -124,6 +132,8 @@ public class AdminViewAccountsController implements Initializable {
         String defaultStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color: #cccccc; -fx-border-width:1; ";
         String focusedStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color:  #036248; -fx-border-width:2; ";
 
+
+        //Applying styles to the UI elements
         tbFirstName.setStyle(defaultStyle);
         tbFirstName.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
             if (newVal) tbFirstName.setStyle(focusedStyle);
@@ -183,7 +193,7 @@ public class AdminViewAccountsController implements Initializable {
 
 
 
-        //Map customer columns
+        //Map customer columns to View Accounts Table
         colCustFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         colCustLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         colCustEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -194,7 +204,7 @@ public class AdminViewAccountsController implements Initializable {
         colCustCountry.setCellValueFactory(new PropertyValueFactory<>("country"));
 
 
-        //map employee columns
+        //Map employee columns to View Accounts Table
         colEmpFirstName.setCellValueFactory(new PropertyValueFactory<>("firstName"));
         colEmpLastName.setCellValueFactory(new PropertyValueFactory<>("lastName"));
         colEmpEmail.setCellValueFactory(new PropertyValueFactory<>("email"));
@@ -221,12 +231,16 @@ public class AdminViewAccountsController implements Initializable {
         loadCustomerData();
         loadEmployeeData();
     }
+
+
     private void fillFields(String fn, String ln, String em, String ph, String a1, String a2, String ct, String co) {
         tbFirstName.setText(fn); tbLastName.setText(ln); tbEmail.setText(em); tbMobileNumber.setText(ph);
         tbAddressLine1.setText(a1); tbAddressLine2.setText(a2); tbCity.setText(ct); tbCountry.setText(co);
         this.emailBeforeEdit = em;
     }
 
+
+    //Loads Customer data into the respective columns
     public void loadCustomerData(){
         customerList.clear();
         DatabaseConnection dc = new DatabaseConnection();
@@ -253,6 +267,8 @@ public class AdminViewAccountsController implements Initializable {
         }
     }
 
+
+    //Loads Employee data into the respective columns
     public void loadEmployeeData(){
        employeeList.clear();
         DatabaseConnection dc = new DatabaseConnection();
@@ -283,6 +299,8 @@ public class AdminViewAccountsController implements Initializable {
     }
 
 
+
+    //Save edits made to customer or employee accounts
     @FXML
     private void saveAccountEdits(ActionEvent event) {
         if (selectedUserId == -1) return;
@@ -346,6 +364,8 @@ public class AdminViewAccountsController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    //Removes all data from the text boxes after edits are saved
     private void clearFields() {
         tbFirstName.clear();
         tbLastName.clear();
@@ -359,6 +379,7 @@ public class AdminViewAccountsController implements Initializable {
     }
 
 
+    //Takes the administrator back to the Administrator Dashboard
     @FXML
     private void returnToHome(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -1,3 +1,12 @@
+/** This class provides control for the customers, employees and administrators to log into the system based on their credentials and account type.
+ * It also adds interactive designs to UI elements, such as buttons and textboxes.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
+
 package com.cts.homeservices;
 
 import javafx.collections.FXCollections;

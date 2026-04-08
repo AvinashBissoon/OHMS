@@ -1,3 +1,13 @@
+/** This class provides control and allows for customers to place a booking for any Housekeeping Service provided.
+ * It also adds interactive designs to UI elements, such as buttons and textboxes.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
+
+
 package com.cts.homeservices;
 
 import javafx.collections.FXCollections;
@@ -17,7 +27,7 @@ public class HousekeepingController implements Initializable {
     private static final Logger logger = Logger.getLogger(HousekeepingController.class.getName());
 
 
-    //Class Parameters that connect register-view.fxml to this controller
+    //Class Parameters that connect housekeeping-view.fxml to this controller
     @FXML
     private ComboBox<String> cBoxService;
 
@@ -43,14 +53,15 @@ public class HousekeepingController implements Initializable {
     private Button btnBookNow;
 
 
-    //Populate Country and Role Combo Boxes
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        //Populate Service Combo Boxes
         cBoxService.setItems(FXCollections.observableArrayList("Housekeeping: Interior Cleaning", "Housekeeping: Window Cleaning", "Housekeeping: Post Construction Cleaning", "Housekeeping: Laundry and Ironing"));
         cBoxService.setStyle("-fx-font: 15px\"Ariel\";");
 
 
-        //Setting up the styles to be used
+        //Set up of the styles to be used for UI elements
         String defaultStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color: #cccccc; -fx-border-width:1; ";
         String focusedStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color:  #036248; -fx-border-width:2; ";
 
@@ -60,7 +71,7 @@ public class HousekeepingController implements Initializable {
         String defStyle = "-fx-background-color: white; -fx-border-color: #cccccc; -fx-border-width:1; ";
         String focusStyle = "-fx-background-color: white; -fx-border-color:  #036248; -fx-border-width:2; ";
 
-        //Text Field style on event
+        //Applying styles to the UI elements
         tAreaDetails.setStyle(defStyle);
         tAreaDetails.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
             if (newVal) tAreaDetails.setStyle(focusStyle);
@@ -109,12 +120,14 @@ public class HousekeepingController implements Initializable {
 
     }
 
+    //Takes the customer back to the Customer Dashboard
     @FXML
     private void returnToHome(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "customer-dashboard.fxml", 1100, 750);
     }
 
+    //Allows Customer to place housekeeping booking and save it to the database
     @FXML
     private void placeBooking(ActionEvent event) throws IOException {
         DatabaseConnection dc = new DatabaseConnection();

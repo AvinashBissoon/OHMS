@@ -1,3 +1,11 @@
+/** This class provides controls to the employee so that that can view their assigned booking and update its status.
+ * It also adds interactive designs to UI elements, such as buttons and textboxes.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
 package com.cts.homeservices;
 
 import javafx.collections.FXCollections;

@@ -25,7 +25,7 @@ public class EmployeeBooking {
         this.status = status;
     }
 
-    // IMPORTANT: Getters. JavaFX TableView CANNOT see the data without these.
+    //Getters. JavaFX TableView CANNOT see the data without these.
     public int getBookingId(){ return bookingId; }
     public String getDate() { return date; }
     public String getTime() { return time; }
@@ -36,7 +36,7 @@ public class EmployeeBooking {
     public String getAssignedTo() { return assignedTo; }
     public String getStatus() { return status; }
 
-    // Setters (Optional, but good to have)
+    // Setters
     public void setBookingId(int bookingId) { this.bookingId = bookingId; }
     public void setDate(String date) { this.date = date; }
     public void setTime(String time) { this.time = time; }

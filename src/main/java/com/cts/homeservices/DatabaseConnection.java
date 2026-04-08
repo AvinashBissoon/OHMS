@@ -1,23 +1,21 @@
 package com.cts.homeservices;
 
-/* DatabaseConnection.java
+/** DatabaseConnection.java
  * This class creates a database object to load drivers and perform queries.
  * Upon creation of an instance of this class a connection to the database is
  * established using a data source. From an instance of this class objects of
  * the Connection, Statement and ResultSet Interface classes can be obtained.
  * Provides the API for accessing and processing data stored in a
  * data source.
-
- * @Author (author)
- * @Version (a version number or a date)
- * @Date (date)
+ * @author Avinash Bissoon
+ * @version 1.0
  */
 
 import java.sql.*;
 import java.util.logging.Logger;
 
 
-//connection to the MySQL Database
+//Connects MySQL Database to the java project
 public class DatabaseConnection  {
 
     /*
@@ -75,7 +73,7 @@ public class DatabaseConnection  {
 
             /* Returns a database connection from the currently active connection provider */
             //--------------------------------------------------------------------------
-            //JavaFXProject is the name of our database
+            //homeservicesdb is the name of our database
             String JDBC_URL = "JDBC:mysql://localhost:3306/homeservicesdb";
             con = DriverManager.getConnection(JDBC_URL, "root", "mysql");
 

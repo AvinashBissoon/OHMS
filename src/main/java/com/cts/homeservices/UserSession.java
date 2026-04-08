@@ -1,3 +1,10 @@
+/** This class allows for the account information to be actively saved when a user is logged in.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
 package com.cts.homeservices;
 
 public class UserSession {
@@ -8,7 +15,6 @@ public class UserSession {
     private static String lastName;
     private static String email;
 
-    // Call this in your LoginViewController after a successful login
     public static void init(int id, String fName, String lName, String userEmail) {
         userId = id;
         firstName = fName;
@@ -16,7 +22,7 @@ public class UserSession {
         email = userEmail;
     }
 
-    // Getters to use in other controllers
+    // Getters to use in controllers
     public static int getUserId() { return userId; }
     public static String getFirstName() { return firstName; }
     public static String getLastName() { return lastName; }

@@ -1,3 +1,11 @@
+/** This class provides controls for an administrator to manage bookings; assign employees and cancel bookings.
+ * It also adds interactive designs to UI elements, such as buttons and textboxes.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
 package com.cts.homeservices;
 
 import javafx.beans.Observable;
@@ -23,7 +31,7 @@ public class AdminManageBookingsController implements Initializable {
     }
 
 
-
+    //Class Parameters that connect admin-manage-bookings.fxml and this controller
     @FXML
     private TableView<Booking> tblViewBooking;
 
@@ -78,7 +86,8 @@ public class AdminManageBookingsController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        //Setting up the styles to be used
+
+        //Set up of the styles to be used for UI elements
         String btnNormal = "-fx-font: 20px\"Leelawadee\";-fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnHover = "-fx-font: 20px\"Leelawadee\"; -fx-border-radius: 15; -fx-border-color:  #01402e; -fx-border-width:2; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnNormalAccordian = "-fx-font: 14px\"Leelawadee\";-fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
@@ -86,7 +95,7 @@ public class AdminManageBookingsController implements Initializable {
         String defaultStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color: #cccccc; -fx-border-width:1; ";
         String focusedStyle = "-fx-background-radius: 15; -fx-background-color: white; -fx-border-radius: 15; -fx-border-color:  #036248; -fx-border-width:2; ";
 
-
+        //Applying styles to the UI elements
         tbBookingID1.setStyle(defaultStyle);
         tbBookingID1.focusedProperty().addListener((observableValue, oldVal, newVal) -> {
             if (newVal) tbBookingID1.setStyle(focusedStyle);
@@ -130,7 +139,7 @@ public class AdminManageBookingsController implements Initializable {
         btnAssignEmployee.setOnMouseEntered(mouseEvent -> btnAssignEmployee.setStyle(btnHoverAccordian));
         btnAssignEmployee.setOnMouseExited(mouseEvent -> btnAssignEmployee.setStyle(btnNormalAccordian));
 
-
+        //Linking data objects to a Manage Bookings Table
         colBookingId.setCellValueFactory(new PropertyValueFactory<>("bookingId"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colTime.setCellValueFactory(new PropertyValueFactory<>("time"));
@@ -154,6 +163,8 @@ public class AdminManageBookingsController implements Initializable {
         loadData();
     }
 
+
+    //Loads data into table
     private void loadData(){
         bookingList.clear();
         DatabaseConnection dc = new DatabaseConnection();
@@ -180,6 +191,7 @@ public class AdminManageBookingsController implements Initializable {
         }
     }
 
+    //Assigns employee to a booking
     @FXML
     private void assignEmployee(ActionEvent event) {
         DatabaseConnection dc = new DatabaseConnection();
@@ -223,6 +235,7 @@ public class AdminManageBookingsController implements Initializable {
     }
 
 
+    //Cancels Booking made by customer
     @FXML
     private void cancelBooking (ActionEvent event) {
         Booking selectedBooking = tblViewBooking.getSelectionModel().getSelectedItem();
@@ -266,8 +279,9 @@ public class AdminManageBookingsController implements Initializable {
 
     }
 
+    //Takes the administrator back to the Administrator Dashboard
     @FXML
-    private void returnToHome(ActionEvent event) throws IOException {
+    private void returnToDash(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "admin-dashboard.fxml", 1100, 750);
     }

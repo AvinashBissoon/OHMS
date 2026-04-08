@@ -1,3 +1,12 @@
+/** This class provides controls for a customer to view and cancel a booking they have placed.
+ * It also adds interactive designs to UI elements, such as buttons and textboxes.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
+
 package com.cts.homeservices;
 
 import javafx.collections.FXCollections;
@@ -21,6 +30,7 @@ import java.util.logging.Logger;
 public class CustomerHistoryController implements Initializable {
     private static final Logger logger = Logger.getLogger(CustomerHistoryController.class.getName());
 
+    //Class Parameters that connect customer-view-history.fxml and this controller
     @FXML
     private TableView<Booking> tableBookings;
 
@@ -55,17 +65,15 @@ public class CustomerHistoryController implements Initializable {
     private Button btnCancelBooking;
 
 
-    //Populate Country and Role Combo Boxes
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        //Setting up the styles to be used
-
+        //Set up of the styles to be used for UI elements
         String btnNormal = "-fx-font: 18px\"Leelawadee\"; -fx-background-color:  white; -fx-text-fill: #036248; -fx-background-radius: 15; -fx-font-weight:bold;";
         String btnHover = "-fx-font: 18px\"Leelawadee\"; -fx-background-color: #036248; -fx-text-fill: white; -fx-background-radius: 15; -fx-font-weight:bold;";
 
 
-
+        //Applying styles to the UI elements
         btnReturnToHome.setStyle(btnNormal);
         btnReturnToHome.setOnMouseEntered(mouseEvent -> btnReturnToHome.setStyle(btnHover));
         btnReturnToHome.setOnMouseExited(mouseEvent -> btnReturnToHome.setStyle(btnNormal));
@@ -74,7 +82,7 @@ public class CustomerHistoryController implements Initializable {
         btnCancelBooking.setOnMouseEntered(mouseEvent -> btnCancelBooking.setStyle(btnHover));
         btnCancelBooking.setOnMouseExited(mouseEvent -> btnCancelBooking.setStyle(btnNormal));
 
-        //Mapping Columns to booking class
+        //Mapping Columns to Booking class
         colBookingId.setCellValueFactory(new PropertyValueFactory<>("bookingId"));
         colDate.setCellValueFactory(new PropertyValueFactory<>("date"));
         colTime.setCellValueFactory(new PropertyValueFactory<>("time"));
@@ -86,6 +94,7 @@ public class CustomerHistoryController implements Initializable {
         loadData();
     }
 
+    //Loads booking data into the respective columns
     private void loadData(){
         bookingList.clear();
         DatabaseConnection dc = new DatabaseConnection();
@@ -117,6 +126,7 @@ public class CustomerHistoryController implements Initializable {
     }
 
 
+    //Allows for booking to be canceled by customer
     @FXML
     private void cancelBooking (ActionEvent event) {
         Booking selectedBooking = tableBookings.getSelectionModel().getSelectedItem();
@@ -156,10 +166,10 @@ public class CustomerHistoryController implements Initializable {
         }
     }
 
+    //Takes the customer back to the Customer Dashboard
     @FXML
     private void returnToHome(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "customer-dashboard.fxml", 1100, 750);
     }
-
 }
