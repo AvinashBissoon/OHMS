@@ -143,3 +143,12 @@ AssignedTo varchar(50) DEFAULT "Awaiting Professional",
 PRIMARY KEY (BookingID),
 FOREIGN KEY (UserID) REFERENCES HomeServicesDB.tblUsers(UserID)
 );
+
+INSERT INTO homeservicesdb.tblBooking (UserID, ServiceType, ServiceDetails, Address, City, BookingDate, BookingTime, Status, AssignedTo)
+VALUES
+(2, 'Electrical: Outlet and Switch Repair', 'Kitchen lights do not come on when the switch is turned on', '#45 Park Palace', 'Port of Spain', '2026-04-16', '9:00:00', 'Pending', 'Awaiting Professional'),
+(4, 'Plumbing: Pipeline Repair', 'Bathroom sink is leaking heavily', '#24 Orchard Drive', 'Trincity', '2026-04-22', '12:00:00', 'Completed', 'Roshan Babwah'),
+(5, 'Landscaping: Lawn Maintenance', 'Front lawn needs mowing and cleaning', '#105 Gageda Road', 'Sangre Grande', '2026-04-11', '2:00:00', 'Pending', 'Awaiting Professional'),
+(3, 'Landscaping: Tree Trimming', 'My flower garden hedges needs trimming', '#Osprey Drive', 'San Fernando', '2026-04-28', '5:00:00', 'Pending', 'Awaiting Professional'),
+(1, 'Housekeeping: Post Construction Cleaning', 'My home has just been built and I need to clean before moving in', '#28 Helios street', 'Couva', '2026-04-17', '01:00:00', 'Pending', 'Awaiting Professional')
+;
