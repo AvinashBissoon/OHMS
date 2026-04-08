@@ -37,7 +37,7 @@ VALUES
     (null, "Darion", "Thomas", "#22 Orange Drive", "Santa Rosa", "Arima", "Trinidad", "(868)284-0091", "darionthomas@gmail.com", "Pass", "Customer", 1),
     (null, "Jonathan", "Bachan", "#55 Cresend Drive", "Long Circular Road", "San Fernando", "Trinidad", "(868)324-6213", "johnny@gmail.com", "Pass", "Customer", 1),
     (null, "Kimmy", "Khan", "#4 Bon Accord Drive", "Simple Road", "Scarborough", "Tobago", "(868)625-8821", "kimmykhan@gmail.com", "Pass", "Customer", 1),
-    (null, "Selena", "Brown", "#107 Yellow Bird Drive", "Timberland Park", "Sangre Grande", "Trinidad", "(868)453-1298", "selena@gmail.com", "Pass", "Customer", 1),
+    (null, "Selena", "Brown", "#107 Yellow Bird Drive", "Timberland Park", "Sangre Grande", "Trinidad", "(868)453-1298", "selena@gmail.com", "Pass", "Customer", 1)
 ;
 
 /*-------------------------------------------------------------------------------------*/
@@ -69,7 +69,7 @@ VALUES
     (null, "Renaldo", "Boodhoo", "#321 Jump Street", "Dememara Road", "Arima", "Trinidad", "(868)342-0012", "renaldo@gmail.com", "Pass", "Employee", 1),
     (null, "Amelia", "Terry", "#1 Kenny Drive", "Gold Street", "Bon Accord", "Tobago", "(868)782-8723", "amelia@gmail.com", "Pass", "Employee", 1),
     (null, "Roshan", "Babwah", "#34 Love Road", "Cupid Park", "Couva", "Trinidad", "(868)224-0819", "roshan@gmail.com", "Pass", "Employee", 1),
-    (null, "Maile", "Harry", "#76 Red Road", "The Plantations", "Scarborough", "Tobago", "(868)771-0673", "malie@gmail.com", "Pass", "Employee", 1),
+    (null, "Maile", "Harry", "#76 Red Road", "The Plantations", "Scarborough", "Tobago", "(868)771-0673", "malie@gmail.com", "Pass", "Employee", 1)
 ;
 
 /*-------------------------------------------------------------------------------------*/
@@ -99,7 +99,7 @@ INSERT INTO HomeServicesDB.tblAdmin (AdminID, FirstName, LastName, StreetAddress
 VALUES
 	(null, "Avinash", "Bissoon", "#25 Honey Bee Drive", "Bye Pass Road", "Arima", "Trinidad", "(868)723-0141", "avi@gmail.com", "Pass", "Administrator", 1),
     (null, "Nicholas", "Brathwaite", "#17 Orange Flats", "Cherry Circular", "Point Fortin", "Trinidad", "(868)229-4091", "nicholas@gmail.com", "Pass", "Administrator", 1),
-    (null, "Kerry", "Maze", "#61 Montest Drive", "Glen Road", "Scarborough", "Tobago", "(868)345-0987", "kerry@gmail.com", "Pass", "Administrator", 1),
+    (null, "Kerry", "Maze", "#61 Montest Drive", "Glen Road", "Scarborough", "Tobago", "(868)345-0987", "kerry@gmail.com", "Pass", "Administrator", 1)
 ;
 
 /*-------------------------------------------------------------------------------------*/
