@@ -1,3 +1,12 @@
+/** This class is an object class used for customer related information.
+ * It encapsulates customer information such as customer ID, first name, last name, street addresses, city, country, phone number and email.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
+
 package com.cts.homeservices;
 
 public class Customer {

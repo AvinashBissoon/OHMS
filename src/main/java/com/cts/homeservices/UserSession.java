@@ -1,4 +1,4 @@
-/** This class allows for the account information to be actively saved when a user is logged in.
+/** This class allows for the account information to be saved to a "session" when a user has logged in.
  *
  * @author Avinash Bissoon
  * @version 1.0

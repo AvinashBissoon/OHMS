@@ -1,3 +1,12 @@
+/** This class is an object class used for booking related information that can be accessed by the employee.
+ * It encapsulates booking information such as booking ID, date, time, service, details, employee assigned and booking status.
+ *
+ * @author Avinash Bissoon
+ * @version 1.0
+ *
+ */
+
+
 package com.cts.homeservices;
 
 public class EmployeeBooking {

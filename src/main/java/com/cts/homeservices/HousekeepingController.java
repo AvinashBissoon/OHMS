@@ -1,7 +1,7 @@
 /** This class provides control and allows for customers to place a booking for any Housekeeping Service provided.
  * It also adds interactive designs to UI elements, such as buttons and textboxes.
  *
- * @author Avinash Bissoon
+ * @author Nicholas Brathwaite
  * @version 1.0
  *
  */
