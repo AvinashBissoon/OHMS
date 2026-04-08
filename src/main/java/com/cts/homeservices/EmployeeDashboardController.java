@@ -1,7 +1,7 @@
 /** This class provides controls to the employee dashboard.
  * It also adds interactive designs to UI elements, such as buttons and textboxes.
  *
- * @author Avinash Bissoon
+ * @author Nicholas Brathwaite
  * @version 1.0
  *
  */
