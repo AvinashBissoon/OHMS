@@ -11,6 +11,7 @@ module com.cts.homeservices {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires java.sql;
+    requires com.github.librepdf.openpdf;
 
     opens com.cts.homeservices to javafx.fxml;
     exports com.cts.homeservices;

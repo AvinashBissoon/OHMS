@@ -38,10 +38,8 @@ public class AdminDashboardController implements Initializable {
     private Button btnViewAccounts;
 
     @FXML
-    private Button btnPrintInvoice;
-
-    @FXML
     private Button btnPrintReport;
+
 
 
     @Override
@@ -60,9 +58,6 @@ public class AdminDashboardController implements Initializable {
         btnViewAccounts.setOnMouseEntered(mouseEvent -> btnViewAccounts.setStyle(btnHover));
         btnViewAccounts.setOnMouseExited(mouseEvent -> btnViewAccounts.setStyle(btnNormal));
 
-        btnPrintInvoice.setStyle(btnNormal);
-        btnPrintInvoice.setOnMouseEntered(mouseEvent -> btnPrintInvoice.setStyle(btnHover));
-        btnPrintInvoice.setOnMouseExited(mouseEvent -> btnPrintInvoice.setStyle(btnNormal));
 
         btnPrintReport.setStyle(btnNormal);
         btnPrintReport.setOnMouseEntered(mouseEvent -> btnPrintReport.setStyle(btnHover));
@@ -88,6 +83,13 @@ public class AdminDashboardController implements Initializable {
     private void viewAccounts(ActionEvent event) throws IOException {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         OnlineHomeServiceApp.changeScene(stage, "admin-view-accounts.fxml", 1100, 750);
+    }
+
+    //Opens the Print Reports Scene
+    @FXML
+    private void openPrintReport(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        OnlineHomeServiceApp.changeScene(stage, "admin-print-report.fxml", 1100, 750);
     }
 
 }

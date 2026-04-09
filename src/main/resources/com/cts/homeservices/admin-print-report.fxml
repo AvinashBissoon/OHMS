@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cts.homeservices.PrintReportController">
+   <top>
+      <AnchorPane prefHeight="50.0" prefWidth="600.0" style="-fx-background-color: #036248;" BorderPane.alignment="CENTER">
+         <children>
+            <Label alignment="CENTER" layoutX="449.0" layoutY="5.0" text="Print Report" textFill="WHITE">
+               <font>
+                  <Font name="SansSerif Bold" size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <bottom>
+      <AnchorPane prefHeight="40.0" prefWidth="1100.0" style="-fx-background-color: #fae8d6;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="23.0" layoutY="11.0" text="Online Home Service Solutions 2026">
+               <font>
+                  <Font name="Serif Italic" size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="985.0" layoutY="11.0" text="Version: 1.00">
+               <font>
+                  <Font name="Serif Italic" size="16.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+   </bottom>
+   <center>
+      <AnchorPane prefHeight="610.0" prefWidth="780.0" style="-fx-background-color: CBDED3;" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="159.0" layoutY="93.0" prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="tblViewCustomer" layoutX="-156.0" layoutY="-75.0" prefHeight="528.0" prefWidth="1093.0">
+                    <columns>
+                      <TableColumn fx:id="colCustFirstName" minWidth="0.0" prefWidth="147.0" text="FIRST NAME" />
+                        <TableColumn fx:id="colCustLastName" prefWidth="130.0" text="LAST NAME" />
+                        <TableColumn fx:id="colCustEmail" prefWidth="118.0" text="EMAIL" />
+                        <TableColumn fx:id="colCustMobileNum" minWidth="0.0" prefWidth="135.0" text="MOBILE NUMBER" />
+                      <TableColumn fx:id="colCustAddress1" prefWidth="159.0" text="ADDRESS 1" />
+                        <TableColumn fx:id="colCustAddress2" prefWidth="160.0" text="ADDRESS 2" />
+                        <TableColumn fx:id="colCustCity" prefWidth="129.0" text="CITY" />
+                        <TableColumn fx:id="colCustCountry" prefWidth="122.0" text="COUNTRY" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+            <Button fx:id="btnReturnToHome" layoutX="352.0" layoutY="566.0" mnemonicParsing="false" onAction="#backToHome" text="Return to Home" textFill="#036248">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Button fx:id="btnPrintReport" layoutX="629.0" layoutY="566.0" mnemonicParsing="false" text="Print Report" textFill="#036248">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
