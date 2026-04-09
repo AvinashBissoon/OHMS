@@ -1,7 +1,7 @@
 /** This class provides controls for an administrator to view and edit user accounts.
  * It also adds interactive designs to UI elements, such as buttons and textboxes.
  *
- * @author Avinash Bissoon
+ * @author Avinash Bissoon & Nicholas Brathwaite
  * @version 1.0
  *
  */

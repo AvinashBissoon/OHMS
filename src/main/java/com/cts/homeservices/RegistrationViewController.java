@@ -1,7 +1,7 @@
 /** This class provides control for the customers, employees and administrators to register an account on the system.
  * It also adds interactive designs to UI elements, such as buttons and textboxes.
  *
- * @author Avinash Bissoon
+ * @author Nicholas Brathwaite
  * @version 1.0
  *
  */
