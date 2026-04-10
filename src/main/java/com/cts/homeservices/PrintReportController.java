@@ -144,7 +144,7 @@ public class PrintReportController implements Initializable {
             document.open();
 
             Font font = FontFactory.getFont(FontFactory.HELVETICA_BOLD, 18);
-            document.add(new Paragraph("Customer Service Report", font));
+            document.add(new Paragraph("Customer List Report", font));
             document.add(new Paragraph(" "));
 
             PdfPTable table = new PdfPTable(8);
